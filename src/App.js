@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './Header';
+import Banner from './Banner';
+import GymImage from './GymImage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-gray-100 min-h-screen">
+      <Header />
+      <Banner />
+      <main className="container mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold mb-4">Bienvenido a FBT Functional Body Training</h2>
+        <p className="mb-4">Transforma tu cuerpo y mejora tu salud con nuestro entrenamiento funcional personalizado.</p>
+        <GymImage />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
