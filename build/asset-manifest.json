@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/FBT/static/css/main.5b960588.css",
+    "main.js": "/FBT/static/js/main.8071c0d2.js",
+    "index.html": "/FBT/index.html",
+    "main.5b960588.css.map": "/FBT/static/css/main.5b960588.css.map",
+    "main.8071c0d2.js.map": "/FBT/static/js/main.8071c0d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b960588.css",
+    "static/js/main.8071c0d2.js"
+  ]
+}
