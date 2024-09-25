@@ -1,37 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Banner from './Banner';
 import GymImage from './GymImage';
-import SignupForm from './SignupForm'; // Asegúrate de que la ruta es correcta
+import Register from './Register';
+import supabase from './supabase/supabaseClient';
+import ReusableButton from './ReusableButton';
 
 const App = () => {
-  const [showForm, setShowForm] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleShowForm = () => setShowForm(true);
-  const handleCloseForm = () => setShowForm(false);
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+    });
+
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        setIsAuthenticated(true);
+      }
+    };
+
+    checkSession();
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen">
       <Header />
-      <GymImage onClick={handleShowForm} />
+      <GymImage />
       <Banner />
+      <nav className="container mx-auto px-4 py-4">
+        {isAuthenticated ? (
+          <ReusableButton onClick={handleLogout} className="ml-4 text-red-600">
+            Cerrar Sesión
+          </ReusableButton>
+        ) : null /* El botón "Registrarse" ha sido eliminado */}
+      </nav>
       <main className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-4">Bienvenido a FBT Functional Body Training</h2>
-        <p className="mb-4">Transforma tu cuerpo y mejora tu salud con nuestro entrenamiento funcional personalizado.</p>
+        <Register /> {/* El formulario de registro siempre está visible */}
       </main>
-      {showForm && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <SignupForm />
-            <button
-              onClick={handleCloseForm}
-              className="mt-4 bg-red-500 text-white py-2 px-4 rounded"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
