@@ -23,8 +23,8 @@ header {
   /* Para pantallas pequeñas en orientación horizontal */
   @media (max-width: 576px) and (orientation: landscape) {
     header h1 {
-      font-size: 1.5rem; /* Texto más pequeño en horizontal */
-      padding: 0.5rem; /* Ajuste de espacio */
+      font-size: 2rem; /* Texto más pequeño en horizontal */
+      padding: 0rem; /* Ajuste de espacio */
     }
   }
   
