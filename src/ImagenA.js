@@ -13,6 +13,9 @@ const ImagenA = ({ imagenSrc, altTexto }) => {
           <span className="text-white"> contra entrega </span> 
           <span className="text-yellow">en Bucaramanga y área metropolitana</span>
         </h2>
+        {/* Textos que se pueden mover */}
+        <div className="movable-text1" >Texto 1</div>
+        <div className="movable-text2" >Texto 2</div>
       </Col>
       <Col md={6}>
         <img src={imagenSrc} alt={altTexto} className="img-fluid" />

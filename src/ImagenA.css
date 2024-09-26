@@ -7,13 +7,66 @@
     line-height: 1.5; /* Ajusta el espaciado entre líneas */
     text-align: center; /* Alinea el texto al centro */
     border-radius: 5px; /* Redondea los bordes */
-
+    margin-top: 15px; /* Ajusta este valor según sea necesario */
 }
 
 /* Ajustes responsivos */
-@media (max-width: 576px) { /* Para pantallas pequeñas */
+
+/* Pantallas pequeñas (móviles en orientación vertical) */
+@media (max-width: 576px) {
     .custom-header {
-        font-size: 2rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+        font-size: 1.3rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+        margin-top: -20px; /* Ajusta este valor según sea necesario */
+    }
+}
+
+/* Pantallas pequeñas (móviles en orientación horizontal) */
+@media (max-width: 576px) and (orientation: landscape) {
+    .custom-header {
+        font-size: 1.7rem; /* Ajusta el tamaño de la fuente para móviles en horizontal */
+        margin-top: -10px; /* Ajusta este valor según sea necesario */
+    }
+}
+
+/* Pantallas medianas (tabletas en orientación vertical) */
+@media (min-width: 576px) and (max-width: 768px) and (orientation: portrait) {
+    .custom-header {
+        font-size: 3rem; /* Texto más grande para tablets en vertical */
+    }
+}
+
+/* Pantallas medianas (tabletas en orientación horizontal) */
+@media (min-width: 576px) and (max-width: 768px) and (orientation: landscape) {
+    .custom-header {
+        font-size: 3.5rem; /* Texto ajustado para tablets en horizontal */
+    }
+}
+
+/* Pantallas grandes (escritorios y laptops en orientación vertical) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .custom-header {
+        font-size: 4rem; /* Texto más grande para laptops en vertical */
+    }
+}
+
+/* Pantallas grandes (escritorios y laptops en orientación horizontal) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .custom-header {
+        font-size: 5rem; /* Texto ajustado para laptops en horizontal */
+    }
+}
+
+/* Pantallas extra grandes (escritorios y laptops) */
+@media (min-width: 1024px) {
+    .custom-header {
+        font-size: 6rem; /* Texto más grande para pantallas extra grandes */
+    }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1200px) {
+    .custom-header {
+        font-size: 7rem; /* Aumenta aún más el tamaño del texto */
     }
 }
 
@@ -23,4 +76,35 @@
 
 .text-white {
     color: white; /* Color blanco */
+}
+
+/* Estilos para Texto 1 */
+.movable-text1 {
+    font-size: 2rem; /* Tamaño de la fuente para Texto 1 */
+    color: #413eff; 
+    text-align: center; /* Alineación centrada */
+    margin-top: 20px; /* Espaciado superior */
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+
+/* Estilos para Texto 2 */
+.movable-text2 {
+    font-size: 2rem; /* Tamaño de la fuente para Texto 2 */
+    color: #413eff; /* Color del texto */
+    text-align: center; /* Alineación centrada */
+    margin-top: -690px; /* Espaciado superior */
+    transition: all 0.3s ease; /* Suaviza la transición */
+    margin-left: 110%;
+    position: relative; /* Cambia la posición para utilizar z-index */
+    z-index: 999; /* Asegúrate de que el z-index sea positivo para estar por encima de otros elementos */
+}
+
+
+/* Ajustes responsivos para los textos movibles */
+@media (max-width: 576px) {
+    .movable-text1,
+    .movable-text2 {
+        font-size: 1.5rem; /* Tamaño reducido para pantallas pequeñas */
+        margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
 }
