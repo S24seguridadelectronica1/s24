@@ -1,11 +1,13 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import './Header.css'; // Asegúrate de que la ruta sea correcta
 
 const Header = () => {
   return (
-    <header className="bg-blue-600 text-white p-4">
-      <div className="container mx-auto">
-        <h1 className="text-2xl font-bold text-center">FBT Functional Body Training</h1>
-      </div>
+    <header>
+      <Container>
+        <h1>¡Page en la puerta de tu casa!</h1>
+      </Container>
     </header>
   );
 };

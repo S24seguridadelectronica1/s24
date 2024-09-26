@@ -1,0 +1,26 @@
+.custom-header {
+    background-color: black; /* Fondo negro */
+    padding: 0.5px; /* Espaciado interno para que se vea mejor */
+    color: transparent; /* Asegúrate de que el color sea transparente para usar el color de texto personalizado */
+    display: inline-block; /* Cambiado a inline-block para centrar con text-align */
+    font-size: 6rem; /* Aumenta el tamaño de la fuente */
+    line-height: 1.5; /* Ajusta el espaciado entre líneas */
+    text-align: center; /* Alinea el texto al centro */
+    border-radius: 5px; /* Redondea los bordes */
+
+}
+
+/* Ajustes responsivos */
+@media (max-width: 576px) { /* Para pantallas pequeñas */
+    .custom-header {
+        font-size: 2rem; /* Ajusta el tamaño de la fuente para pantallas pequeñas */
+    }
+}
+
+.text-yellow {
+    color: yellow; /* Color amarillo */
+}
+
+.text-white {
+    color: white; /* Color blanco */
+}

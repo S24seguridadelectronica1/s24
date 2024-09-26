@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import Banner from './Banner';
-import GymImage from './GymImage';
 import Register from './Register';
+import ImagenA from './ImagenA'; // Importa el nuevo componente
 import supabase from './supabase/supabaseClient';
 import ReusableButton from './ReusableButton';
+import Footer from './Footer';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,8 +44,13 @@ const App = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       <Header />
-      <GymImage />
+      <ImagenA 
+  texto="pago contraentrega ." 
+  imagenSrc={`${process.env.PUBLIC_URL}/1.png`}
+  altTexto="Descripción de la imagen"
+/>
       <Banner />
+      
       <nav className="container mx-auto px-4 py-4">
         {isAuthenticated ? (
           <ReusableButton onClick={handleLogout} className="ml-4 text-red-600">
@@ -54,6 +61,7 @@ const App = () => {
       <main className="container mx-auto px-4 py-8">
         <Register /> {/* El formulario de registro siempre está visible */}
       </main>
+      <Footer />
     </div>
   );
 };
