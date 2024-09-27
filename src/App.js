@@ -73,16 +73,18 @@ const App = () => {
 
 
        {/* Sección CameraDescription */}
-       <Container fluid className="my-4">
-        <Row className="justify-content-center">
-          <Col xs={12} md={8}>
-            <CameraDescription 
-              imageSrc={`${process.env.PUBLIC_URL}/1.png`} // Cambia la ruta a la imagen que desees
-              description="Esta cámara de seguridad ofrece una alta resolución, visión nocturna y conectividad Wi-Fi para una fácil supervisión de tu hogar o negocio. Su diseño compacto permite una instalación discreta y efectiva."
-            />
-          </Col>
-        </Row>
-      </Container>
+<Container fluid className="my-4">
+  <Row className="justify-content-center">
+    <Col xs={12} md={8}>
+      <CameraDescription 
+        imageSrc={`${process.env.PUBLIC_URL}/1.png`} 
+        buttonText="Ir al Registro"
+        scrollToRegister={scrollToRegister}
+      />
+    </Col>
+  </Row>
+</Container>
+
 
 
 
