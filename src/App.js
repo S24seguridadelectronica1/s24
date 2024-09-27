@@ -8,8 +8,13 @@ import Register from './Register';
 import ImagenA from './ImagenA';
 import supabase from './supabase/supabaseClient';
 import Footer from './Footer';
-import Price from './Price'; // Importa el nuevo componente Price
-import Beneficios from './Beneficios'; // Con "B" mayúscula
+import Price from './Price'; 
+import Beneficios from './Beneficios'; 
+import MemoriaGratis from './MemoriaGratis';  
+import DeteccionDeHumanos from './DeteccionDeHumanos';
+import VisionNocturna from './VisionNocturna'; 
+
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -66,15 +71,9 @@ const App = () => {
         </Row>
       </Container>
 
-      <Banner 
-        title="¡Garantía de satisfacción! O la devolución de su dinero"
-        description="Producto en caja original + 1 año de garantía por defectos de fábrica."
-        buttonText="Ir al Registro"
-        scrollToRegister={scrollToRegister}
-      />
 
-      {/* Sección CameraDescription */}
-      <Container fluid className="my-4">
+       {/* Sección CameraDescription */}
+       <Container fluid className="my-4">
         <Row className="justify-content-center">
           <Col xs={12} md={8}>
             <CameraDescription 
@@ -84,6 +83,17 @@ const App = () => {
           </Col>
         </Row>
       </Container>
+
+
+
+
+      <Banner 
+        title="¡Garantía de satisfacción! O la devolución de su dinero"
+        description="Producto en caja original + 1 año de garantía por defectos de fábrica."
+        buttonText="Ir al Registro"
+        scrollToRegister={scrollToRegister}
+      />
+
 
       {/* Agrega el componente Price aquí, antes del formulario de registro */}
       <Row className="justify-content-center">
@@ -103,12 +113,61 @@ const App = () => {
         </Col>
       </Row>
 
+      <Row className="justify-content-center">
+        <Col xs={12} md={7}>
+          <MemoriaGratis 
+            title="Memoria Gratis con tu compra"
+            imageSrc={`${process.env.PUBLIC_URL}/5.png`} 
+            description="Obtén una memoria micro SD de 32GB gratis al comprar tu cámara de seguridad."
+          />
+        </Col>
+      </Row>
+
+
+
+
+
       <Beneficios
         title=""
         description=""
         buttonText="Regístrate Ahora"
         scrollToRegister={scrollToRegister}
       />
+
+<DeteccionDeHumanos 
+  title="Detección de Humanos"
+  imageSrc={`${process.env.PUBLIC_URL}/2.png`} 
+  description="Esta función de detección de humanos permite reconocer y alertar sobre la presencia de personas en áreas sensibles, aumentando la seguridad y la supervisión."
+  scrollToRegister={scrollToRegister} // Pasar la función aquí
+/>
+
+
+
+<VisionNocturna 
+  title="Visión Nocturna"
+  imageSrc={`${process.env.PUBLIC_URL}/3.png`} 
+  description="La función de visión nocturna garantiza una supervisión constante, incluso en condiciones de poca luz, asegurando la seguridad en todo momento."
+  scrollToRegister={scrollToRegister} // Pasar la función aquí
+/>
+
+
+
+<DeteccionDeHumanos 
+  title="Detección de Humanos"
+  imageSrc={`${process.env.PUBLIC_URL}/2.png`} 
+  description="Esta función de detección de humanos permite reconocer y alertar sobre la presencia de personas en áreas sensibles, aumentando la seguridad y la supervisión."
+  scrollToRegister={scrollToRegister} // Pasar la función aquí
+/>
+
+<VisionNocturna 
+  title="Visión Nocturna"
+  imageSrc={`${process.env.PUBLIC_URL}/3.png`} 
+  description="La función de visión nocturna garantiza una supervisión constante, incluso en condiciones de poca luz, asegurando la seguridad en todo momento."
+  scrollToRegister={scrollToRegister} // Pasar la función aquí
+/>
+
+
+
 
       {/* Main content */}
       <Container className="py-4">

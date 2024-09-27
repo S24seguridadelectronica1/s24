@@ -3,10 +3,10 @@ import { Card, Row, Col, Container } from 'react-bootstrap';
 
 const Price = ({ title, amount, imageSrc, productDetails }) => {
   return (
-    <Container fluid className="my-3"> {/* Contenedor fluido para ocupar todo el ancho */}
-      <Card className="shadow-sm mx-0 wide-card"> {/* Aplicando la clase personalizada */}
+    <Container fluid className="my-3"> 
+      <Card className="shadow-sm mx-0 wide-card"> 
         <Card.Body>
-          <Row className="g-0 align-items-center"> {/* g-0 para eliminar el espacio entre columnas */}
+          <Row className="g-0 align-items-center">
             <Col xs={12} md={4} className="text-center text-md-left">
               <img src={imageSrc} alt={title} className="img-fluid" />
             </Col>
