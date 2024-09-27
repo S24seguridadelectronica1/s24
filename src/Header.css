@@ -1,61 +1,11 @@
 /* Estilos base para el header */
 header {
-    background-color: #007bff; /* Fondo azul (clase bg-primary de Bootstrap) */
-    color: white; /* Texto blanco */
-    padding: 0rem 0;
-    text-align: center;
-  }
-  
-  /* Título grande por defecto */
-  header h1 {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  
-  /* Para pantallas pequeñas (móviles en orientación vertical) */
-  @media (max-width: 576px) {
-    header h1 {
-      font-size: 1.3rem; /* Texto más pequeño en móviles */
-      padding: -10rem 0;
-    }
-  }
-  
-  /* Para pantallas pequeñas en orientación horizontal */
-  @media (max-width: 576px) and (orientation: landscape) {
-    header h1 {
-      font-size: 2rem; /* Texto más pequeño en horizontal */
-      padding: 0rem; /* Ajuste de espacio */
-    }
-  }
-  
-  /* Pantallas medianas (tabletas en orientación vertical) */
-  @media (min-width: 576px) and (max-width: 768px) and (orientation: portrait) {
-    header h1 {
-      font-size: 2.5rem; /* Texto más grande para tablets */
-      padding: 1rem; /* Más espacio */
-    }
-  }
-  
-  /* Pantallas medianas en orientación horizontal */
-  @media (min-width: 576px) and (max-width: 768px) and (orientation: landscape) {
-    header h1 {
-      font-size: 2rem; /* Texto ajustado para horizontal */
-      padding: 0.8rem;
-    }
-  }
-  
-  /* Para pantallas grandes (escritorios y laptops) */
-  @media (min-width: 768px) {
-    header h1 {
-      font-size: 4rem; /* Texto más grande en pantallas grandes */
-    }
-  }
-  
-  /* Para pantallas extra grandes */
-  @media (min-width: 1200px) {
-    header h1 {
-      font-size: 5rem; /* Aumenta aún más el tamaño del texto */
-    }
-  }
-  
+  background-color: #007bff; /* Fondo azul (clase bg-primary de Bootstrap) */
+  color: white; /* Texto blanco */
+  padding: 0rem 0;
+  text-align: center;
+}
+
+
+
+

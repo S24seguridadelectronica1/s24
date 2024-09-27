@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Form, Button, Alert, Container } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient';
+import './Register.css'; // Importa el archivo CSS
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,30 +13,29 @@ const Register = () => {
   });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState(''); // Estado para el mensaje de éxito
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    setSuccessMessage(''); // Reiniciar el mensaje de éxito
+    setSuccessMessage('');
 
     const { name, phone, email } = formData;
 
-    // Validar que todos los campos estén llenos
+    // Validación de campos
     if (!name || !phone || !email) {
       setError('Por favor, completa todos los campos.');
       return;
     }
 
-    // Validar que el teléfono tenga al menos 10 caracteres
     if (phone.length < 10) {
       setError('El teléfono debe tener al menos 10 caracteres.');
       return;
@@ -43,90 +44,82 @@ const Register = () => {
     setLoading(true);
 
     try {
-      // Insertar los datos en la tabla "registro"
+      // Insertar datos en la tabla "registro"
       const { error: dbError } = await supabase
         .from('registro')
-        .insert([{ name, phone, email }]); // Ajusta los campos según tu tabla
+        .insert([{ name, phone, email }]);
 
       if (dbError) {
-        console.error('Error al guardar los datos:', dbError); // Captura más detalles del error
-        setError('Error al guardar los datos en la tabla: ' + dbError.message);
-        throw dbError;
+        console.error('Error al guardar los datos:', dbError);
+        setError(`Error al guardar los datos: ${dbError.message}`);
+        return;
       }
 
-      // Establecer el mensaje de éxito
       setSuccessMessage('¡Registro exitoso! Puedes iniciar sesión ahora.');
+      setFormData({ name: '', phone: '', email: '' });
 
-      // Limpiar los datos del formulario
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-      });
-
-      // Redirigir al usuario después de un tiempo (opcional)
+      // Redirigir después de un tiempo
       setTimeout(() => {
         navigate('/login');
-      }, 2000); // Espera 2 segundos antes de redirigir
+      }, 2000);
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
+      setError('Ha ocurrido un error, por favor intenta nuevamente.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded shadow">
-      <h2 className="text-2xl font-bold mb-6">Registrarse</h2>
-      <p className="mb-4 text-gray-600">Por favor, completa el formulario para crear una cuenta.</p>
-      {error && <div className="bg-red-100 text-red-700 p-2 mb-4 rounded">{error}</div>}
-      {successMessage && <div className="bg-green-100 text-green-700 p-2 mb-4 rounded">{successMessage}</div>} {/* Mensaje de éxito */}
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className="block mb-2">Nombre</label>
-          <input
+    <Container className="my-5">
+      <h2 className="text-center mb-4">Registrarse</h2>
+      <p className="text-center mb-4">Completa el formulario para crear una cuenta.</p>
+      {error && <Alert variant="danger">{error}</Alert>}
+      {successMessage && <Alert variant="success">{successMessage}</Alert>}
+      <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
+        <Form.Group controlId="name" className="mb-3">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control
             type="text"
-            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Ingresa tu nombre"
           />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="phone" className="block mb-2">Teléfono</label>
-          <input
+        </Form.Group>
+        <Form.Group controlId="phone" className="mb-3">
+          <Form.Label>Teléfono</Form.Label>
+          <Form.Control
             type="tel"
-            id="phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Ingresa tu número de teléfono"
           />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="block mb-2">Correo Electrónico</label>
-          <input
+        </Form.Group>
+        <Form.Group controlId="email" className="mb-3">
+          <Form.Label>Correo Electrónico</Form.Label>
+          <Form.Control
             type="email"
-            id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Ingresa tu correo electrónico"
           />
-        </div>
-        <button
+        </Form.Group>
+        <Button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-100"
+          variant="primary"
         >
           {loading ? 'Registrando...' : 'Registrarse'}
-        </button>
-      </form>
-    </div>
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

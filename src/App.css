@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+/* Estilos generales para el contenedor */
+.app-container {
+  background-color: #f8f9fa; /* Fondo claro */
+  min-height: 100vh; /* Asegúrate de que ocupe toda la altura */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos para el header */
+.header {
+  margin-bottom: 20px; /* Espacio debajo del header */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilos para la imagen */
+.img-fluid {
+  max-width: 100%;
+  height: auto; /* Asegura que la imagen se ajuste responsivamente */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Estilos para el navbar */
+.navbar-custom {
+  background-color: #343a40; /* Fondo oscuro para el navbar */
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para el texto del navbar */
+.navbar-custom .navbar-text {
+  color: white; /* Texto blanco */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos para el contenedor principal */
+.main-content {
+  padding: 20px; /* Espaciado interno */
 }
+
+/* Estilos para el footer */
+.footer {
+  margin-top: 20px; /* Espacio superior en el footer */
+}
+
+body {
+  margin: -20; /* Asegúrate de que no haya márgenes */
+  padding: 0; /* Asegúrate de que no haya paddings */
+}
+

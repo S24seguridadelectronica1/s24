@@ -1,0 +1,6 @@
+/* Register.css */
+.form-control::placeholder {
+    color: hsla(0, 17%, 22%, 0.502); /* Cambia el color y la opacidad según tus necesidades */
+    opacity: 0.5; /* Para algunos navegadores */
+  }
+  

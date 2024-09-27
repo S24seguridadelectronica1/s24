@@ -1,16 +1,31 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-const ReusableButton = ({ onClick, children, className }) => {
+const ReusableButton = ({ children, variant = "primary", className = "", to, ...props }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (to) {
+      navigate(to);
+    }
+  };
+
   return (
     <Button
-      variant="primary"
-      onClick={onClick} // Este debe ser manejado correctamente
-      className={`bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${className}`}
+      variant={variant}
+      onClick={handleClick}
+      className={className}
+      {...props}
     >
       {children}
     </Button>
   );
+};
+
+ReusableButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  variant: PropTypes.string,
+  className: PropTypes.string,
+  to: PropTypes.string,
 };
 
 export default ReusableButton;
