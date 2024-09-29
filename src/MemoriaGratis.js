@@ -11,7 +11,7 @@ const MemoriaGratis = ({ title, imageSrc, description }) => {
             <Col xs={12} md={8} className="text-center text-md-left">
               <Card.Title>{title}</Card.Title>
               <Card.Text>{description}</Card.Text>
-              <h2 className="mt-4">Promoción</h2>
+              <h2 className="mt-4">Solo con el registro!</h2>
               <p>Obtén una memoria gratis al comprar este producto. ¡No te lo pierdas!</p>
             </Col>
             {/* Columna de la imagen a la derecha */}

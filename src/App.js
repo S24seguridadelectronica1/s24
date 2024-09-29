@@ -60,7 +60,6 @@ const App = () => {
 
       {/* Sección ImagenA */}
       <Container fluid className="my-4">
-        <Row className="align-items-center justify-content-center">
           <Col xs={12} md={8}>
             <ImagenA 
               imagenSrc={`${process.env.PUBLIC_URL}/1.png`} 
@@ -68,13 +67,11 @@ const App = () => {
               scrollToRegister={scrollToRegister}
             />
           </Col>
-        </Row>
       </Container>
 
 
-       {/* Sección CameraDescription */}
+ {/* Sección CameraDescription */}
 <Container fluid className="my-4">
-  <Row className="justify-content-center">
     <Col xs={12} md={8}>
       <CameraDescription 
         imageSrc={`${process.env.PUBLIC_URL}/1.png`} 
@@ -82,8 +79,8 @@ const App = () => {
         scrollToRegister={scrollToRegister}
       />
     </Col>
-  </Row>
 </Container>
+
 
 
 
@@ -98,7 +95,6 @@ const App = () => {
 
 
       {/* Agrega el componente Price aquí, antes del formulario de registro */}
-      <Row className="justify-content-center">
         <Col xs={12} md={7}>
           <Price 
             title="Precio" 
@@ -113,9 +109,11 @@ const App = () => {
             ]}
           />
         </Col>
-      </Row>
 
-      <Row className="justify-content-center">
+
+
+
+
         <Col xs={12} md={7}>
           <MemoriaGratis 
             title="Memoria Gratis con tu compra"
@@ -123,7 +121,6 @@ const App = () => {
             description="Obtén una memoria micro SD de 32GB gratis al comprar tu cámara de seguridad."
           />
         </Col>
-      </Row>
 
 
 
