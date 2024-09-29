@@ -168,16 +168,18 @@ const App = () => {
 
 
 
-      {/* Main content */}
-      <Container className="py-4">
-        <Row className="justify-content-center">
-          <Col xs={12} md={6}>
-            <div ref={registerRef}>
-              <Register />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    {/* Main content */}
+<Container className="py-4" fluid>
+  <Row className="justify-content-center">
+    <Col xs={12} md={12}>
+      <div ref={registerRef}>
+        <Register />
+      </div>
+    </Col>
+  </Row>
+</Container>
+
+
 
       {/* Si el usuario está autenticado, mostrar botón de cerrar sesión */}
       {isAuthenticated && (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Alert, Container } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient';
 import './Register.css'; // Importa el archivo CSS
 
@@ -71,54 +71,61 @@ const Register = () => {
   };
 
   return (
-    <Container className="my-5">
-      <h2 className="text-center mb-4">Registrarse</h2>
-      <p className="text-center mb-4">Completa el formulario para crear una cuenta.</p>
-      {error && <Alert variant="danger">{error}</Alert>}
-      {successMessage && <Alert variant="success">{successMessage}</Alert>}
-      <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
-        <Form.Group controlId="name" className="mb-3">
-          <Form.Label>Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Ingresa tu nombre"
-          />
-        </Form.Group>
-        <Form.Group controlId="phone" className="mb-3">
-          <Form.Label>Teléfono</Form.Label>
-          <Form.Control
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            placeholder="Ingresa tu número de teléfono"
-          />
-        </Form.Group>
-        <Form.Group controlId="email" className="mb-3">
-          <Form.Label>Correo Electrónico</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Ingresa tu correo electrónico"
-          />
-        </Form.Group>
-        <Button
-          type="submit"
-          disabled={loading}
-          className="w-100"
-          variant="primary"
-        >
-          {loading ? 'Registrando...' : 'Registrarse'}
-        </Button>
-      </Form>
+    <Container fluid className="my-5" style={{ maxWidth: '90vw' }}>
+      <Row className="justify-content-center">
+        <Col xs={12} md={6}>
+          <h2 className="text-center mb-4 display-4">Registrarse</h2> {/* Aumentar tamaño del título */}
+          <p className="text-center mb-4 fs-5">Completa el formulario para crear una cuenta.</p>
+          {error && <Alert variant="danger">{error}</Alert>}
+          {successMessage && <Alert variant="success">{successMessage}</Alert>}
+          <Form onSubmit={handleSubmit} className="bg-light p-5 rounded shadow-sm">
+            <Form.Group controlId="name" className="mb-3">
+              <Form.Label className="fs-5">Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Ingresa tu nombre"
+                className="fs-5"
+              />
+            </Form.Group>
+            <Form.Group controlId="phone" className="mb-3">
+              <Form.Label className="fs-5">Teléfono</Form.Label>
+              <Form.Control
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder="Ingresa tu número de teléfono"
+                className="fs-5"
+              />
+            </Form.Group>
+            <Form.Group controlId="email" className="mb-3">
+              <Form.Label className="fs-5">Correo Electrónico</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="Ingresa tu correo electrónico"
+                className="fs-5"
+              />
+            </Form.Group>
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-100 btn-lg fs-5"
+              variant="primary"
+            >
+              {loading ? 'Registrando...' : 'Registrarse'}
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 };
