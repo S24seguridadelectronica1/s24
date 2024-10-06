@@ -1,0 +1,39 @@
+.carrusel-container {
+  overflow: hidden; /* Oculta las imágenes que salen del contenedor */
+  width: 100%; /* Ancho del contenedor del carrusel */
+  position: relative; /* Necesario para el desplazamiento absoluto */
+}
+
+.carrusel {
+  display: flex; /* Hace que las imágenes estén en línea */
+  width: calc(100% * 3); /* Ancho total del carrusel (3 veces el ancho del contenedor) */
+  animation: slide 120s linear infinite; /* Aumentar el tiempo a 30s para reducir la velocidad */
+}
+
+.carousel-image {
+  width: calc(30% / 3); /* Cada imagen ocupa un tercio del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Mantener la proporción de la imagen */
+}
+
+/* Animación para el desplazamiento continuo */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-33.33%);
+  }
+  40% {
+    transform: translateX(-66.66%);
+  }
+  60% {
+    transform: translateX(-66.66%);
+  }
+  80% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
