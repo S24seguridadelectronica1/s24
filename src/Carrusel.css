@@ -1,4 +1,4 @@
-.carrusel-container {
+.carrusel-container { 
   overflow: hidden; /* Oculta las imágenes que salen del contenedor */
   width: 100%; /* Ancho del contenedor del carrusel */
   position: relative; /* Necesario para el desplazamiento absoluto */
@@ -6,14 +6,41 @@
 
 .carrusel {
   display: flex; /* Hace que las imágenes estén en línea */
-  width: calc(100% * 3); /* Ancho total del carrusel (3 veces el ancho del contenedor) */
-  animation: slide 120s linear infinite; /* Aumentar el tiempo a 30s para reducir la velocidad */
+  width: 300%; /* Ancho total del carrusel (3 veces el ancho del contenedor) */
+  animation: slide 30s linear infinite; /* Aumentar el tiempo a 30s para reducir la velocidad */
 }
 
 .carousel-image {
-  width: calc(30% / 3); /* Cada imagen ocupa un tercio del contenedor */
+  width: calc(100% / 2.5); /* Cada imagen ocupa 2.5 partes del contenedor (más grandes) */
   height: auto; /* Mantener la proporción de la imagen */
   object-fit: cover; /* Mantener la proporción de la imagen */
+}
+
+/* Estilo de los controles del carrusel */
+.carousel-control {
+  position: absolute; /* Posiciona los botones de forma absoluta */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajusta para centrar exactamente */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Redondea los bordes */
+  padding: 10px; /* Espacio interno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  z-index: 10; /* Asegura que estén por encima del carrusel */
+  transition: background-color 0.3s ease; /* Suaviza el cambio de color al pasar el mouse */
+}
+
+.prev {
+  left: 10px; /* Posición a la izquierda */
+}
+
+.next {
+  right: 10px; /* Posición a la derecha */
+}
+
+/* Mejora la apariencia de los botones al pasar el mouse */
+.carousel-control:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fondo completamente blanco al pasar el mouse */
 }
 
 /* Animación para el desplazamiento continuo */
@@ -22,18 +49,29 @@
     transform: translateX(0);
   }
   20% {
-    transform: translateX(-33.33%);
+    transform: translateX(-40%); /* Mueve a la segunda imagen */
   }
   40% {
-    transform: translateX(-66.66%);
+    transform: translateX(-80%); /* Mueve a la tercera imagen */
   }
   60% {
-    transform: translateX(-66.66%);
+    transform: translateX(-80%); /* Mantiene la tercera imagen visible */
   }
   80% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Vuelve a la primera imagen */
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0); /* Reinicia el carrusel */
+  }
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carousel-image {
+    width: 30%; /* Cada imagen ocupa todo el contenedor en pantallas pequeñas */
+  }
+
+  .carrusel {
+    width: 300%; /* Mantiene el ancho del carrusel para tres imágenes */
   }
 }

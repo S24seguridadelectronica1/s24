@@ -26,9 +26,9 @@ const Contrate = ({ title, description, phone, imageSrc }) => {
             className="img-fluid" 
             style={{ 
               borderRadius: '8px', 
-              height: 'auto', 
-              objectFit: 'cover',
-              width: '80%' 
+              height: 'auto', // Mantiene la proporción de la imagen
+              objectFit: 'cover', // Asegura que la imagen mantenga su proporción
+              width: '100%', // Asegúrate de que ocupe todo el ancho
             }} 
           />
         </Col>

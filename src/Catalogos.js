@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import './Catalogos.css'; // Asegúrate de importar un CSS si necesitas estilos adicionales
 
 const Catalogos = () => {
   // Número de teléfono de WhatsApp
@@ -13,34 +14,34 @@ const Catalogos = () => {
     <Container fluid className="my-1">
       <Row>
         {/* Imagen y botón para el catálogo de servicios */}
-        <Col md={6} className="d-flex flex-column align-items-center">
+        <Col md={6} className="position-relative">
           <img 
             src={`${process.env.PUBLIC_URL}/2.png`} 
             alt="Catálogo de Servicios" 
-            style={{ width: '100%', height: 'auto', maxHeight: '650px', objectFit: 'cover' }}
+            className="img-fluid catalogo-image"
           />
           <Button 
             variant="primary" 
             href={catalogoServiciosUrl} 
             target="_blank" 
-            className="mt-3"
+            className="position-absolute top-50 start-50 translate-middle btn-large" // Clase CSS personalizada
           >
             Catálogo de Servicios
           </Button>
         </Col>
 
         {/* Imagen y botón para el catálogo de productos */}
-        <Col md={6} className="d-flex flex-column align-items-center">
+        <Col md={6} className="position-relative">
           <img 
             src={`${process.env.PUBLIC_URL}/1.png`} 
             alt="Catálogo de Productos" 
-            style={{ width: '100%', height: 'auto', maxHeight: '650px', objectFit: 'cover' }}
+            className="img-fluid catalogo-image"
           />
           <Button 
             variant="success" 
             href={catalogoProductosUrl} 
             target="_blank" 
-            className="mt-3"
+            className="position-absolute top-50 start-50 translate-middle btn-large" // Clase CSS personalizada
           >
             Catálogo de Productos
           </Button>

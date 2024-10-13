@@ -51,7 +51,7 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
               borderRadius: '8px', 
               height: 'auto', // Mantiene la proporción de la imagen
               objectFit: 'cover', // Asegura que la imagen mantenga su proporción
-              width: '80%' // Ocupa el 100% de ancho
+              width: '100%', // Asegúrate de que ocupe todo el ancho
             }} 
           />
         </Col>

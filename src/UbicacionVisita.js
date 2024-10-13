@@ -54,14 +54,12 @@ const UbicacionVisita = () => {
             variant="primary"
             href={googleMapsLink}
             target="_blank"
-            className="position-absolute"
+            className="position-absolute btn-large"
             style={{
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
               zIndex: 2,
-              padding: '15px 30px', // Aumenta el tamaño del botón
-              fontSize: '1.5rem',    // Aumenta el tamaño de la fuente
             }}
           >
             Cómo llegar
@@ -73,19 +71,24 @@ const UbicacionVisita = () => {
           <img 
             src={`${process.env.PUBLIC_URL}/visita.png`} 
             alt="Visita técnica" 
-            style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'cover' }}
+            className="img-fluid" // Usar clase de Bootstrap para imágenes fluidas
+            style={{ 
+              borderRadius: '8px', 
+              height: 'auto', // Mantiene la proporción de la imagen
+              objectFit: 'cover', // Asegura que la imagen mantenga su proporción
+              width: '100%', // Asegúrate de que ocupe todo el ancho
+              maxHeight: '450px', // Limitar altura máxima
+            }} 
           />
           {/* Botón para pedir una visita */}
           <Button
             variant="success"
-            className="position-absolute"
+            className="position-absolute btn-large"
             style={{
               top: '50%', // Centrado vertical
               left: '50%',
               transform: 'translate(-50%, -50%)', // Centrado horizontal y vertical
               zIndex: 2,
-              padding: '15px 30px', // Igual al botón de "Cómo llegar"
-              fontSize: '1.5rem',    // Igual al botón de "Cómo llegar"
             }}
             onClick={toggleForm} // Cambia la visibilidad del formulario
           >

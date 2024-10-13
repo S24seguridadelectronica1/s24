@@ -73,7 +73,7 @@ const App = () => {
   title="¿Estás pensando en contratar nuestros servicios?"
   description="¡Déjanos tu nombre y número de teléfono, te contactamos hoy mismo!"
   phone="1234567890"
-  imageSrc={`${process.env.PUBLIC_URL}/1.jpg`}
+  imageSrc={`${process.env.PUBLIC_URL}/porque eligir a s24.png`}
 />
 
       

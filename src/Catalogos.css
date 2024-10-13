@@ -1,0 +1,27 @@
+.catalogo-image {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción */
+    max-height: 650px; /* Mantiene la altura máxima */
+    object-fit: cover; /* Asegúrate de que la imagen cubra el área */
+    object-position: 25% center; /* Mueve el contenido un poco hacia la izquierda */
+}
+
+.btn-large {
+    font-size: 2rem; /* Tamaño de fuente para pantallas grandes */
+    padding: 10px 20px; /* Aumenta el padding para un mejor diseño */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    .catalogo-image {
+        height: 300px !important; /* Aumenta la altura de la imagen en pantallas pequeñas */
+        width: 100%; /* Asegúrate de que ocupe todo el ancho */
+        object-fit: cover; /* Asegúrate de que la imagen cubra el área */
+        object-position: 25% center; /* Desplaza el contenido 25% hacia la izquierda */
+    }
+    
+    .btn-large {
+        font-size: 2rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        padding: 0px 0px; /* Aumenta el padding para mejorar la usabilidad */
+    }
+}

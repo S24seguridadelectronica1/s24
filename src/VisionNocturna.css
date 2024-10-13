@@ -1,0 +1,62 @@
+.vision-card {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    position: relative;
+}
+
+.vision-body {
+    height: auto;
+    padding: 10px;
+}
+
+.vision-logo {
+    position: absolute;
+    top: 2px;
+    left: 1%;
+    max-width: 80px;
+    z-index: 10;
+}
+
+.vision-row {
+    margin-top: -1px;
+}
+
+.vision-description {
+    position: relative;
+    padding: 5px;
+    margin-top: 50px; /* Ajuste general */
+    z-index: 20;
+}
+
+.vision-image {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    .vision-logo {
+        max-width: 60px;
+    }
+
+    .vision-image {
+        height: 300px !important; /* Aumenta la altura de la imagen en pantallas pequeñas */
+        width: 100%; /* Asegúrate de que ocupe todo el ancho */
+        object-fit: cover; /* Asegúrate de que la imagen cubra el área */
+        object-position: 25% center; /* Desplaza el contenido 10% hacia la izquierda */
+    }
+    
+
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
+    .fs-4 {
+        font-size: 1rem;
+    }
+
+    .vision-description {
+        margin-top: 10px; /* Ajustar el texto en pantallas pequeñas */
+    }
+}

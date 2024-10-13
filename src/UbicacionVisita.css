@@ -1,0 +1,12 @@
+.btn-large {
+    font-size: 5rem; /* Tamaño de fuente para pantallas grandes */
+    padding: 1px 2px; /* Aumenta el padding para un mejor diseño */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    .btn-large {
+        font-size: 1.5rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        padding: 1px 2px; /* Aumenta el padding para mejorar la usabilidad */
+    }
+}
