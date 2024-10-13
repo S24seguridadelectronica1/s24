@@ -111,7 +111,7 @@ const UbicacionVisita = () => {
       {/* Modal para el formulario */}
       <Modal show={showForm} onHide={toggleForm}>
         <Modal.Header closeButton>
-          <Modal.Title>Formulario de Visita</Modal.Title>
+          <Modal.Title>Pide tu Visita!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Visitas /> {/* Aquí se renderiza el formulario */}

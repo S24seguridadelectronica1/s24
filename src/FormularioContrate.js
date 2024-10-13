@@ -74,12 +74,12 @@ const FormularioContrate = () => {
   return (
     <Container fluid className="my-5" style={{ maxWidth: '90vw' }}>
       <Row className="justify-content-center">
-        <Col xs={12} md={6}>
-          <h2 className="text-center mb-4 display-4">Registrarse</h2>
-          <p className="text-center mb-4 fs-5">Completa el formulario para crear una cuenta.</p>
+        <Col xs={12} sm={10} md={8} lg={6}>
+          <h2 className="text-center mb-4 display-4">¡Regístra tu numero!</h2>
+          <p className="text-center mb-4 fs-5">Te llamamos en el menor tiempo posible.</p>
           {error && <Alert variant="danger">{error}</Alert>}
           {successMessage && <Alert variant="success">{successMessage}</Alert>}
-          <Form onSubmit={handleSubmit} className="bg-light p-5 rounded shadow-sm">
+          <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
             <Form.Group controlId="name" className="mb-3">
               <Form.Label className="fs-5">Nombre</Form.Label>
               <Form.Control

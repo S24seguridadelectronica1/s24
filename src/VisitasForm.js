@@ -71,9 +71,11 @@ const VisitasForm = () => {
   return (
     <Container fluid className="my-5" style={{ maxWidth: '90vw' }}>
       <Row className="justify-content-center">
-        <Col xs={12} md={8} lg={6}>
-          <h2 className="text-center mb-4 display-4">Registrar Visita</h2>
-          <p className="text-center mb-4 fs-5">Completa el formulario para registrar tu visita.</p>
+        <Col xs={12} md={10} lg={8}>
+          <h2 className="text-center mb-4 display-4">¡Regístrate!</h2>
+          <p className="text-center mb-4 fs-5">
+            Visita sin costo solo completando el formulario. Por favor, coloca hora y fecha. "Visita gratis solo en horarios de oficina". Realizamos llamada de confirmación.
+          </p>
           {error && <Alert variant="danger">{error}</Alert>}
           {successMessage && <Alert variant="success">{successMessage}</Alert>}
           <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
@@ -121,7 +123,7 @@ const VisitasForm = () => {
 
             {/* Campo para la fecha */}
             <Form.Group controlId="fecha" className="mb-3">
-              <Form.Label className="fs-5">Fecha</Form.Label>
+              <Form.Label className="fs-5">Fecha de la visita</Form.Label>
               <Form.Control
                 type="date"
                 name="fecha"
@@ -134,7 +136,7 @@ const VisitasForm = () => {
 
             {/* Campo para la hora */}
             <Form.Group controlId="hora" className="mb-3">
-              <Form.Label className="fs-5">Hora</Form.Label>
+              <Form.Label className="fs-5">Hora de la visita</Form.Label>
               <Form.Control
                 type="time"
                 name="hora"
