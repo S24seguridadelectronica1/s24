@@ -33,12 +33,11 @@ const SeguridadElectronica = () => {
          
           <p>
             <strong>realizamos Showrooms en Bucaramanga!:</strong><br />
-            llamanos
           </p>
         </Col>
         <Col md={12} className="text-center">
           <Button variant="primary" href={`tel:3046615865`} size="lg">
-            Llama ahora
+            llamanos!
           </Button>
         </Col>
       </Row>

@@ -13,9 +13,6 @@ const Banner = ({ title, description, buttonText, scrollToRegister }) => {
             <p className="lead mb-4">
               {description}
             </p>
-            <button onClick={scrollToRegister} className="btn btn-primary mt-3">
-              {buttonText}
-            </button>
           </Col>
         </Row>
       </Container>

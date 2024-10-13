@@ -71,7 +71,7 @@ const UbicacionVisita = () => {
         {/* Imagen y botón a la derecha */}
         <Col md={6} className="d-flex flex-column align-items-center position-relative">
           <img 
-            src={`${process.env.PUBLIC_URL}/1.jpg`} 
+            src={`${process.env.PUBLIC_URL}/visita.png`} 
             alt="Visita técnica" 
             style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'cover' }}
           />

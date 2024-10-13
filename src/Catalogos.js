@@ -10,14 +10,14 @@ const Catalogos = () => {
   const catalogoProductosUrl = `https://wa.me/${telefono}?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20ver%20el%20catálogo%20de%20productos`;
 
   return (
-    <Container fluid className="my-5">
+    <Container fluid className="my-1">
       <Row>
         {/* Imagen y botón para el catálogo de servicios */}
         <Col md={6} className="d-flex flex-column align-items-center">
           <img 
             src={`${process.env.PUBLIC_URL}/2.png`} 
             alt="Catálogo de Servicios" 
-            style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'cover' }}
+            style={{ width: '100%', height: 'auto', maxHeight: '650px', objectFit: 'cover' }}
           />
           <Button 
             variant="primary" 
@@ -34,7 +34,7 @@ const Catalogos = () => {
           <img 
             src={`${process.env.PUBLIC_URL}/1.png`} 
             alt="Catálogo de Productos" 
-            style={{ width: '100%', height: 'auto', maxHeight: '450px', objectFit: 'cover' }}
+            style={{ width: '100%', height: 'auto', maxHeight: '650px', objectFit: 'cover' }}
           />
           <Button 
             variant="success" 
