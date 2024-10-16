@@ -24,7 +24,7 @@ const Maps = () => {
       {/* Modal para mostrar la ubicación */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Ubicación</Modal.Title>
+          <Modal.Title>S24 Seguridad Electronica</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p><strong>Oficina:</strong><br />
@@ -33,7 +33,7 @@ const Maps = () => {
           <p><strong>Consultas en la oficina bajo llamada previa</strong></p>
           <p>
             <a href="tel:+573046615865" style={{ color: 'blue', textDecoration: 'none' }}>
-              <strong>llámanos!: 📞 3046615865</strong>
+              <strong className="vibrate">llámanos!: 📞 3046615865</strong>
             </a>
           </p>
           <iframe
@@ -49,7 +49,7 @@ const Maps = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" href={googleMapsLink} target="_blank">
-            Ir al Lugar
+          Cómo llegar
           </Button>
           <Button variant="secondary" onClick={handleClose}>
             Cerrar

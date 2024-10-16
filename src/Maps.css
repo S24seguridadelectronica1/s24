@@ -24,6 +24,8 @@
 iframe {
     width: 100%; /* Asegura que el iframe ocupe el ancho completo */
     height: 300px; /* Altura fija, ajusta según sea necesario */
+    border: none; /* Elimina el borde del iframe */
+    transition: transform 0.2s; /* Agrega una transición suave para cambios */
 }
 
 /* Media queries para pantallas pequeñas */
@@ -37,3 +39,16 @@ iframe {
         height: 200px; /* Ajusta la altura del iframe para pantallas pequeñas */
     }
 }
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 0); }
+    50% { transform: translate(2px, 0); }
+    75% { transform: translate(-2px, 0); }
+    100% { transform: translate(0); }
+}
+
+.vibrate {
+    animation: vibrate 0.2s linear infinite; /* Asegúrate de que esta línea esté presente */
+}
+
