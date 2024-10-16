@@ -11,7 +11,7 @@
 }
 
 .full-width-text h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
@@ -22,7 +22,7 @@
 
 /* Aquí se agranda el tamaño del texto del párrafo */
 .full-width-text p.fs-5 {
-    font-size: 3rem !important; /* Forzar el tamaño */
+    font-size: 2.5rem !important; /* Forzar el tamaño */
     line-height: 1.5;
     margin-bottom: 20px;
 }

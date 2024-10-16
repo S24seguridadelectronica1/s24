@@ -46,6 +46,7 @@ const App = () => {
   imageSrc={`${process.env.PUBLIC_URL}/porque eligir a s24.png`}
 />
 
+
       {/* Banner */}
       <Banner 
         title="¡lo último en tecnología!"
