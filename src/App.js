@@ -43,7 +43,7 @@ const App = () => {
       <EligeS24
   title="¿Por qué elegir a S24 Seguridad Electrónica?"
   phone="304 661 5865"
-  imageSrc={`${process.env.PUBLIC_URL}/porque eligir a s24.png`}
+  imageSrc={`${process.env.PUBLIC_URL}/elije.png`}
 />
 
 
@@ -76,7 +76,7 @@ const App = () => {
   title="¿Estás pensando en contratar nuestros servicios?"
   description="¡Déjanos tu nombre y número de teléfono, te contactamos hoy mismo!"
   phone="1234567890"
-  imageSrc={`${process.env.PUBLIC_URL}/porque eligir a s24.png`}
+  imageSrc={`${process.env.PUBLIC_URL}/15.png`}
 />
 
       
