@@ -1,18 +1,39 @@
 .map-container {
-    position: fixed; /* Para que flote en la pantalla */
+    position: fixed; /* Mantiene la posición fija en la pantalla */
     bottom: 70px; /* Ajusta la posición vertical */
     right: 15px; /* Ajusta la posición horizontal */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  }
-  
-  .map-image {
+}
+
+.map-image {
     width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
     height: auto; /* Mantiene la proporción */
     cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
     transition: transform 0.2s; /* Añade una animación al pasar el cursor */
-  }
-  
-  .map-image:hover {
+}
+
+.map-image:hover {
     transform: scale(1.1); /* Escala la imagen al pasar el mouse */
-  }
-  
+}
+
+/* Asegúrate de que la Modal sea responsiva */
+.modal-body {
+    padding: 0; /* Reduce el padding para que el mapa ocupe más espacio */
+}
+
+iframe {
+    width: 100%; /* Asegura que el iframe ocupe el ancho completo */
+    height: 300px; /* Altura fija, ajusta según sea necesario */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 576px) {
+    .map-container {
+        bottom: 80px; /* Ajusta la posición en pantallas pequeñas */
+        right: 16px; /* Ajusta la posición en pantallas pequeñas */
+    }
+
+    iframe {
+        height: 200px; /* Ajusta la altura del iframe para pantallas pequeñas */
+    }
+}

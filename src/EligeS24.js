@@ -37,13 +37,14 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
             de protección adaptado a tus necesidades.
           </p>
           <p className="fs-5">
-            Protege lo que más te importa con nosotros. ¡Llámanos al 
-            <strong>
+            Protege lo que más te importa con nosotros. 
+            <strong style={{ color: 'blue' }}>
+              ¡Llámanos al 
               <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 {phone}
-              </a>
-            </strong> 
-            para una cotización personalizada y empieza a cuidar tu seguridad desde la instalación!
+              </a>!
+              </strong> 
+              para una cotización personalizada y empieza a cuidar tu seguridad desde la instalación!
           </p>
         </Col>
 
