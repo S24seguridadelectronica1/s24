@@ -1,0 +1,18 @@
+.map-container {
+    position: fixed; /* Para que flote en la pantalla */
+    bottom: 70px; /* Ajusta la posición vertical */
+    right: 15px; /* Ajusta la posición horizontal */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .map-image {
+    width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+    transition: transform 0.2s; /* Añade una animación al pasar el cursor */
+  }
+  
+  .map-image:hover {
+    transform: scale(1.1); /* Escala la imagen al pasar el mouse */
+  }
+  

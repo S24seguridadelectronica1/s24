@@ -1,0 +1,59 @@
+/* Estilos generales */
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .full-width-text {
+    padding: 40px; /* Ajusta el padding para pantallas más grandes */
+  }
+  
+  .full-width-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .full-width-text p.lead {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .full-width-text p.fs-5 {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .img-fluid {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Media queries para pantallas pequeñas */
+  @media (max-width: 576px) {
+    .full-width-text {
+      width: 150% !important; /* Asegura que el texto ocupe todo el ancho */
+      padding: 0px !important; /* Reduce el padding en pantallas pequeñas */
+    }
+  
+    .full-width-text h2 {
+      font-size: 1.75rem; /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+  
+    .full-width-text p.lead {
+      font-size: 1rem; /* Reduce el tamaño del párrafo importante */
+    }
+  
+    .full-width-text p.fs-5 {
+      font-size: 0.875rem; /* Ajusta el tamaño del texto general */
+      line-height: 1.4;
+    }
+  
+    .img-fluid {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

@@ -11,6 +11,8 @@ import EligeS24 from './EligeS24';
 import Contrate from './Contrate'; // Asegúrate de que la ruta sea correcta
 import SeguridadElectronica from './SeguridadElectronica';
 import WhatsAppButton from './WhatsAppButton'; // Asegúrate de que la ruta sea correcta
+import Maps from './Maps'; // Asegúrate de importar el componente Maps
+
 
 
 const App = () => {
@@ -82,6 +84,7 @@ const App = () => {
 
       <SeguridadElectronica />
       <WhatsAppButton />
+      <Maps />
 
 
       {/* Footer */}
