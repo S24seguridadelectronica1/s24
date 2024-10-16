@@ -110,7 +110,7 @@ const FormularioContrate = () => {
               className="w-100 btn-lg fs-5"
               variant="primary"
             >
-              {loading ? 'Registrando...' : 'Registrarse'}
+              {loading ? 'Registrando...' : 'Registrate'}
             </Button>
           </Form>
         </Col>
