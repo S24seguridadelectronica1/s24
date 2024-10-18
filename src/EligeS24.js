@@ -19,9 +19,7 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
             momento de la instalación.
           </p>
           <p className="fs-5">
-            Ofrecemos una amplia gama de sistemas de seguridad de alta calidad, desde cámaras 
-            IP y sistemas de vigilancia con visión nocturna hasta soluciones de monitoreo 
-            remoto y grabación avanzada. Todos nuestros productos están diseñados con la 
+            Ofrecemos una amplia gama de sistemas de seguridad de alta calidad. Todos nuestros productos están diseñados con la 
             última tecnología para asegurar el mayor nivel de protección.
           </p>
           <p className="fs-5">
@@ -33,18 +31,24 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
           <p className="fs-5">
             En S24 Seguridad Electrónica, no solo vendemos cámaras de seguridad, también 
             garantizamos que el proceso de instalación sea seguro, profesional y discreto. 
-            Nuestro equipo de expertos está listo para asesorarte y ofrecerte el mejor sistema 
-            de protección adaptado a tus necesidades.
+            <strong>Si ya has comprado tus propios equipos de seguridad, también estamos aquí para 
+            ayudarte con la instalación</strong>, asegurando que todo funcione de manera óptima y con 
+            los estándares más altos de calidad.
           </p>
           <p className="fs-5">
-            Protege lo que más te importa con nosotros. 
+            Colocar las cámaras de seguridad correctamente es clave para una vigilancia efectiva. 
+            Al igual que en la fotografía, la elección de los ángulos es fundamental para 
+            capturar imágenes claras y precisas. Nuestros técnicos se aseguran de que las cámaras 
+            estén ubicadas en los puntos estratégicos para ofrecer la mejor cobertura y calidad de imagen.
+          </p>
+          <p className="fs-5">
+            Formulamos tus equipos de seguridad, 
             <strong style={{ color: 'blue' }}>
-              ¡Llámanos al 
               <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                {phone}
-              </a>!
-              </strong> 
-              para una cotización personalizada y empieza a cuidar tu seguridad desde la instalación!
+                ¡Llámanos al {phone}!
+              </a>
+            </strong> 
+            para una cotización personalizada y empieza a cuidar tu seguridad desde la instalación!
           </p>
         </Col>
 

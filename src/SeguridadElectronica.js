@@ -22,7 +22,7 @@ const SeguridadElectronica = () => {
       <Row>
         <Col md={12} className="text-center mb-4">
           <p className="lead">
-            Somos una empresa de Bucaramanga dedicada a la venta e instalación de cámaras de seguridad, alarmas, video porteros y sistemas de monitoreo. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
+            Somos una empresa de Bucaramanga y giron dedicada a la venta e instalación de cámaras de seguridad, alarmas, video porteros y sistemas de monitoreo. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
           </p>
           <p>
             Nuestros productos están diseñados con la más alta tecnología y calidad, garantizando durabilidad y eficiencia. Contamos con un equipo de expertos en seguridad electrónica que te asesorarán en la elección de los sistemas que mejor se adapten a tus necesidades.
