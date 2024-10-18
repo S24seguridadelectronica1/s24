@@ -20,7 +20,7 @@ const UbicacionVisita = () => {
             <strong className="d-block mb-2">Transversal 6D #109-58</strong>
             <span>Marianela, Girón, Santander, Colombia</span>
             <p className="mt-2">
-              <strong>Consultas en la oficina bajo llamada previa</strong>
+              <strong>llamada previa para Consultas en la oficina.</strong>
             </p>
             <a href="tel:+573046615865" className="text-primary text-decoration-none">
               <strong>¡Llámanos!: 📞 3046615865</strong>
