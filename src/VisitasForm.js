@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Row, Col, Modal } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient';
 
 const VisitasForm = () => {
@@ -15,6 +15,7 @@ const VisitasForm = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [showModal, setShowModal] = useState(false); // Estado para controlar la modal
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,14 +69,20 @@ const VisitasForm = () => {
     }
   };
 
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <Container fluid className="my-5" style={{ maxWidth: '90vw' }}>
       <Row className="justify-content-center">
         <Col xs={12} md={10} lg={8}>
-          <h2 className="text-center mb-4 display-4">¡Regístrate!</h2>
+          <h2 className="text-center mb-4 display-4">¡Visita Completamente Gratis!</h2>
           <p className="text-center mb-4 fs-5">
-            Visita sin costo solo completando el formulario. Por favor, coloca hora y fecha. "Visita gratis solo en horarios de oficina". Realizamos llamada de confirmación.
+            Por favor coloca nombre, direccion, hora y fecha correctamente para la visita. 
+            Realizamos llamada de confirmación. <strong>Horario gratuito solo de lunes a viernes de 8am a 4 pm jornada continua.</strong> 
+            Para visitas fuera del horario gratuito, <Button variant="link" onClick={handleShowModal}>ver Planes de precios</Button>.
           </p>
+
           {error && <Alert variant="danger">{error}</Alert>}
           {successMessage && <Alert variant="success">{successMessage}</Alert>}
           <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
@@ -156,6 +163,35 @@ const VisitasForm = () => {
               {loading ? 'Registrando...' : 'Registrar Visita'}
             </Button>
           </Form>
+
+          {/* Modal para mostrar los precios */}
+          <Modal show={showModal} onHide={handleCloseModal} centered size="lg">
+            <Modal.Header closeButton className="bg-primary text-white">
+              <Modal.Title>Planes de Visita</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="text-center">
+              <h5 className="mb-4" style={{ fontWeight: 'bold', color: '#555' }}>valor de la visita fuera del horario gratuito!</h5>
+              <ul className="list-unstyled">
+                <li className="my-3">
+                  <strong>Diurno:</strong> $30,000
+                </li>
+                <li className="my-3">
+                  <strong>Nocturno:</strong> $50,000
+                </li>
+                <li className="my-3">
+                  <strong>Sábados de 8 am a 1 pm:</strong> $30,000
+                </li>
+                <li className="my-3" style={{ color: 'grey' }}>
+                  <strong>Domingos y festivos:</strong> No realizamos visitas
+                </li>
+              </ul>
+            </Modal.Body>
+            <Modal.Footer className="d-flex justify-content-center">
+              <Button variant="secondary" onClick={handleCloseModal} className="btn-lg">
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </Col>
       </Row>
     </Container>

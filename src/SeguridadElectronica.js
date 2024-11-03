@@ -22,22 +22,21 @@ const SeguridadElectronica = () => {
       <Row>
         <Col md={12} className="text-center mb-4">
           <p className="lead">
-            Somos una empresa de Bucaramanga y giron dedicada a la venta e instalación de cámaras de seguridad, alarmas, video porteros y sistemas de monitoreo. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
+            Somos una empresa de Bucaramanga y Girón dedicada a la venta e instalación de cámaras de seguridad, alarmas y videoporteros. Llegamos a todo Santander. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
           </p>
           <p>
-            Nuestros productos están diseñados con la más alta tecnología y calidad, garantizando durabilidad y eficiencia. Contamos con un equipo de expertos en seguridad electrónica que te asesorarán en la elección de los sistemas que mejor se adapten a tus necesidades.
+            Contamos con productos de la mejor tecnología y calidad, garantizando durabilidad y eficiencia. Tenemos un equipo de integradores de seguridad electrónica que te asesorará en la elección de los sistemas que mejor se adapten a tus necesidades.
           </p>
           <p>
-            Ofrecemos instalación profesional y soporte técnico para asegurar un funcionamiento óptimo de todos nuestros equipos. Además, trabajamos con precios competitivos para brindar la mejor relación calidad-precio en el mercado.
+            Ofrecemos instalación y soporte técnico para asegurar el buen funcionamiento de todos nuestros equipos. Además, trabajamos con precios competitivos para brindar la mejor relación calidad-precio en el mercado.
           </p>
-         
           <p>
-            <strong>realizamos Showrooms en Bucaramanga!:</strong><br />
+            <strong>¡Realizamos Showrooms en Bucaramanga!</strong><br />
           </p>
         </Col>
         <Col md={12} className="text-center">
           <Button variant="primary" href={`tel:3046615865`} size="lg">
-            llamanos!
+            ¡Llámanos!
           </Button>
         </Col>
       </Row>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
-import Visitas from './VisitasForm'; // Asegúrate de que la ruta sea correcta
+import FormularioContrate from './FormularioContrate';
 
 const UbicacionVisita = () => {
   const googleMapsLink = "https://www.google.com/maps/dir/?api=1&destination=7.075000,-73.127389";
@@ -106,15 +106,16 @@ const UbicacionVisita = () => {
         Visitas sin costo únicamente con el registro
       </div>
 
-      {/* Modal para el formulario */}
-      <Modal show={showForm} onHide={toggleForm}>
-        <Modal.Header closeButton>
-          <Modal.Title>¡Pide tu visita!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Visitas /> {/* Aquí se renderiza el formulario */}
-        </Modal.Body>
-      </Modal>
+     {/* Modal para el formulario */}
+<Modal show={showForm} onHide={toggleForm}>
+  <Modal.Header closeButton>
+    <Modal.Title>¡Vamos hasta donde estés!</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <FormularioContrate />
+  </Modal.Body>
+</Modal>
+
     </Container>
   );
 };

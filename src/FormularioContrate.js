@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Row, Col, Modal } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient';
 
 const FormularioContrate = () => {
@@ -12,6 +12,7 @@ const FormularioContrate = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [showPlans, setShowPlans] = useState(false); // Estado para controlar la visibilidad del modal de planes
 
   // Maneja los cambios en los campos del formulario
   const handleChange = (e) => {
@@ -56,7 +57,7 @@ const FormularioContrate = () => {
       }
 
       // Mensaje de éxito y reiniciar el formulario
-      setSuccessMessage('¡Registro exitoso! te contactaremos en la menor brevedad posible.');
+      setSuccessMessage('¡Registro exitoso! Te contactaremos en la menor brevedad posible.');
       setFormData({ name: '', phone: '' });
 
       // Redirigir después de un tiempo
@@ -71,14 +72,29 @@ const FormularioContrate = () => {
     }
   };
 
+  // Alternar la visibilidad del modal de planes
+  const togglePlans = () => {
+    setShowPlans((prev) => !prev);
+  };
+
   return (
     <Container fluid className="my-5" style={{ maxWidth: '90vw' }}>
       <Row className="justify-content-center">
         <Col xs={12} sm={10} md={8} lg={6}>
-          <h2 className="text-center mb-4 display-4">¡Regístra tu numero!</h2>
+          <h2 className="text-center mb-4 display-4">¡Apunta tu número!</h2>
+          
           <p className="text-center mb-4 fs-5">Te llamamos en el menor tiempo posible.</p>
+
+          <p className="mt-2 small-text">
+            Visitas gratis de lunes a viernes de 8 am a 4 pm, para visitas fuera del horario gratuito por favor{' '}
+            <span className="link-text" onClick={togglePlans} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}>
+              ver los planes de precios!
+            </span>.
+          </p>
+
           {error && <Alert variant="danger">{error}</Alert>}
           {successMessage && <Alert variant="success">{successMessage}</Alert>}
+          
           <Form onSubmit={handleSubmit} className="bg-light p-4 rounded shadow-sm">
             <Form.Group controlId="name" className="mb-3">
               <Form.Label className="fs-5">Nombre</Form.Label>
@@ -110,11 +126,40 @@ const FormularioContrate = () => {
               className="w-100 btn-lg fs-5"
               variant="primary"
             >
-              {loading ? 'Registrando...' : 'Registrate'}
+              {loading ? 'Registrando...' : 'Enviar!'}
             </Button>
           </Form>
         </Col>
       </Row>
+
+      {/* Modal para los planes */}
+      <Modal show={showPlans} onHide={togglePlans} centered size="lg">
+        <Modal.Header closeButton className="bg-primary text-white">
+          <Modal.Title>Planes de Visita</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          <h5 className="mb-4" style={{ fontWeight: 'bold', color: '#555' }}>Valor de la visita fuera del horario gratuito!</h5>
+          <ul className="list-unstyled">
+            <li className="my-3">
+              <strong>Diurno:</strong> $30,000
+            </li>
+            <li className="my-3">
+              <strong>Nocturno de lunes a viernes de 6 pm a 8pm:</strong> $60,000
+            </li>
+            <li className="my-3">
+              <strong>Sábados de 8 am a 1 pm:</strong> $60,000
+            </li>
+            <li className="my-3" style={{ color: '#555' }}>
+              <strong>Domingos y festivos de 8 am a 1 pm:</strong> $80,000  
+            </li>
+          </ul>
+        </Modal.Body>
+        <Modal.Footer className="d-flex justify-content-center">
+          <Button variant="secondary" onClick={togglePlans} className="btn-lg">
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

@@ -1,3 +1,35 @@
+.custom-title {
+    margin-top: 80px; /* Ajusta este valor según sea necesario */
+  }
+  
+  .custom-description {
+    margin-top: 10px; /* Ajusta este valor según sea necesario */
+  }
+  
+  .custom-button {
+    padding: 0px 8px;
+    font-size: 3rem; /* Ajustado a un tamaño legible */
+    border-radius: 4px;
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    border: none; /* Elimina el borde por defecto */
+    transition: background-color 0.3s ease; /* Efecto suave en el hover */
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al hacer hover */
+    color: #f8f9fa; /* Color de texto un poco más claro */
+  }
+  
+  .custom-button:focus {
+    outline: none; /* Quita el borde al hacer focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Sombra alrededor para el enfoque */
+  }
+  
+  
+
+
+
 .vision-card {
     width: 100%;
     height: auto;

@@ -11,10 +11,9 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
           <h2 className="display-1">{title}</h2>
           <p className="lead">{description}</p>
           <p className="fs-5">
-            La seguridad de tu hogar o negocio empieza con quienes realizan la instalación.
-            En S24 Seguridad Electrónica, sabemos que proteger tu propiedad no solo depende 
+            La seguridad de tu hogar o negocio empieza con quienes realizan la instalación, sabemos que proteger tu propiedad no solo depende 
             de la tecnología, sino también de la confianza que tienes en los instaladores 
-            que entran a tu espacio. Por eso, nuestros técnicos están altamente capacitados 
+            que entran a tu espacio. Por eso, nuestros técnicos están muy bien capacitados 
             y son de total confianza, garantizando que la seguridad comience desde el primer 
             momento de la instalación.
           </p>
@@ -29,11 +28,10 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
             negocios como para grandes corporaciones.
           </p>
           <p className="fs-5">
-            En S24 Seguridad Electrónica, no solo vendemos cámaras de seguridad, también 
+            no solo vendemos cámaras de seguridad, también 
             garantizamos que el proceso de instalación sea seguro, profesional y discreto. 
             <strong>Si ya has comprado tus propios equipos de seguridad, también estamos aquí para 
-            ayudarte con la instalación</strong>, asegurando que todo funcione de manera óptima y con 
-            los estándares más altos de calidad.
+            ayudarte con la instalación</strong>, asegurando que todo funcione de manera óptima.
           </p>
           <p className="fs-5">
             Colocar las cámaras de seguridad correctamente es clave para una vigilancia efectiva. 

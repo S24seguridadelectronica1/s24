@@ -12,7 +12,7 @@ const Contrate = ({ title, description, phone, imageSrc }) => {
           <h2 className="display-1">{title}</h2>
           <p className="lead">{description}</p>
           <p className={`fs-5 ${styles['fs-5']}`}>
-  En S24 Seguridad Electrónica, tratamos cada solicitud con total discreción y profesionalismo. Sabemos lo importante que es tu seguridad, por eso queremos brindarte una solución personalizada adaptada a tus necesidades. No esperes más, rellena el formulario y nuestro equipo te asesorará en breve, garantizando un servicio confiable y seguro desde el primer contacto.
+  tratamos cada solicitud con total discreción y profesionalismo. Sabemos lo importante que es tu seguridad, brindamos soluciónes personalizadas adaptadas a tus necesidades. Coloca tu nombre y numero de telefono y te contactaremos en la mayor brevedad, garantizamos un servicio confiable y seguro desde el primer contacto.
 </p>
 
 
