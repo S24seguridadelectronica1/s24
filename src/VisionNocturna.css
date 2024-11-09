@@ -1,40 +1,40 @@
 .custom-title {
-    margin-top: 80px; /* Ajusta este valor según sea necesario */
-  }
-  
-  .custom-description {
-    margin-top: 10px; /* Ajusta este valor según sea necesario */
-  }
-  
-  .custom-button {
-    padding: 0px 8px;
-    font-size: 3rem; /* Ajustado a un tamaño legible */
+    margin-top: 40px; /* Ajusta este valor según sea necesario */
+    font-size: 2.5rem; /* Tamaño en pantallas grandes */
+    font-weight: bold;
+}
+
+.custom-description {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.custom-button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 4px;
     background-color: #007bff; /* Color de fondo azul */
     color: #fff; /* Color de texto blanco */
     border: none; /* Elimina el borde por defecto */
     transition: background-color 0.3s ease; /* Efecto suave en el hover */
-  }
-  
-  .custom-button:hover {
+}
+
+.custom-button:hover {
     background-color: #0056b3; /* Color de fondo más oscuro al hacer hover */
     color: #f8f9fa; /* Color de texto un poco más claro */
-  }
-  
-  .custom-button:focus {
+}
+
+.custom-button:focus {
     outline: none; /* Quita el borde al hacer focus */
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Sombra alrededor para el enfoque */
-  }
-  
-  
-
-
+}
 
 .vision-card {
     width: 100%;
     height: auto;
     min-height: 300px;
     position: relative;
+    margin: 0 auto;
 }
 
 .vision-body {
@@ -56,15 +56,26 @@
 
 .vision-description {
     position: relative;
-    padding: 5px;
+    padding: 15px;
     margin-top: 50px; /* Ajuste general */
     z-index: 20;
+    text-align: center;
 }
 
 .vision-image {
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
     height: auto; /* Mantiene la proporción */
+    object-fit: cover;
 }
+
+.vision-image-col {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+
+
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
@@ -75,10 +86,18 @@
     .vision-image {
         height: 300px !important; /* Aumenta la altura de la imagen en pantallas pequeñas */
         width: 100%; /* Asegúrate de que ocupe todo el ancho */
-        object-fit: cover; /* Asegúrate de que la imagen cubra el área */
-        object-position: 25% center; /* Desplaza el contenido 10% hacia la izquierda */
+        object-fit: cover;
+        object-position: 25% center; /* Desplaza el contenido */
     }
-    
+
+    .custom-title {
+        font-size: 1.8rem; /* Tamaño en pantallas pequeñas */
+        margin-top: 10px; /* Ajusta el espacio superior */
+    }
+
+    .custom-description {
+        font-size: 1rem;
+    }
 
     .display-4 {
         font-size: 1.5rem;
@@ -89,6 +108,31 @@
     }
 
     .vision-description {
-        margin-top: 10px; /* Ajustar el texto en pantallas pequeñas */
+        margin-top: 10px; /* Ajuste de margen superior para pantallas pequeñas */
     }
 }
+
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 576px) {
+    .overlay-content {
+        position: absolute;
+        top: 50%; /* Ajusta según sea necesario */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .vision-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
