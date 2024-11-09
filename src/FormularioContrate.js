@@ -86,9 +86,9 @@ const FormularioContrate = () => {
           <p className="text-center mb-4 fs-5">Te llamamos en el menor tiempo posible.</p>
 
           <p className="mt-2 small-text">
-            Visitas gratis de lunes a viernes de 8 am a 4 pm, para visitas fuera del horario gratuito por favor{' '}
+          Visita sin costo de lunes a viernes de 8 am a 12 pm, para visitas fuera del horario gratuito por favor{' '}
             <span className="link-text" onClick={togglePlans} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}>
-              ver los planes de precios!
+              ver precios!
             </span>.
           </p>
 
