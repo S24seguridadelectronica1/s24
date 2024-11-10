@@ -11,34 +11,28 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
           <h2 className="display-1">{title}</h2>
           <p className="lead">{description}</p>
           <p className="fs-5">
-            damos garantia por nuestros trabajos, llevmos el registro de todos los productos y servicios que usted compra con nosotros, solucionamos rapido sus garantias .
+          Ofrecemos garantía en todos nuestros trabajos y llevamos un registro detallado de cada producto y servicio que adquiere con nosotros. Respondemos rápidamente a cualquier solicitud de garantía, cubriendo todos los costos de operación y transporte de los equipos que requieren revisión. Además, reemplazamos inmediatamente el equipo que entra garantia por uno equivalente mientras el original está en proceso de garantía. Este respaldo incluye sistemas centrales como videograbadores y su disco duro, paneles de alarma y controladores de acceso.  .
           </p>
           <p className="fs-5">
-            Ofrecemos una amplia gama de sistemas de seguridad de alta calidad. Todos nuestros productos están diseñados con la 
-            última tecnología para asegurar el mayor nivel de protección.
+          Ofrecemos una amplia gama de sistemas de seguridad de alta calidad. Todos nuestros productos son seleccionados directo en distribucion, sin pasar por almacenamiento, lo que nos permite mantener tu equipo siempre actualizado con lo último en tecnología y brindar el mayor nivel de protección.
           </p>
-          <p className="fs-5">
-            Personalizamos nuestras soluciones de seguridad a su medida.
-          </p>
+          
           <p className="fs-5">
             Garantizamos una instalación segura y discreta si lo requiere. 
-            <strong> Si ya compro sus equipos de seguridad cuente con nosotros para 
-            la instalación</strong>, aseguramos que todo funcione de manera óptima.
+             Si ya compro sus equipos de seguridad cuente con nosotros para 
+            la instalación, aseguramos que todo funcione de manera óptima.
           </p>
           <p className="fs-5">
-            Colocar las cámaras de seguridad correctamente es clave para una vigilancia efectiva. 
-            Al igual que en la fotografía, la elección de los ángulos es fundamental para 
-            capturar imágenes claras y precisas. Nuestros técnicos se aseguran de que las cámaras 
-            estén ubicadas en los puntos estratégicos para ofrecer la mejor cobertura y calidad de imagen.
+          <strong>¡Somos expertos en ángulos de visión y movimiento!</strong>
           </p>
           <p className="fs-5">
-            Formulamos tus equipos de seguridad, 
+          Personalizamos nuestras soluciones de seguridad a su medida, Formulamos sus equipos de seguridad, 
             <strong style={{ color: 'blue' }}>
               <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 ¡Llámanos al {phone}!
               </a>
             </strong> 
-            para una cotización personalizada!
+             para una cotización!
           </p>
         </Col>
 
