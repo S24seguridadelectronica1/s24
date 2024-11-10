@@ -74,9 +74,6 @@
     position: relative;
 }
 
-
-
-
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
     .vision-logo {
@@ -110,15 +107,25 @@
     .vision-description {
         margin-top: 10px; /* Ajuste de margen superior para pantallas pequeñas */
     }
-}
 
+    /* Estilos para mostrar el mensaje debajo de la imagen en pantallas pequeñas */
+    .showroom-message {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        font-size: 1rem;
+        color: yellow; /* Cambié el color a amarillo */
+        text-decoration: underline;
+    }
 
+    .desktop-showroom-message {
+        display: none;
+    }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 576px) {
+    /* Estilos para el contenedor superpuesto en pantallas pequeñas */
     .overlay-content {
         position: absolute;
-        top: 70%; /* Ajusta según sea necesario */
+        top: 55%; /* Ajusta según sea necesario */
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -127,7 +134,8 @@
         border-radius: 8px;
         color: white;
         width: 90%;
-        height: 50%;
+        height: 40%;
+        z-index: 10; /* Asegura que esté debajo del mensaje */
     }
 
     .vision-image {
@@ -136,4 +144,16 @@
     }
 }
 
+/* Estilos para ocultar el mensaje en pantallas grandes */
+@media (min-width: 577px) {
+    .showroom-message {
+        display: none; /* Oculta el mensaje en pantallas grandes */
+    }
 
+    .desktop-showroom-message {
+        display: inline;
+        font-size: 1rem;
+        color: #0000ffd5;
+        text-decoration: underline;
+    }
+}

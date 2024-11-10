@@ -13,7 +13,7 @@ const Maps = () => {
     <>
       <div className="map-container">
         <Image
-          src={`${process.env.PUBLIC_URL}/globo.jpg`} // Reemplaza con la ruta de tu imagen de pin
+          src={`${process.env.PUBLIC_URL}/showroms.png`} // Reemplaza con la ruta de tu imagen de pin
           alt="Marcador de mapa"
           className="map-image"
           onClick={handleShow} // Abre el modal al hacer clic en la imagen

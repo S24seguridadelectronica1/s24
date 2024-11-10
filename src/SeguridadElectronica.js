@@ -3,6 +3,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import S24Logo from './S24Logo'; // Asegúrate de que la ruta de importación sea correcta
 
 const SeguridadElectronica = () => {
+  const whatsappMessage = "Estoy interesado en el exposhow en Bucaramanga, por favor necesito más información";
+  const whatsappLink = `https://wa.me/3046615865?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <Container className="my-5">
       {/* Espacio para el logo */}
@@ -22,7 +25,7 @@ const SeguridadElectronica = () => {
       <Row>
         <Col md={12} className="text-center mb-4">
           <p className="lead">
-            Somos una empresa de Bucaramanga y Girón dedicada a la venta e instalación de cámaras de seguridad, alarmas y videoporteros. Llegamos a todo Santander. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
+            Somos una empresa en Bucaramanga y Girón dedicada a la venta e instalación de cámaras de seguridad, alarmas y videoporteros. Llegamos a todo Santander. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
           </p>
           <p>
             Contamos con productos de la mejor tecnología y calidad, garantizando durabilidad y eficiencia. Tenemos un equipo de integradores de seguridad electrónica que te asesorará en la elección de los sistemas que mejor se adapten a tus necesidades.
@@ -31,7 +34,11 @@ const SeguridadElectronica = () => {
             Ofrecemos instalación y soporte técnico para asegurar el buen funcionamiento de todos nuestros equipos. Además, trabajamos con precios competitivos para brindar la mejor relación calidad-precio en el mercado.
           </p>
           <p>
-            <strong>¡Realizamos Showrooms en Bucaramanga!</strong><br />
+            <strong>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" style={{ color: 'blue', textDecoration: 'underline' }}>
+                ¡Realizamos Showrooms en Bucaramanga!
+              </a>
+            </strong>
           </p>
         </Col>
         <Col md={12} className="text-center">

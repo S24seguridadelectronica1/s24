@@ -5,10 +5,14 @@ import FormularioContrate from './FormularioContrate';
 
 const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
   const [showForm, setShowForm] = useState(false);
-  const [showPlans, setShowPlans] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   const toggleForm = () => setShowForm(!showForm);
-  const togglePlans = () => setShowPlans(!showPlans);
+  const showVideoModal = () => setShowVideo(true);
+  const hideVideoModal = () => setShowVideo(false);
+
+  const whatsappMessage = "Estoy interesado en el exposhow en Bucaramanga, por favor necesito más información";
+  const whatsappLink = `https://wa.me/3046615865?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <Container fluid className="my-3 vision-container">
@@ -25,30 +29,36 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             <Col xs={12} md={5} className="text-center text-md-left vision-description">
               <Card.Title className="display-4 custom-title">{title}</Card.Title>
               <Card.Text className="fs-5 custom-description">{description}</Card.Text>
-              
-                        </Col>
+              <p className="desktop-showroom-message">
+                <Button variant="link" onClick={showVideoModal}>
+                  ¡Ven a nuestros Showrooms en Bucaramanga!
+                </Button>
+              </p>
+            </Col>
 
             {/* Columna de la imagen con el contenedor superpuesto */}
             <Col xs={12} md={7} className="text-center vision-image-col">
               <img src={imageSrc} alt={title} className="img-fluid vision-image" />
-              
-              {/* Contenedor para el botón y texto superpuesto */}
               <div className="overlay-content">
-                <Button 
-                  variant="primary" 
-                  className="mt-3 custom-button" 
-                  onClick={toggleForm}
-                >
+                <Button variant="primary" className="mt-3 custom-button" onClick={toggleForm}>
                   Visita sin Costo!
                 </Button>
-
                 <p className="mt-2 small-text">
-                visitas sin costo de lunes a viernes de 8 am a 2 pm, para visitas fuera del horario gratuito por favor{' '}
-                  <span className="link-text" onClick={togglePlans} style={{ color: 'yellow', cursor: 'pointer', textDecoration: 'underline' }}>
-                    ver los precios!
+                  Visitas sin costo de lunes a viernes de 8 am a 2 pm. Para visitas fuera del horario gratuito, por favor{' '}
+                  <span
+                    className="link-text"
+                    onClick={() => window.open("https://wa.me/573046615865", "_blank")}
+                    style={{ color: 'yellow', cursor: 'pointer', textDecoration: 'underline' }}
+                  >
+                    preguntar precios!
                   </span>.
                 </p>
               </div>
+              <p className="showroom-message">
+                <Button variant="link" onClick={showVideoModal}>
+                  ¡Ven a nuestros Showrooms en Bucaramanga!
+                </Button>
+              </p>
             </Col>
           </Row>
         </Card.Body>
@@ -64,27 +74,37 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
         </Modal.Body>
       </Modal>
 
-      {/* Modal para planes */}
-      <Modal show={showPlans} onHide={togglePlans} centered size="lg">
-        <Modal.Header closeButton className="bg-primary text-white">
-          <Modal.Title>Precios de Visitas</Modal.Title>
+      {/* Modal para el video */}
+      <Modal show={showVideo} onHide={hideVideoModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="text-center">
-          <h5 className="mb-4" style={{ fontWeight: 'bold', color: '#555' }}>Valor de la visita fuera del horario gratuito!</h5>
-          <ul className="list-unstyled">
-            <li className="my-3"><strong>Diurno:</strong> $30,000</li>
-            <li className="my-3"><strong>Nocturno de lunes a viernes de 6 pm a 8pm:</strong> $60,000</li>
-            <li className="my-3"><strong>Sábados de 8 am a 1 pm:</strong> $60,000</li>
-            <li className="my-3"><strong>Domingos y festivos de 8 am a 1 pm:</strong> $80,000</li>
-          </ul>
-          <p className="mt-4" style={{ fontWeight: 'bold', color: '#007bff' }}>
-            * el valor de esta visita se descuenta del costo total en caso de concluirse el proyecto   
-            !
+        <Modal.Body>
+          <div className="video-container">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video de Showrooms"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="mt-3">¡Conoce todos los showrooms que nuestros distribuidores tienen preparados para ti!</p>
+          <p>
+            Pregunta la dirección de nuestros showrooms o llama directamente a nuestro teléfono:{' '}
+            <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
+              3046615865
+            </a>.
           </p>
+          <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
+            Llamar al 3046615865
+          </Button>
+          <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
+            Ir a WhatsApp
+          </Button>
         </Modal.Body>
-        <Modal.Footer className="d-flex justify-content-center">
-          <Button variant="secondary" onClick={togglePlans}>Cerrar</Button>
-        </Modal.Footer>
       </Modal>
     </Container>
   );

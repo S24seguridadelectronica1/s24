@@ -12,7 +12,7 @@ const Contrate = ({ title, description, phone, imageSrc }) => {
           <h2 className="display-1">{title}</h2>
           <p className="lead">{description}</p>
           <p className={`fs-5 ${styles['fs-5']}`}>
-  tratamos cada solicitud con total discreción y profesionalismo. Sabemos lo importante que es tu seguridad, brindamos soluciónes personalizadas adaptadas a tus necesidades. Coloca tu nombre y numero de telefono y te contactaremos en la mayor brevedad, garantizamos un servicio confiable y seguro desde el primer contacto.
+          Tratamos cada solicitud con total discreción y profesionalismo. Brindamos soluciones personalizadas adaptadas a sus necesidades; desde el primer contacto, registramos y entregamos copias de cotizaciones, planos de instalación, facturas y contrato de instalación de equipos. Coloque su nombre y número de teléfono, y nos pondremos en contacto con usted a la mayor brevedad. Garantizamos un servicio confiable y seguro desde el primer contacto.
 </p>
 
 

@@ -103,13 +103,13 @@ const UbicacionVisita = () => {
           fontSize: '1.2rem',
         }}
       >
-        Visitas sin costo únicamente con el registro
+        ¡Visita sin costo de lunes a viernes de 8 am a 2 pm!
       </div>
 
      {/* Modal para el formulario */}
 <Modal show={showForm} onHide={toggleForm}>
   <Modal.Header closeButton>
-    <Modal.Title>¡Vamos hasta donde estés!</Modal.Title>
+    <Modal.Title>¡Visita sin costo de lunes a viernes de 8 am a 2 pm!</Modal.Title>
   </Modal.Header>
   <Modal.Body>
     <FormularioContrate />

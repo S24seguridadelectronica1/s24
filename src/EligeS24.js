@@ -14,11 +14,11 @@ const EligeS24 = ({ title, description, phone, imageSrc }) => {
           Ofrecemos garantía en todos nuestros trabajos y llevamos un registro detallado de cada producto y servicio que adquiere con nosotros. Respondemos rápidamente a cualquier solicitud de garantía, cubriendo todos los costos de operación y transporte de los equipos que requieren revisión. Además, reemplazamos inmediatamente el equipo que entra garantia por uno equivalente mientras el original está en proceso de garantía. Este respaldo incluye sistemas centrales como videograbadores y su disco duro, paneles de alarma y controladores de acceso.  .
           </p>
           <p className="fs-5">
-          Ofrecemos una amplia gama de sistemas de seguridad de alta calidad. Todos nuestros productos son seleccionados directo en distribucion, sin pasar por almacenamiento, lo que nos permite mantener tu equipo siempre actualizado con lo último en tecnología y brindar el mayor nivel de protección.
+          Ofrecemos una amplia gama de sistemas de seguridad de alta calidad. Todos nuestros productos son seleccionados directamente en distribución, sin pasar por almacenamiento, lo que nos permite ofrecer equipos siempre actualizados, con fechas de fabricación recientes y lo último en tecnología, para brindar el mayor nivel de protección en su hogar o negocio.
           </p>
           
           <p className="fs-5">
-            Garantizamos una instalación segura y discreta si lo requiere. 
+            Garantizamos una instalación segura y discreta. 
              Si ya compro sus equipos de seguridad cuente con nosotros para 
             la instalación, aseguramos que todo funcione de manera óptima.
           </p>
