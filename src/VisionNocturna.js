@@ -39,13 +39,13 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
                   className="mt-3 custom-button" 
                   onClick={toggleForm}
                 >
-                  Pide una visita!
+                  Visita sin Costo!
                 </Button>
 
                 <p className="mt-2 small-text">
-                visita sin costo de lunes a viernes de 8 am a 12 pm, para visitas fuera del horario gratuito por favor{' '}
-                  <span className="link-text" onClick={togglePlans} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}>
-                    ver los planes de precios!
+                visitas sin costo de lunes a viernes de 8 am a 2 pm, para visitas fuera del horario gratuito por favor{' '}
+                  <span className="link-text" onClick={togglePlans} style={{ color: 'yellow', cursor: 'pointer', textDecoration: 'underline' }}>
+                    ver los precios!
                   </span>.
                 </p>
               </div>
@@ -57,7 +57,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
       {/* Modal para el formulario */}
       <Modal show={showForm} onHide={toggleForm}>
         <Modal.Header closeButton>
-          <Modal.Title>¡Vamos hasta donde estés!</Modal.Title>
+          <Modal.Title>¡Visita sin costo de lunes a viernes de 8am a 2pm!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormularioContrate />
@@ -67,7 +67,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
       {/* Modal para planes */}
       <Modal show={showPlans} onHide={togglePlans} centered size="lg">
         <Modal.Header closeButton className="bg-primary text-white">
-          <Modal.Title>Planes de Visita</Modal.Title>
+          <Modal.Title>Precios de Visitas</Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center">
           <h5 className="mb-4" style={{ fontWeight: 'bold', color: '#555' }}>Valor de la visita fuera del horario gratuito!</h5>
@@ -78,7 +78,8 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             <li className="my-3"><strong>Domingos y festivos de 8 am a 1 pm:</strong> $80,000</li>
           </ul>
           <p className="mt-4" style={{ fontWeight: 'bold', color: '#007bff' }}>
-            * Sigue adelante con tu proyecto, ¡te descontaremos el valor de esta visita del costo total!
+            * el valor de esta visita se descuenta del costo total en caso de concluirse el proyecto   
+            !
           </p>
         </Modal.Body>
         <Modal.Footer className="d-flex justify-content-center">

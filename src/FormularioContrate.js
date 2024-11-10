@@ -83,12 +83,12 @@ const FormularioContrate = () => {
         <Col xs={12} sm={10} md={8} lg={6}>
           <h2 className="text-center mb-4 display-4">¡Apunta tu número!</h2>
           
-          <p className="text-center mb-4 fs-5">Te llamamos en el menor tiempo posible.</p>
+          <p className="text-center mb-4 fs-5">Te llamamos en el menor tiempo posible para confirmar su direccion y hora de la visita</p>
 
           <p className="mt-2 small-text">
-          Visita sin costo de lunes a viernes de 8 am a 12 pm, para visitas fuera del horario gratuito por favor{' '}
+         para visitas fuera del horario gratuito por favor{' '}
             <span className="link-text" onClick={togglePlans} style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}>
-              ver precios!
+              ver los precios!
             </span>.
           </p>
 
@@ -133,31 +133,26 @@ const FormularioContrate = () => {
       </Row>
 
       {/* Modal para los planes */}
-      <Modal show={showPlans} onHide={togglePlans} centered size="lg">
+     {/* Modal para planes */}
+     <Modal show={showPlans} onHide={togglePlans} centered size="lg">
         <Modal.Header closeButton className="bg-primary text-white">
-          <Modal.Title>Planes de Visita</Modal.Title>
+          <Modal.Title>Precios de Visitas</Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center">
           <h5 className="mb-4" style={{ fontWeight: 'bold', color: '#555' }}>Valor de la visita fuera del horario gratuito!</h5>
           <ul className="list-unstyled">
-            <li className="my-3">
-              <strong>Diurno:</strong> $30,000
-            </li>
-            <li className="my-3">
-              <strong>Nocturno de lunes a viernes de 6 pm a 8pm:</strong> $60,000
-            </li>
-            <li className="my-3">
-              <strong>Sábados de 8 am a 1 pm:</strong> $60,000
-            </li>
-            <li className="my-3" style={{ color: '#555' }}>
-              <strong>Domingos y festivos de 8 am a 1 pm:</strong> $80,000  
-            </li>
+            <li className="my-3"><strong>Diurno:</strong> $30,000</li>
+            <li className="my-3"><strong>Nocturno de lunes a viernes de 6 pm a 8pm:</strong> $60,000</li>
+            <li className="my-3"><strong>Sábados de 8 am a 1 pm:</strong> $60,000</li>
+            <li className="my-3"><strong>Domingos y festivos de 8 am a 1 pm:</strong> $80,000</li>
           </ul>
+          <p className="mt-4" style={{ fontWeight: 'bold', color: '#007bff' }}>
+            * el valor de esta visita se descuenta del costo total en caso de concluirse el proyecto   
+            !
+          </p>
         </Modal.Body>
         <Modal.Footer className="d-flex justify-content-center">
-          <Button variant="secondary" onClick={togglePlans} className="btn-lg">
-            Cerrar
-          </Button>
+          <Button variant="secondary" onClick={togglePlans}>Cerrar</Button>
         </Modal.Footer>
       </Modal>
     </Container>
