@@ -91,18 +91,17 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
               allowFullScreen
             ></iframe>
           </div>
-          <p className="mt-3">¡Conoce todos los showrooms que nuestros distribuidores tienen preparados para ti!</p>
+          <p className="mt-3">¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!</p>
           <p>
-            Pregunta la dirección de nuestros showrooms o llama directamente a nuestro teléfono:{' '}
+            Pregunta la dirección de nuestros showrooms al whatsapp o llama directamente para mas informacion!:{' '}
             <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
-              3046615865
             </a>.
           </p>
           <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
-            Llamar al 3046615865
+            Llamar!
           </Button>
           <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
-            Ir a WhatsApp
+            direccion al WhatsApp
           </Button>
         </Modal.Body>
       </Modal>

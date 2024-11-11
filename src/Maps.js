@@ -4,7 +4,7 @@ import './Maps.css'; // Importa el archivo CSS para los estilos
 
 const Maps = () => {
   const [showModal, setShowModal] = useState(false); // Estado para controlar la visibilidad del modal
-  const googleMapsLink = "https://www.google.com/maps/dir/?api=1&destination=7.075000,-73.127389"; // Enlace a Google Maps
+  const whatsappLink = "https://wa.me/573046615865"; // Enlace de WhatsApp
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -21,40 +21,37 @@ const Maps = () => {
         />
       </div>
 
-      {/* Modal para mostrar la ubicación */}
+      {/* Modal para el video */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>S24 Seguridad Electronica</Modal.Title>
+          <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p><strong>Oficina:</strong><br />
-          Transversal 6D #109-58<br />
-          Marianela, Girón, Santander, Colombia</p>
-          <p><strong>Consultas en la oficina bajo llamada previa</strong></p>
+          <div className="video-container">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Video de Showrooms"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="mt-3">¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!</p>
           <p>
-            <a href="tel:+573046615865" style={{ color: 'blue', textDecoration: 'none' }}>
-              <strong className="vibrate">llámanos!: 📞 3046615865</strong>
-            </a>
+            Pregunta la dirección de nuestros showrooms al WhatsApp o llama directamente para más información:{' '}
+            <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
+              3046615865
+            </a>.
           </p>
-          <iframe
-            title="Mapa de Ubicación"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.540896414341!2d-73.127389!3d7.075000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDQnMzAuMCJOIDczwrAwnzM4LjYiVw!5e0!3m2!1ses!2sco!4v1696100366541!5m2!1ses!2sco"
-            width="100%"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
+            Llamar
+          </Button>
+          <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
+            Dirección al WhatsApp
+          </Button>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" href={googleMapsLink} target="_blank">
-          Cómo llegar
-          </Button>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
