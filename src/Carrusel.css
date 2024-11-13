@@ -132,3 +132,51 @@
     width: 300%; /* Mantiene el ancho del carrusel para tres imágenes */
   }
 }
+
+.mini-carousel {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.mini-image {
+  width: 100px;
+  height: auto;
+  margin: 0 10px;
+  object-fit: cover;
+}
+
+.mini-prev, .mini-next {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+}
+
+
+.modal-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.modal-control.prev {
+  left: 10px;
+}
+
+.modal-control.next {
+  right: 10px;
+}
+
+.modal-control:hover {
+  background-color: rgba(255, 255, 255, 1);
+}

@@ -98,7 +98,8 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             </a>.
           </p>
           <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
-            Llamar!
+            Llamar
+            !
           </Button>
           <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
             direccion al WhatsApp

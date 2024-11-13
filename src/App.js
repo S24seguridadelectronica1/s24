@@ -65,22 +65,21 @@ const App = () => {
         scrollToRegister={scrollToRegister}
       />
 
-      <Carrusel 
-        images={[
-          `${process.env.PUBLIC_URL}/1.png`, 
-          `${process.env.PUBLIC_URL}/2.png`, 
-          `${process.env.PUBLIC_URL}/3.png`, 
-          `${process.env.PUBLIC_URL}/4.png`, 
-          `${process.env.PUBLIC_URL}/5.png`, 
-          `${process.env.PUBLIC_URL}/6.png`, 
-          `${process.env.PUBLIC_URL}/7.png`, 
-          `${process.env.PUBLIC_URL}/8.png`, 
-          `${process.env.PUBLIC_URL}/9.png`, 
-          `${process.env.PUBLIC_URL}/10.png`, 
-          `${process.env.PUBLIC_URL}/11.png`, 
-          `${process.env.PUBLIC_URL}/12.png`
-        ]} 
-      />
+<Carrusel
+  images={[
+    `${process.env.PUBLIC_URL}/1.png`,
+    `${process.env.PUBLIC_URL}/2.png`,
+    `${process.env.PUBLIC_URL}/3.png`,
+    // más imágenes...
+  ]}
+  secondaryImages={[
+    [`${process.env.PUBLIC_URL}/22.png`, `${process.env.PUBLIC_URL}/1.png`],
+    [`${process.env.PUBLIC_URL}/1.png`, `${process.env.PUBLIC_URL}/2.png`],
+    [`${process.env.PUBLIC_URL}/23.png`, `${process.env.PUBLIC_URL}/3.png`],
+    // más arreglos de imágenes secundarias...
+  ]}
+/>
+
 
       <Contrate 
         title="¿Estás pensando en contratar nuestros servicios?"

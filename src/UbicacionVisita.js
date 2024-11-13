@@ -16,7 +16,7 @@ const UbicacionVisita = () => {
         {/* Columna para el mapa */}
         <Col md={6} className="position-relative">
           <div className="recuadro-info p-4 bg-light border rounded shadow-sm">
-            <strong className="d-block mb-2">Oficina:</strong>
+            <strong className="d-block mb-2">Oficina de soporte en linea:</strong>
             <strong className="d-block mb-2">Transversal 6D #109-58</strong>
             <span>Marianela, Girón, Santander, Colombia</span>
             <p className="mt-2">
