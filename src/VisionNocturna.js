@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { Row, Col, Card, Container, Button, Modal } from 'react-bootstrap';
 import './VisionNocturna.css';
 import FormularioContrate from './FormularioContrate';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
   const [showForm, setShowForm] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const toggleForm = () => setShowForm(!showForm);
-  const showVideoModal = () => setShowVideo(true);
-  const hideVideoModal = () => setShowVideo(false);
+  const showModalImage = () => setShowModal(true);
+  const hideModalImage = () => setShowModal(false);
 
   const whatsappMessage = "Estoy interesado en el exposhow en Bucaramanga, por favor necesito más información";
   const whatsappLink = `https://wa.me/3046615865?text=${encodeURIComponent(whatsappMessage)}`;
@@ -29,11 +30,11 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             <Col xs={12} md={5} className="text-center text-md-left vision-description">
               <Card.Title className="display-4 custom-title">{title}</Card.Title>
               <Card.Text className="fs-5 custom-description">{description}</Card.Text>
-              <p className="desktop-showroom-message">
-                <Button variant="link" onClick={showVideoModal}>
+              <div className="desktop-showroom-message">
+                <Button variant="link" onClick={showModalImage}>
                   ¡Ven a nuestros Showrooms en Bucaramanga!
                 </Button>
-              </p>
+              </div>
             </Col>
 
             {/* Columna de la imagen con el contenedor superpuesto */}
@@ -43,7 +44,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
                 <Button variant="primary" className="mt-3 custom-button" onClick={toggleForm}>
                   Visita sin Costo!
                 </Button>
-                <p className="mt-2 small-text">
+                <div className="mt-2 small-text">
                   Visitas sin costo de lunes a viernes de 8 am a 2 pm. Para visitas fuera del horario gratuito, por favor{' '}
                   <span
                     className="link-text"
@@ -52,13 +53,13 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
                   >
                     preguntar precios!
                   </span>.
-                </p>
+                </div>
               </div>
-              <p className="showroom-message">
-                <Button variant="link" onClick={showVideoModal}>
+              <div className="showroom-message">
+                <Button variant="link" onClick={showModalImage}>
                   ¡Ven a nuestros Showrooms en Bucaramanga!
                 </Button>
-              </p>
+              </div>
             </Col>
           </Row>
         </Card.Body>
@@ -74,38 +75,34 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
         </Modal.Body>
       </Modal>
 
-      {/* Modal para el video */}
-      <Modal show={showVideo} onHide={hideVideoModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="video-container">
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Video de Showrooms"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <p className="mt-3">¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!</p>
-          <p>
-            Pregunta la dirección de nuestros showrooms al whatsapp o llama directamente para mas informacion!:{' '}
-            <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
-            </a>.
-          </p>
-          <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
-            Llamar
-            !
-          </Button>
-          <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
-            direccion al WhatsApp
-          </Button>
-        </Modal.Body>
-      </Modal>
+      {/* Modal para la imagen del showroom */}
+      <Modal show={showModal} onHide={hideModalImage}>
+  <Modal.Header closeButton>
+    <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    {/* Ruta correcta a la imagen en la carpeta public */}
+    <img src="/showrooms2.png" alt="Showroom" className="img-fluid" />
+    <p className="mt-3">
+      ¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!
+    </p>
+    <p>
+      Pregunta la dirección de nuestros showrooms al whatsapp o llama directamente para más información:{' '}
+      <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
+        +573046615865
+      </a>.
+    </p>
+    <div className="d-flex justify-content-between">
+      <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
+        Llamar
+      </Button>
+      <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
+        Dirección al WhatsApp
+      </Button>
+    </div>
+  </Modal.Body>
+</Modal>
+
     </Container>
   );
 };
