@@ -28,7 +28,7 @@ const Maps = () => {
         <Modal.Body>
           <div className="image-container">
             <Image
-              src={`${process.env.PUBLIC_URL}/showrooms.png`} // Cambia esta ruta por la de tu imagen
+              src={`${process.env.PUBLIC_URL}/123.png`} // Cambia esta ruta por la de tu imagen
               alt="Showroom"
               fluid // Hace que la imagen sea responsive
               className="w-100" // Asegura que la imagen ocupe todo el ancho disponible

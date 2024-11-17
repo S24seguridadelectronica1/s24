@@ -67,18 +67,40 @@ const App = () => {
 
 <Carrusel
   images={[
-    `${process.env.PUBLIC_URL}/1.png`,
-    `${process.env.PUBLIC_URL}/2.png`,
+    `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
     `${process.env.PUBLIC_URL}/3.png`,
-    // más imágenes...
+    `${process.env.PUBLIC_URL}/3.png`,
+    `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
+    `${process.env.PUBLIC_URL}/3.png`,
+    `${process.env.PUBLIC_URL}/3.png`,
+    // más imágenes principales...
   ]}
   secondaryImages={[
-    [`${process.env.PUBLIC_URL}/22.png`, `${process.env.PUBLIC_URL}/1.png`],
-    [`${process.env.PUBLIC_URL}/1.png`, `${process.env.PUBLIC_URL}/2.png`],
-    [`${process.env.PUBLIC_URL}/23.png`, `${process.env.PUBLIC_URL}/3.png`],
+    [
+      `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
+      `${process.env.PUBLIC_URL}/12.png`,
+      `${process.env.PUBLIC_URL}/13.png`,
+      `${process.env.PUBLIC_URL}/14.png`,
+    ],
+    [
+      `${process.env.PUBLIC_URL}/21.png`,
+      `${process.env.PUBLIC_URL}/22.png`,
+      `${process.env.PUBLIC_URL}/23.png`,
+      `${process.env.PUBLIC_URL}/24.png`,
+    ],
+    [
+      `${process.env.PUBLIC_URL}/31.png`,
+      `${process.env.PUBLIC_URL}/32.png`,
+      `${process.env.PUBLIC_URL}/33.png`,
+      `${process.env.PUBLIC_URL}/34.png`,
+    ],
     // más arreglos de imágenes secundarias...
   ]}
+  titles={['Título 1', 'Título 2', 'Título 3']}
+  descriptions={['Descripción 1', 'Descripción 2', 'Descripción 3']}
 />
+
+
 
 
       <Contrate 

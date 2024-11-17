@@ -1,90 +1,109 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Carrusel.css';
 
-const Carrusel = ({ images, secondaryImages }) => {
+const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
-  const autoSlideInterval = useRef(null);
-  const intervalTime = 3000;
+  const [isAutoSliding, setIsAutoSliding] = useState(true);
+  const intervalTime = 3000;  // Tiempo entre slides automáticos
+  const pauseTime = 5000;     // Tiempo de pausa al hacer clic en un punto
 
-  const changeSlide = useCallback(
+  // Cambiar slide en el carrusel principal (de 3 en 3)
+  const changeSlideMain = useCallback(
     (direction) => {
-      setCurrentIndex((prevIndex) =>
-        (prevIndex + direction + images.length) % images.length
-      );
+      setCurrentIndex((prevIndex) => (prevIndex + direction + images.length) % images.length);
     },
     [images.length]
   );
 
-  const startAutoSlide = useCallback(() => {
-    if (!autoSlideInterval.current) {
-      autoSlideInterval.current = setInterval(() => changeSlide(1), intervalTime);
-    }
-  }, [changeSlide, intervalTime]);
-
-  const stopAutoSlide = useCallback(() => {
-    clearInterval(autoSlideInterval.current);
-    autoSlideInterval.current = null;
-  }, []);
-
+  // Auto deslizamiento
   useEffect(() => {
-    startAutoSlide();
-    return () => stopAutoSlide();
-  }, [startAutoSlide, stopAutoSlide]);
+    let autoSlideInterval;
+    if (isAutoSliding) {
+      autoSlideInterval = setInterval(() => changeSlideMain(1), intervalTime);
+    }
+    return () => clearInterval(autoSlideInterval);
+  }, [changeSlideMain, intervalTime, isAutoSliding]);
 
-  const openModal = (index) => {
-    setCurrentIndex(index); // Establece el índice de la imagen principal seleccionada
-    setModalImageIndex(0); // Restablece el índice del modal a la primera imagen del grupo correspondiente
-    setIsModalOpen(true);
-    stopAutoSlide();
+  // Función para cambiar el slide al hacer clic en los puntos
+  const changeSlideFromDot = (index) => {
+    setCurrentIndex(index);
+    setIsAutoSliding(false);  // Detener el deslizamiento
+
+    // Programar la reanudación después de 5 segundos
+    setTimeout(() => {
+      setIsAutoSliding(true);
+    }, pauseTime);
   };
 
+  // Abrir el modal
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setModalImageIndex(0);
+    setIsModalOpen(true);
+    setIsAutoSliding(false);  // Detener el deslizamiento cuando el modal está abierto
+  };
+
+  // Cerrar el modal
   const closeModal = () => {
     setIsModalOpen(false);
-    startAutoSlide();
+    setIsAutoSliding(true);   // Reanudar el deslizamiento al cerrar el modal
   };
 
-  const changeModalSlide = (direction) => {
-    setModalImageIndex(
-      (prevIndex) =>
-        (prevIndex + direction + secondaryImages[currentIndex].length) %
-        secondaryImages[currentIndex].length
-    );
-  };
+  // Cambiar imagen en el modal
+  const changeSlideModal = useCallback(
+    (direction) => {
+      setModalImageIndex((prevIndex) => 
+        (prevIndex + direction + secondaryImages[currentIndex].length) % secondaryImages[currentIndex].length
+      );
+    },
+    [currentIndex, secondaryImages]
+  );
 
   return (
-    <div
-      className="carrusel-container"
-      onMouseEnter={stopAutoSlide}
-      onMouseLeave={startAutoSlide}
-    >
+    <div className="carrusel-container">
       <div
         className="carrusel"
         style={{
-          transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
+          display: 'flex',
+          width: `${images.length * 33.33}%`, // Ajuste para mostrar tres imágenes a la vez
+          transform: `translateX(-${(currentIndex * 33.33)}%)`, // Mover 33.33% en cada cambio
           transition: 'transform 0.5s ease',
         }}
       >
         {images.map((img, index) => (
-          <img
+          <div 
+            key={index} 
+            className="carousel-slide"
+            style={{ width: '33.33%' }} // Ajuste para mostrar tres imágenes a la vez
+          >
+            <img
+              className="carousel-image"
+              src={img}
+              alt={`Slide ${index}`}
+              onClick={() => openModal(index)}
+            />
+            <div className="image-caption">
+              <h2>{titles[index]}</h2>
+              <p>{descriptions[index]}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Puntos de control */}
+      <div className="carousel-dots">
+        {images.map((_, index) => (
+          <div
             key={index}
-            className="carousel-image"
-            src={img}
-            alt={`Slide ${index}`}
-            onClick={() => openModal(index)}
+            className={`dot ${currentIndex === index ? 'active' : ''}`}
+            onClick={() => changeSlideFromDot(index)}
           />
         ))}
       </div>
 
-      <button className="carousel-control prev" onClick={() => changeSlide(-1)}>
-        &lt;
-      </button>
-      <button className="carousel-control next" onClick={() => changeSlide(1)}>
-        &gt;
-      </button>
-
-      {/* Modal con el segundo carrusel */}
+      {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -93,11 +112,13 @@ const Carrusel = ({ images, secondaryImages }) => {
               alt={`Modal Slide ${modalImageIndex}`}
               className="modal-image"
             />
-            <button className="close-button" onClick={closeModal}>X</button>
-            <button className="modal-control prev" onClick={() => changeModalSlide(-1)}>
+            <button className="close-button" onClick={closeModal}>
+              X
+            </button>
+            <button className="modal-control prev" onClick={() => changeSlideModal(-1)}>
               &lt;
             </button>
-            <button className="modal-control next" onClick={() => changeModalSlide(1)}>
+            <button className="modal-control next" onClick={() => changeSlideModal(1)}>
               &gt;
             </button>
           </div>

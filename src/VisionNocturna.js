@@ -82,7 +82,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
   </Modal.Header>
   <Modal.Body>
     {/* Ruta correcta a la imagen en la carpeta public */}
-    <img src="/showrooms2.png" alt="Showroom" className="img-fluid" />
+    <img src="/123.png" alt="Showroom" className="img-fluid" />
     <p className="mt-3">
       ¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!
     </p>
