@@ -12,6 +12,15 @@ import Contrate from './Contrate';
 import SeguridadElectronica from './SeguridadElectronica';
 import WhatsAppButton from './WhatsAppButton';
 import Maps from './Maps';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Modal from 'react-modal';
+
+// Configura el contenedor del modal
+Modal.setAppElement('#root');
+
+
+
 
 const App = () => {
   const registerRef = useRef(null);
@@ -66,40 +75,37 @@ const App = () => {
       />
 
 <Carrusel
-  images={[
-    `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
-    `${process.env.PUBLIC_URL}/3.png`,
-    `${process.env.PUBLIC_URL}/3.png`,
-    `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
-    `${process.env.PUBLIC_URL}/3.png`,
-    `${process.env.PUBLIC_URL}/3.png`,
-    // más imágenes principales...
-  ]}
-  secondaryImages={[
-    [
-      `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
-      `${process.env.PUBLIC_URL}/12.png`,
-      `${process.env.PUBLIC_URL}/13.png`,
-      `${process.env.PUBLIC_URL}/14.png`,
-    ],
-    [
-      `${process.env.PUBLIC_URL}/21.png`,
-      `${process.env.PUBLIC_URL}/22.png`,
-      `${process.env.PUBLIC_URL}/23.png`,
-      `${process.env.PUBLIC_URL}/24.png`,
-    ],
-    [
-      `${process.env.PUBLIC_URL}/31.png`,
-      `${process.env.PUBLIC_URL}/32.png`,
-      `${process.env.PUBLIC_URL}/33.png`,
-      `${process.env.PUBLIC_URL}/34.png`,
-    ],
-    // más arreglos de imágenes secundarias...
-  ]}
-  titles={['Título 1', 'Título 2', 'Título 3']}
-  descriptions={['Descripción 1', 'Descripción 2', 'Descripción 3']}
-/>
-
+        images={[
+          `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
+          `${process.env.PUBLIC_URL}/3.png`,
+          `${process.env.PUBLIC_URL}/3.png`,
+          // más imágenes principales...
+        ]}
+        secondaryImages={[
+          // Arreglos de imágenes secundarias asociadas con cada imagen principal
+          [
+            `${process.env.PUBLIC_URL}/loultimoentecnologia/portadalxts.png`,
+            `${process.env.PUBLIC_URL}/3.png`,
+            `${process.env.PUBLIC_URL}/3.png`,
+            `${process.env.PUBLIC_URL}/3.png`,
+          ],
+          [
+            `${process.env.PUBLIC_URL}/21.png`,
+            `${process.env.PUBLIC_URL}/22.png`,
+            `${process.env.PUBLIC_URL}/23.png`,
+            `${process.env.PUBLIC_URL}/24.png`,
+          ],
+          [
+            `${process.env.PUBLIC_URL}/31.png`,
+            `${process.env.PUBLIC_URL}/32.png`,
+            `${process.env.PUBLIC_URL}/33.png`,
+            `${process.env.PUBLIC_URL}/34.png`,
+          ],
+          // más arreglos de imágenes secundarias...
+        ]}
+        titles={['Título 1', 'Título 2', 'Título 3', 'Título 4']}
+        descriptions={['Descripción 1', 'Descripción 2', 'Descripción 3', 'Descripción 4']}
+      />
 
 
 

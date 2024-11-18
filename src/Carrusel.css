@@ -1,170 +1,141 @@
-/* Estilo para el contenedor del carrusel */
-.carrusel-container {
-  position: relative;
-  overflow: hidden;
-  background-color: #f9f9f9;
+/* Contenedor principal del carrusel */
+.slider-container {
+  width: 80%;
+  margin: 0 auto;
+  transition: opacity 0.3s ease;
+  text-align: center; /* Asegura que el contenido esté centrado */
+}
+
+/* Estilo de cada diapositiva */
+.slick-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos hijos al centro */
+  justify-content: center; /* Asegura que los elementos se centren verticalmente */
+  text-align: center; /* Centra el contenido del texto */
+  padding: 10px; /* Agrega un poco de espacio alrededor de cada imagen y texto */
+}
+
+/* Estilo de las imágenes dentro del carrusel */
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo de los títulos (h3) */
+/* Estilo de los títulos (h3) */
+.slick-slide h3 {
+  margin: 0; /* Eliminar márgenes predeterminados */
+  text-align: center; /* Centrar el texto */
+  color: #fff; /* Color de texto blanco */
+  font-size: 1.5em; /* Tamaño de fuente del título */
+  line-height: 1.4; /* Espaciado entre líneas */
+  max-width: 90%; /* Limitar el ancho del título */
+  margin-top: 10px; /* Un poco de margen arriba */
+  font-weight: bold; /* Hacer el título en negrita */
+  display: block; /* Asegura que se trate como bloque y se centre */
+  margin-left: auto;
+  margin-right: auto; /* Asegura que el título esté centrado */
+}
+
+/* Estilo de las descripciones (p) */
+.slick-slide p {
+  margin: 0;
+  text-align: center; /* Centrar el texto */
+  color: #fff; /* Color de texto blanco */
+  font-size: 1.1em; /* Tamaño de fuente de la descripción */
+  line-height: 1.6; /* Espaciado entre líneas */
+  max-width: 90%; /* Limitar el ancho del texto */
+  margin-top: 5px; /* Un poco de margen arriba */
+  font-weight: normal; /* Descripción con peso normal */
+}
+
+/* Estilos específicos para dispositivos en portrait (pantallas pequeñas) */
+@media (max-width: 767px) {
+  .slick-slide img {
+    width: 80%; /* Ajusta el tamaño de la imagen a 80% de la pantalla */
+    margin: 0 auto; /* Centra la imagen */
+    height: auto;
+  }
+
+  .slick-slide h3, .slick-slide p {
+    font-size: 1em; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+}
+
+/* Estilos específicos para dispositivos en landscape (pantallas grandes) */
+@media (min-width: 768px) {
+  .slick-slide img {
+    width: 33.33%; /* Muestra tres imágenes en landscape */
+    height: auto;
+  }
+}
+
+/* Estilo de los botones en el modal */
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto; /* Centra el botón */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilo del contenedor del modal */
+/* Estilo de los contenedores en el modal */
+.modal-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+/* Estilo de la parte del texto en el modal */
+.modal-text {
+  flex: 1; /* Hace que el texto ocupe la mitad del espacio */
+  padding-left: 20px; /* Un poco de espacio a la izquierda */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+/* Estilo de los títulos y descripciones en el modal */
+.modal-text h3 {
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+}
+
+.modal-text p {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Estilo de las imágenes en el modal */
+.modal-image {
+  flex: 1; /* Hace que la imagen ocupe la otra mitad del espacio */
+  text-align: left; /* Alinea la imagen a la izquierda */
+}
+
+.modal-image img {
+  width: 100%; /* Ajusta el tamaño de la imagen para que ocupe el espacio disponible */
+  height: auto;
+  max-width: 300px; /* Puedes ajustar este valor según sea necesario */
   border-radius: 8px;
 }
 
-/* Carrusel sin animación automática */
-.carrusel {
-  display: flex;
-  height: auto;
-  transition: transform 0.5s ease;
-  margin: 0;
-  padding: 0;
-  gap: 0;
-}
 
-/* Estilo para las imágenes */
-.carousel-image {
-  width: 100%; /* Aseguramos que la imagen ocupe todo el ancho */
-  height: auto; /* Mantiene la relación de aspecto */
-  object-fit: contain; /* Asegura que la imagen se ajuste sin recortes */
-  transition: transform 0.3s ease;
-  margin: 0;
-  padding: 0;
-  flex-shrink: 0; /* Evitar que la imagen se reduzca en tamaño */
-}
 
-/* Hover para las imágenes */
-.carousel-image:hover {
-  transform: scale(1.05);
-}
 
-/* Ajuste para las diapositivas */
-.carousel-slide {
-  position: relative;
-  width: auto;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-/* Eliminar el margen negativo para evitar problemas en dispositivos pequeños */
-.carrusel {
-  gap: 0; /* Elimina el espacio entre las imágenes */
-}
-
-/* Estilo para las leyendas de las imágenes */
-.image-caption {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.image-caption h2 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.image-caption p {
-  margin: 5px 0 0;
-  font-size: 16px;
-}
-
-/* Puntos de control */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Consultas de medios para diferentes tamaños de pantalla */
-
-/* Para dispositivos pequeños (teléfonos) */
-
-/* Modo vertical */
-@media (max-width: 600px) and (orientation: portrait) {
-  .carousel-image {
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    height: auto; /* Mantiene la relación de aspecto */
-    object-fit: contain; /* Asegura que la imagen se ajuste sin recortes */
-  }
-
-  .carousel-slide {
-    display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    margin-right: 0; /* No hay margen a la derecha */
-  }
-}
-
-/* Modo horizontal */
-@media (max-width: 600px) and (orientation: landscape) {
-  .carousel-image {
-    width: 60%; /* Las imágenes ocupan el 60% del ancho en horizontal */
-  }
-
-  .carousel-slide {
-    margin-right: 0; /* Sin márgenes negativos */
-  }
-}
-
-/* Para dispositivos medianos (tabletas) */
-
-/* Modo vertical */
-@media (max-width: 768px) and (orientation: portrait) {
-  .carousel-image {
-    width: 70%; /* Las imágenes ocupan el 70% del ancho en vertical */
-  }
-
-  .carousel-slide {
-    margin-right: 0; /* Sin márgenes negativos */
-  }
-}
-
-/* Modo horizontal */
-@media (max-width: 768px) and (orientation: landscape) {
-  .carousel-image {
-    width: 50%; /* Las imágenes ocupan el 50% del ancho en horizontal */
-  }
-
-  .carousel-slide {
-    margin-right: 0; /* Sin márgenes negativos */
-  }
-}
-
-/* Para dispositivos grandes (pantallas más grandes) */
-
-/* Modo vertical */
-@media (min-width: 1024px) and (orientation: portrait) {
-  .carousel-image {
-    width: 60%; /* Las imágenes ocupan el 60% del ancho en vertical */
-  }
-
-  .carousel-slide {
-    margin-right: 0; /* Sin márgenes negativos */
-  }
-}
-
-/* Modo horizontal */
-@media (min-width: 1024px) and (orientation: landscape) {
-  .carousel-image {
-    width: 55%; /* Las imágenes ocupan el 55% del ancho en horizontal */
-  }
-
-  .carousel-slide {
-    margin-right: 0; /* Sin márgenes negativos */
-  }
-}
