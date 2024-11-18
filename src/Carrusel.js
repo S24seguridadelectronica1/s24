@@ -2,11 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import Modal from "react-modal"; // Asegúrate de tener react-modal instalado
 
-// Configuración inicial del carrusel
 const defaultSettings = {
   dots: true,
   infinite: true,
-  autoplay: true,  // Autoplay activado por defecto
+  autoplay: true,
   autoplaySpeed: 2000,
   pauseOnHover: true,
 };
@@ -14,80 +13,73 @@ const defaultSettings = {
 const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedSecondaryImages, setSelectedSecondaryImages] = useState([]);
+  const [selectedTitles, setSelectedTitles] = useState([]);
+  const [selectedDescriptions, setSelectedDescriptions] = useState([]);
   const [sliderSettings, setSliderSettings] = useState(defaultSettings);
-  const [isExpanded, setIsExpanded] = useState(false); // Estado para controlar si el modal está expandido
+  const [isExpanded, setIsExpanded] = useState(false);
   const sliderRef = useRef(null);
 
-  // Detectar el tamaño de la pantalla y ajustar el número de imágenes mostradas
   const updateSliderSettings = () => {
     const isLandscape = window.innerWidth > window.innerHeight;
     setSliderSettings({
       ...defaultSettings,
-      slidesToShow: isLandscape ? 3 : 1, // Mostrar 3 imágenes en landscape, 1 en portrait
+      slidesToShow: isLandscape ? 3 : 1,
       slidesToScroll: 1,
     });
   };
 
-  // Función para abrir el modal con las imágenes secundarias correspondientes
   const openModal = (index) => {
-    setSelectedSecondaryImages(secondaryImages[index]);
+    // Verificar que los datos existen antes de abrir el modal
+    if (secondaryImages[index]) {
+      setSelectedSecondaryImages(secondaryImages[index].images || []);
+      setSelectedTitles(secondaryImages[index].titles || []);
+      setSelectedDescriptions(secondaryImages[index].descriptions || []);
+    }
     setIsModalOpen(true);
   };
 
-  // Función para cerrar el modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  // Función para expandir el modal (inicialmente no hace nada)
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded); // Cambia el estado de expansión
+  const toggleFullScreen = () => {
+    setIsExpanded(!isExpanded);
   };
 
-  // Detectar cuando el carrusel entra en la vista del usuario
   useEffect(() => {
-    updateSliderSettings(); // Llamar al principio para ajustar las configuraciones de inicio
-
+    updateSliderSettings();
     const handleResize = () => {
-      updateSliderSettings(); // Actualizar las configuraciones cada vez que cambie el tamaño de la pantalla
+      updateSliderSettings();
     };
-
-    // Listener para cambios en el tamaño de la ventana
     window.addEventListener("resize", handleResize);
 
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) {
-        // Si el carrusel está visible, asegurar que autoplay esté activado
         setSliderSettings((prevSettings) => ({
           ...prevSettings,
           autoplay: true,
         }));
       } else {
-        // Si el carrusel no está visible, desactivar autoplay (opcional)
         setSliderSettings((prevSettings) => ({
           ...prevSettings,
           autoplay: false,
         }));
       }
-    }, { threshold: 0.5 }); // Cuando el 50% del carrusel esté visible en la pantalla
+    }, { threshold: 0.5 });
 
-    // Guardamos el valor de sliderRef.current en una variable dentro del efecto
     const currentSlider = sliderRef.current;
-
-    // Solo observamos el slider si la referencia es válida
     if (currentSlider) {
       observer.observe(currentSlider);
     }
 
-    // Función de limpieza que usa la referencia guardada
     return () => {
       if (currentSlider) {
         observer.unobserve(currentSlider);
       }
-      window.removeEventListener("resize", handleResize); // Limpiar el listener cuando se desmonte el componente
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);  // Este efecto se ejecuta una sola vez al cargar el componente
+  }, []);
 
   return (
     <div>
@@ -118,43 +110,144 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.75)", // Fondo oscuro con opacidad
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
           },
           content: {
             position: "absolute",
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)", // Centrar la ventana modal
+            transform: "translate(-50%, -50%)",
             backgroundColor: "white",
             padding: 0,
-            width: isExpanded ? "100vw" : "95vw", // 70% de ancho por defecto, 100% cuando se expanda
-            height: isExpanded ? "100vh" : "92vh", // 70% de altura por defecto, 100% cuando se expanda
-            transition: "width 0.3s ease, height 0.3s ease", // Transición suave para expandir
+            width: isExpanded ? "100vw" : "95vw",
+            height: isExpanded ? "100vh" : "92vh",
+            transition: "width 0.3s ease, height 0.3s ease",
+            zIndex: 1000,
+            overflow: "hidden",
           },
         }}
       >
-        <Slider {...defaultSettings}>
-          {selectedSecondaryImages.map((secondaryImage, index) => (
-            <div key={index} className="modal-slide">
-              <div className="modal-text">
-                <h3>{titles[index]}</h3>
-                <p>{descriptions[index]}</p>
-              </div>
-              <div className="modal-image">
-                <img src={secondaryImage} alt={`Imagen Secundaria ${index + 1}`} />
-              </div>
-            </div>
-          ))}
-        </Slider>
+        {/* Botones para cerrar o expandir el modal */}
+        <div
+          style={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+            zIndex: 1001,
+          }}
+        >
+          <button
+            onClick={toggleFullScreen}
+            style={{
+              marginRight: "10px",
+              background: "transparent",
+              border: "none",
+              color: "black",
+              fontSize: "20px",
+              cursor: "pointer",
+              zIndex: 1002,
+            }}
+          >
+            {isExpanded ? "Reducir" : "Expandir"} 🎥
+          </button>
+          <button
+            onClick={closeModal}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "black",
+              fontSize: "20px",
+              cursor: "pointer",
+              zIndex: 1002,
+            }}
+          >
+            ❌ Cerrar
+          </button>
+        </div>
 
-        {/* Botón para expandir el modal */}
-        <button onClick={toggleExpand} style={{ marginTop: "20px" }}>
-          {isExpanded ? "Reducir" : "Expandir"}
-        </button>
+        {/* Desplegar imágenes secundarias */}
+      {/* Desplegar imágenes secundarias */}
+{/* Desplegar imágenes secundarias */}
+<Slider {...defaultSettings}>
+  {selectedSecondaryImages.length === 0 ? (
+    <p>Cargando...</p> // Mostrar un mensaje mientras se cargan las imágenes
+  ) : (
+    selectedSecondaryImages.map((secondaryImage, index) => (
+      <div
+      key={index}
+      className="modal-slide"
+      style={{
+        display: "flex", // Usamos flexbox para distribuir los elementos en una fila horizontal
+        flexDirection: "row", // Alineación horizontal de los elementos
+        height: "100%", // Asegura que el contenedor ocupe toda la altura disponible
+        overflowY: "auto", // Permite desplazamiento si el contenido es largo
+      }}
+    >
+      {/* Texto (Título y Descripción) - A la izquierda */}
+      <div
+        className="modal-text"
+        style={{
+          width: "50%", // La mitad del modal (izquierda)
+          padding: "10px",
+          boxSizing: "border-box", // Incluye el padding en el cálculo del ancho
+          textAlign: "left", // Alinea el texto a la izquierda
+          marginRight: "10px", // Espacio entre el texto y la imagen
+        }}
+      >
+        <h3>{selectedTitles[index]}</h3>
+        <p>{selectedDescriptions[index]}</p>
+      </div>
+    
+      {/* Imagen a la derecha */}
+     {/* Imagen a la derecha */}
+<div
+  className="modal-image"
+  style={{
+    width: "50%", // La otra mitad del modal (derecha)
+    display: "flex", // Usamos flexbox para asegurar que la imagen ocupe todo el espacio disponible
+    alignSelf: "flex-end", // Alinea la imagen al final (a la derecha) del contenedor
+    marginLeft: "10px", // Espacio entre el texto y la imagen
+  }}
+>
+  <img
+    src={secondaryImage}
+    alt={`Imagen Secundaria ${index + 1}`}
+    style={{
+      maxWidth: "100%", // La imagen ocupa el 100% del ancho del contenedor
+      height: "auto", // Mantiene la proporción de la imagen
+      objectFit: "contain", // Asegura que la imagen no se distorsione
+    }}
+  />
+</div>
+    </div>
+    
 
-        <button onClick={closeModal} style={{ marginTop: "20px" }}>
-          Cerrar Modal
-        </button>
+    
+    ))
+  )}
+</Slider>
+
+
+
+
+        {/* Botón para redirigir al WhatsApp */}
+        <a
+          href="https://wa.me/573046615865"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            marginTop: "20px",
+            padding: "10px 20px",
+            backgroundColor: "#25D366",
+            color: "white",
+            textAlign: "center",
+            borderRadius: "5px",
+            textDecoration: "none",
+          }}
+        >
+          Precio al WhatsApp
+        </a>
       </Modal>
     </div>
   );

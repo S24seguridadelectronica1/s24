@@ -28,8 +28,8 @@
 .slick-slide h3 {
   margin: 0; /* Eliminar márgenes predeterminados */
   text-align: center; /* Centrar el texto */
-  color: #fff; /* Color de texto blanco */
-  font-size: 1.5em; /* Tamaño de fuente del título */
+  color: #333; /* Color de texto más oscuro para mejor contraste */
+  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
   line-height: 1.4; /* Espaciado entre líneas */
   max-width: 90%; /* Limitar el ancho del título */
   margin-top: 10px; /* Un poco de margen arriba */
@@ -37,19 +37,50 @@
   display: block; /* Asegura que se trate como bloque y se centre */
   margin-left: auto;
   margin-right: auto; /* Asegura que el título esté centrado */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave para resaltar el texto */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+}
+
+
+/* Estilo de los títulos (h3) */
+.slick-slide h3 {
+  margin: 0; /* Eliminar márgenes predeterminados */
+  text-align: center; /* Centrar el texto */
+  color: #333; /* Color de texto más oscuro para mejor contraste */
+  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
+  line-height: 1.4; /* Espaciado entre líneas */
+  max-width: 90%; /* Limitar el ancho del título */
+  margin-top: 10px; /* Un poco de margen arriba */
+  font-weight: bold; /* Hacer el título en negrita */
+  display: block; /* Asegura que se trate como bloque y se centre */
+  margin-left: auto;
+  margin-right: auto; /* Asegura que el título esté centrado */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave para resaltar el texto */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
 }
 
 /* Estilo de las descripciones (p) */
 .slick-slide p {
   margin: 0;
   text-align: center; /* Centrar el texto */
-  color: #fff; /* Color de texto blanco */
-  font-size: 1.1em; /* Tamaño de fuente de la descripción */
+  color: #555; /* Color más suave para la descripción */
+  font-size: 1.2em; /* Tamaño de fuente ligeramente mayor */
   line-height: 1.6; /* Espaciado entre líneas */
   max-width: 90%; /* Limitar el ancho del texto */
   margin-top: 5px; /* Un poco de margen arriba */
   font-weight: normal; /* Descripción con peso normal */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave */
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para separar el texto */
 }
+
+ 
+
 
 /* Estilos específicos para dispositivos en portrait (pantallas pequeñas) */
 @media (max-width: 767px) {
@@ -59,8 +90,12 @@
     height: auto;
   }
 
-  .slick-slide h3, .slick-slide p {
-    font-size: 1em; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  .slick-slide h3 {
+    font-size: 1.4em; /* Ajustar el tamaño de la fuente del título */
+  }
+
+  .slick-slide p {
+    font-size: 1em; /* Ajustar el tamaño de la fuente de la descripción */
   }
 }
 
