@@ -23,7 +23,7 @@ const Maps = () => {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
+          <Modal.Title>Sala de Ventas en Bucaramanga!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="image-container">

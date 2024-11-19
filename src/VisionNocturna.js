@@ -78,7 +78,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
       {/* Modal para la imagen del showroom */}
       <Modal show={showModal} onHide={hideModalImage}>
   <Modal.Header closeButton>
-    <Modal.Title>Showrooms en Bucaramanga!</Modal.Title>
+    <Modal.Title>Sala de Ventas en Bucaramanga!</Modal.Title>
   </Modal.Header>
   <Modal.Body>
     {/* Ruta correcta a la imagen en la carpeta public */}
