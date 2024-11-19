@@ -34,9 +34,9 @@ const Maps = () => {
               className="w-100" // Asegura que la imagen ocupe todo el ancho disponible
             />
           </div>
-          <p className="mt-3">¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!</p>
+          <p className="mt-3">¡Conoce todos los equipos en nuestros show rooms. Todas las marcas!</p>
           <p>
-            Pregunta la dirección de nuestros showrooms al WhatsApp o llama directamente para más información:{' '}
+          Pregunte por la dirección de los showrooms al whatsapp o llame directamente para más información:{' '}
             <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
               3046615865
             </a>.
