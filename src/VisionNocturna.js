@@ -84,10 +84,10 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
     {/* Ruta correcta a la imagen en la carpeta public */}
     <img src="/123.png" alt="Showroom" className="img-fluid" />
     <p className="mt-3">
-      ¡Conoce todos los equipos en las salas de ventas que nuestros distribuidores tienen preparados para ti!
+      ¡Conoce todos los equipos en nuestros show rooms. Todas las marcas!
     </p>
     <p>
-      Pregunta la dirección de nuestros showrooms al whatsapp o llama directamente para más información:{' '}
+      Pregunte por la dirección de los showrooms al whatsapp o llame directamente para más información:{' '}
       <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
         +573046615865
       </a>.

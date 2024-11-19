@@ -29,14 +29,17 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
   };
 
   const openModal = (index) => {
-    // Verificar que los datos existen antes de abrir el modal
     if (secondaryImages[index]) {
       setSelectedSecondaryImages(secondaryImages[index].images || []);
       setSelectedTitles(secondaryImages[index].titles || []);
       setSelectedDescriptions(secondaryImages[index].descriptions || []);
+      console.log('Secondary Images:', secondaryImages[index].images);
+      console.log('Titles:', secondaryImages[index].titles);
+      console.log('Descriptions:', secondaryImages[index].descriptions);
     }
     setIsModalOpen(true);
   };
+  
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -166,69 +169,33 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
         </div>
 
         {/* Desplegar imágenes secundarias */}
-      {/* Desplegar imágenes secundarias */}
-{/* Desplegar imágenes secundarias */}
-<Slider {...defaultSettings}>
-  {selectedSecondaryImages.length === 0 ? (
-    <p>Cargando...</p> // Mostrar un mensaje mientras se cargan las imágenes
-  ) : (
-    selectedSecondaryImages.map((secondaryImage, index) => (
-      <div
-      key={index}
-      className="modal-slide"
-      style={{
-        display: "flex", // Usamos flexbox para distribuir los elementos en una fila horizontal
-        flexDirection: "row", // Alineación horizontal de los elementos
-        height: "100%", // Asegura que el contenedor ocupe toda la altura disponible
-        overflowY: "auto", // Permite desplazamiento si el contenido es largo
-      }}
-    >
-      {/* Texto (Título y Descripción) - A la izquierda */}
-      <div
-        className="modal-text"
-        style={{
-          width: "50%", // La mitad del modal (izquierda)
-          padding: "10px",
-          boxSizing: "border-box", // Incluye el padding en el cálculo del ancho
-          textAlign: "left", // Alinea el texto a la izquierda
-          marginRight: "10px", // Espacio entre el texto y la imagen
-        }}
-      >
-        <h3>{selectedTitles[index]}</h3>
-        <p>{selectedDescriptions[index]}</p>
-      </div>
-    
-      {/* Imagen a la derecha */}
-     {/* Imagen a la derecha */}
-<div
-  className="modal-image"
-  style={{
-    width: "50%", // La otra mitad del modal (derecha)
-    display: "flex", // Usamos flexbox para asegurar que la imagen ocupe todo el espacio disponible
-    alignSelf: "flex-end", // Alinea la imagen al final (a la derecha) del contenedor
-    marginLeft: "10px", // Espacio entre el texto y la imagen
-  }}
->
-  <img
-    src={secondaryImage}
-    alt={`Imagen Secundaria ${index + 1}`}
-    style={{
-      maxWidth: "100%", // La imagen ocupa el 100% del ancho del contenedor
-      height: "auto", // Mantiene la proporción de la imagen
-      objectFit: "contain", // Asegura que la imagen no se distorsione
-    }}
-  />
+        <Slider {...defaultSettings}>
+          {selectedSecondaryImages.length === 0 ? (
+            <p>Cargando...</p> // Mostrar un mensaje mientras se cargan las imágenes
+          ) : (
+            selectedSecondaryImages.map((secondaryImage, index) => (
+              <div
+  key={index}
+  className="modal-slide">
+  {/* Imagen a la izquierda */}
+  <div className="modal-image">
+    <img
+      src={secondaryImage}
+      alt={`Imagen Secundaria ${index + 1}`}
+    />
+  </div>
+
+  {/* Texto a la derecha */}
+  <div className="modal-text">
+    <h3>{selectedTitles[index]}</h3>
+    <p>{selectedDescriptions[index]}</p>
+  </div>
 </div>
-    </div>
-    
 
-    
-    ))
-  )}
-</Slider>
-
-
-
+            
+            ))
+          )}
+        </Slider>
 
         {/* Botón para redirigir al WhatsApp */}
         <a

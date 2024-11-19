@@ -130,18 +130,21 @@ button:hover {
 
 /* Estilo del contenedor del modal */
 /* Estilo de los contenedores en el modal */
+/* Estilo del contenedor del modal */
 .modal-slide {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Garantiza diseño horizontal */
+  flex-direction: row; /* Mantiene elementos en fila */
+  justify-content: space-between; /* Espacio entre imagen y texto */
+  align-items: center; /* Centra verticalmente */
   margin: 10px 0;
   width: 100%;
+  box-sizing: border-box; /* Evita problemas con padding/margin */
 }
 
 /* Estilo de la parte del texto en el modal */
 .modal-text {
-  flex: 1; /* Hace que el texto ocupe la mitad del espacio */
-  padding-left: 20px; /* Un poco de espacio a la izquierda */
+  flex: 1; /* Hace que el texto ocupe espacio proporcional */
+  padding-left: 20px; /* Espaciado entre la imagen y el texto */
   text-align: left; /* Alineamos el texto a la izquierda */
 }
 
@@ -160,17 +163,35 @@ button:hover {
 
 /* Estilo de las imágenes en el modal */
 .modal-image {
-  flex: 1; /* Hace que la imagen ocupe la otra mitad del espacio */
-  text-align: left; /* Alinea la imagen a la izquierda */
+  flex: 1; /* Hace que la imagen ocupe espacio proporcional */
+  width: 10%; /* Ajusta el tamaño de la imagen */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente dentro de su contenedor */
+  align-items: center; /* Centra verticalmente dentro de su contenedor */
 }
 
 .modal-image img {
-  width: 100%; /* Ajusta el tamaño de la imagen para que ocupe el espacio disponible */
+  width: 100%; /* Ajusta el tamaño de la imagen */
   height: auto;
-  max-width: 300px; /* Puedes ajustar este valor según sea necesario */
-  border-radius: 8px;
+  max-width: 300px; /* Limita el ancho máximo */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
+/* Corrige conflictos para pantallas pequeñas */
+@media (max-width: 767px) {
+  .modal-slide {
+    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+  }
 
+  .modal-image,
+  .modal-text {
+    width: 100%; /* Asegura que ocupen todo el ancho */
+    text-align: center; /* Centra el contenido */
+  }
+
+  .modal-image img {
+    max-width: 80%; /* Imagen más pequeña en pantallas pequeñas */
+  }
+}
 
 
