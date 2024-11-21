@@ -55,7 +55,7 @@ const App = () => {
             <p>mantenimiento e instalaciones de todo tipo de equipos de seguridad electrónica: video porteros, controles de acceso, alarmas y cámaras de seguridad en general.</p>
           </div>
         }
-        title="¡empresa de integradores de seguridad electrónica en bucaramanga y santander!"
+        title="¡Integradores de seguridad electrónica en bucaramanga y santander!"
       />
 
       <Catalogos />
