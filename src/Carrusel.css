@@ -164,14 +164,14 @@ button:hover {
 /* Estilo de las imágenes en el modal */
 .modal-image {
   flex: 1; /* Hace que la imagen ocupe espacio proporcional */
-  width: 10%; /* Ajusta el tamaño de la imagen */
+  width: 1% !important; /* Ajusta el tamaño de la imagen */
   display: flex;
   justify-content: center; /* Centra horizontalmente dentro de su contenedor */
   align-items: center; /* Centra verticalmente dentro de su contenedor */
 }
 
 .modal-image img {
-  width: 100%; /* Ajusta el tamaño de la imagen */
+  width: 1%; /* Ajusta el tamaño de la imagen */
   height: auto;
   max-width: 300px; /* Limita el ancho máximo */
   border-radius: 8px; /* Bordes redondeados */
