@@ -11,10 +11,11 @@ import EligeS24 from './EligeS24';
 import Contrate from './Contrate';
 import SeguridadElectronica from './SeguridadElectronica';
 import WhatsAppButton from './WhatsAppButton';
-import Maps from './Maps';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Modal from 'react-modal';
+import Showrooms from './Showrooms'; // Asegúrate de ajustar la ruta
+
 
 // Configura el contenedor del modal
 Modal.setAppElement('#root');
@@ -163,8 +164,7 @@ const App = () => {
       <UbicacionVisita />
       <SeguridadElectronica />
       <WhatsAppButton />
-      <Maps />
-
+      <Showrooms />
       {/* Footer */}
       <Footer />
     </div>
