@@ -1,12 +1,20 @@
 .custom-title {
-    margin-top: 40px; /* Ajusta este valor según sea necesario */
-    font-size: 2.5rem; /* Tamaño en pantallas grandes */
+    margin: 0; /* Elimina los márgenes externos */
+    font-size: 1.8rem; /* Tamaño adaptado */
     font-weight: bold;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: center; /* Opcional: texto alineado a la izquierda */
+    padding: 0px; /* Espaciado mínimo desde los bordes */
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
 }
 
 .custom-description {
-    margin-top: 10px;
-    font-size: 1.2rem;
+    margin: 0; /* Elimina los márgenes externos */
+    font-size: 1rem; /* Tamaño adaptado */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: center; /* Opcional: texto alineado a la izquierda */
+    padding: 0 5px; /* Espaciado mínimo desde los bordes */
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
 }
 
 .custom-button {
@@ -88,12 +96,16 @@
     }
 
     .custom-title {
-        font-size: 1.8rem; /* Tamaño en pantallas pequeñas */
+        font-size: 2rem !important; /* Tamaño en pantallas pequeñas */
         margin-top: 10px; /* Ajusta el espacio superior */
+        margin-left: -29px;
+        width: 120%; /* Ocupa todo el ancho del contenedor */
     }
 
     .custom-description {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        margin-left: -15px;
+        width: 110%; /* Ocupa todo el ancho del contenedor */
     }
 
     .display-4 {

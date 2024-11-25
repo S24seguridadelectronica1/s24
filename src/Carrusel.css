@@ -1,197 +1,367 @@
-/* Contenedor principal del carrusel */
-.slider-container {
-  width: 80%;
-  margin: 0 auto;
-  transition: opacity 0.3s ease;
-  text-align: center; /* Asegura que el contenido esté centrado */
+/* Variables de colores y sombras */
+:root {
+  --primary-color: #4CAF50;
+  --primary-color-hover: #45a049;
+  --text-color-dark: #333;
+  --text-color-light: #555;
+  --bg-overlay: rgba(255, 255, 255, 0.7);
+  --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo de cada diapositiva */
-.slick-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinea los elementos hijos al centro */
-  justify-content: center; /* Asegura que los elementos se centren verticalmente */
-  text-align: center; /* Centra el contenido del texto */
-  padding: 10px; /* Agrega un poco de espacio alrededor de cada imagen y texto */
-}
-
-/* Estilo de las imágenes dentro del carrusel */
-.slick-slide img {
+/* Contenedor principal del modal */
+.modal-container {
   width: 100%;
-  height: auto;
-  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
-}
-
-/* Estilo de los títulos (h3) */
-/* Estilo de los títulos (h3) */
-.slick-slide h3 {
-  margin: 0; /* Eliminar márgenes predeterminados */
-  text-align: center; /* Centrar el texto */
-  color: #333; /* Color de texto más oscuro para mejor contraste */
-  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
-  line-height: 1.4; /* Espaciado entre líneas */
-  max-width: 90%; /* Limitar el ancho del título */
-  margin-top: 10px; /* Un poco de margen arriba */
-  font-weight: bold; /* Hacer el título en negrita */
-  display: block; /* Asegura que se trate como bloque y se centre */
-  margin-left: auto;
-  margin-right: auto; /* Asegura que el título esté centrado */
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave para resaltar el texto */
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
-}
-
-
-/* Estilo de los títulos (h3) */
-.slick-slide h3 {
-  margin: 0; /* Eliminar márgenes predeterminados */
-  text-align: center; /* Centrar el texto */
-  color: #333; /* Color de texto más oscuro para mejor contraste */
-  font-size: 1.8em; /* Aumentar el tamaño de la fuente */
-  line-height: 1.4; /* Espaciado entre líneas */
-  max-width: 90%; /* Limitar el ancho del título */
-  margin-top: 10px; /* Un poco de margen arriba */
-  font-weight: bold; /* Hacer el título en negrita */
-  display: block; /* Asegura que se trate como bloque y se centre */
-  margin-left: auto;
-  margin-right: auto; /* Asegura que el título esté centrado */
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave para resaltar el texto */
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
-}
-
-/* Estilo de las descripciones (p) */
-.slick-slide p {
-  margin: 0;
-  text-align: center; /* Centrar el texto */
-  color: #555; /* Color más suave para la descripción */
-  font-size: 1.2em; /* Tamaño de fuente ligeramente mayor */
-  line-height: 1.6; /* Espaciado entre líneas */
-  max-width: 90%; /* Limitar el ancho del texto */
-  margin-top: 5px; /* Un poco de margen arriba */
-  font-weight: normal; /* Descripción con peso normal */
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo suave */
-  padding: 8px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para separar el texto */
-}
-
- 
-
-
-/* Estilos específicos para dispositivos en portrait (pantallas pequeñas) */
-@media (max-width: 767px) {
-  .slick-slide img {
-    width: 80%; /* Ajusta el tamaño de la imagen a 80% de la pantalla */
-    margin: 0 auto; /* Centra la imagen */
-    height: auto;
-  }
-
-  .slick-slide h3 {
-    font-size: 1.4em; /* Ajustar el tamaño de la fuente del título */
-  }
-
-  .slick-slide p {
-    font-size: 1em; /* Ajustar el tamaño de la fuente de la descripción */
-  }
-}
-
-/* Estilos específicos para dispositivos en landscape (pantallas grandes) */
-@media (min-width: 768px) {
-  .slick-slide img {
-    width: 33.33%; /* Muestra tres imágenes en landscape */
-    height: auto;
-  }
-}
-
-/* Estilo de los botones en el modal */
-button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: block;
-  margin: 20px auto; /* Centra el botón */
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Estilos para el contenido del modal */
-.modal-content {
-  max-width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Estilo del contenedor del modal */
-/* Estilo de los contenedores en el modal */
-/* Estilo del contenedor del modal */
+/* Contenedor del contenido del modal */
 .modal-slide {
-  display: flex; /* Garantiza diseño horizontal */
-  flex-direction: row; /* Mantiene elementos en fila */
-  justify-content: space-between; /* Espacio entre imagen y texto */
-  align-items: center; /* Centra verticalmente */
-  margin: 10px 0;
-  width: 100%;
-  box-sizing: border-box; /* Evita problemas con padding/margin */
-}
-
-/* Estilo de la parte del texto en el modal */
-.modal-text {
-  flex: 1; /* Hace que el texto ocupe espacio proporcional */
-  padding-left: 20px; /* Espaciado entre la imagen y el texto */
-  text-align: left; /* Alineamos el texto a la izquierda */
-}
-
-/* Estilo de los títulos y descripciones en el modal */
-.modal-text h3 {
-  font-size: 1.5em;
-  color: #333;
-  font-weight: bold;
-}
-
-.modal-text p {
-  font-size: 1.1em;
-  color: #666;
-  line-height: 1.5;
-}
-
-/* Estilo de las imágenes en el modal */
-.modal-image {
-  flex: 1; /* Hace que la imagen ocupe espacio proporcional */
-  width: 1% !important; /* Ajusta el tamaño de la imagen */
   display: flex;
-  justify-content: center; /* Centra horizontalmente dentro de su contenedor */
-  align-items: center; /* Centra verticalmente dentro de su contenedor */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 200px;
+}
+
+/* Estilo para las imágenes */
+.modal-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -600px;
 }
 
 .modal-image img {
-  width: 1%; /* Ajusta el tamaño de la imagen */
+  position: absolute;
+  max-width: 5.5%;
   height: auto;
-  max-width: 300px; /* Limita el ancho máximo */
-  border-radius: 8px; /* Bordes redondeados */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 90px;
 }
 
-/* Corrige conflictos para pantallas pequeñas */
-@media (max-width: 767px) {
-  .modal-slide {
-    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+/* Estilo para el texto */
+.modal-text {
+  flex: 0 0 50%;
+  padding: 80px;
+  color: var(--text-color-dark);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 700px;
+  margin-top: -180px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-medium);
+  width: 500px;
+  height: 500px;
+}
+
+
+
+
+
+/* Estilos del carrusel principal */
+.slick-slide {
+  padding: 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.slick-slide h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: var(--text-color-dark);
+}
+
+.slick-slide p {
+  color: var(--text-color-light);
+  font-size: 16px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -50px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #9af1ba;
+}
+
+/* Estilos de los botones */
+button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+
+/* Estilos para el modal */
+.modal {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del modal contenido */
+.modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  height: 92vh;
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-medium);
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+/* Estilos overlay del modal */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Modal expandido */
+.modal-content-expanded {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Botones del modal */
+.modal-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+}
+
+.modal-button {
+  margin-right: 10px;
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.modal-button:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* Estilo del botón de WhatsApp */
+.modal .whatsapp-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Hover efecto del botón de WhatsApp */
+.modal .whatsapp-button:hover {
+  background-color: #128c7e;
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries para dispositivos con un máximo de 768px */
+@media (max-width: 768px) {
+  /* Contenedor principal del modal */
+  .modal-container {
+    padding: 10px;
+    width: 100%;
   }
 
-  .modal-image,
-  .modal-text {
-    width: 100%; /* Asegura que ocupen todo el ancho */
-    text-align: center; /* Centra el contenido */
+  /* Contenedor del contenido del modal */
+  .modal-slide {
+    flex-direction: column; /* Cambiar a columna para móviles */
+    align-items: stretch;
+    margin-top: 0;
+    gap: 15px;
+  }
+
+  /* Estilo para las imágenes */
+  .modal-image {
+    flex: 0 0 100%; /* Imagen ocupa toda la fila */
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    position: relative;
   }
 
   .modal-image img {
-    max-width: 80%; /* Imagen más pequeña en pantallas pequeñas */
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin-top: 0; /* Eliminar el margen superior */
+    position: relative;
+    max-width: 100%;
+  }
+
+  /* Estilo para el texto (modal-text) */
+  .modal-text {
+    position: relative;
+    flex: 0 0 100%; /* Texto ocupa toda la fila */
+    padding: 20px;
+    margin-left: 0; /* Eliminar margen izquierdo */
+    margin-top: -20px; /* Eliminar margen superior */
+    width: 100%;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-medium);
+    text-align: center;
+    max-height: 250px; /* Ajuste automático de la altura */
+    overflow-y: auto; /* Hacer scroll si el texto es muy largo */
+  }
+
+  /* Asegurar que el texto se ajuste dinámicamente */
+  .modal-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    max-width: 100%; /* Asegura que el texto no se desborde */
+  }
+
+  /* Estilos del carrusel principal */
+  .slick-slide img {
+    border-radius: 8px;
+    width: 100%; /* Ajustar las imágenes al ancho completo */
+    height: auto; /* Mantener la proporción de las imágenes */
+  }
+
+  .slick-dots {
+    bottom: -30px; /* Mover los puntos de navegación */
+  }
+
+  /* Estilo del botón de WhatsApp */
+  .modal .whatsapp-button {
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    transform: translateX(0); /* Ajustar la posición para móviles */
+    text-align: center;
+    font-size: 14px; /* Reducir tamaño de fuente */
+    padding: 10px 0;
+    box-shadow: none; /* Eliminar sombra para un diseño más limpio */
+  }
+
+  .modal .whatsapp-button img {
+    margin-right: 10px; /* Espaciado entre el icono y el texto */
   }
 }
 
+/* Media Queries para dispositivos en modo paisaje (max-width: 768px) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .modal-container {
+    padding: 15px;
+  }
 
+  /* Cambiar el layout de la imagen y el texto a fila en lugar de columna */
+  .modal-slide {
+    margin-top: 0;
+    flex-direction: row; /* Asegura que el contenido esté en fila */
+    gap: 20px;
+  }
+
+  /* Estilo para las imágenes */
+.modal-image {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -300px;
+}
+
+.modal-image img {
+  max-width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+  /* Estilo para el texto */
+  .modal-text {
+    flex: 0 0 50%; /* El texto ocupa la otra mitad de la pantalla */
+    padding: 20px;
+    color: var(--text-color-dark);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 290px; /* Eliminar margen izquierdo */
+    margin-top: -220px; /* Eliminar margen superior */
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-medium);
+    width: 50%;
+    height: auto; /* Ajustar altura al contenido */
+  }
+}

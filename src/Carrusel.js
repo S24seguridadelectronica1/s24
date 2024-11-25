@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import Modal from "react-modal"; // Asegúrate de tener react-modal instalado
+import './Carrusel.css';
 
 const defaultSettings = {
   dots: true,
@@ -33,20 +34,16 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
       setSelectedSecondaryImages(secondaryImages[index].images || []);
       setSelectedTitles(secondaryImages[index].titles || []);
       setSelectedDescriptions(secondaryImages[index].descriptions || []);
-      console.log('Secondary Images:', secondaryImages[index].images);
-      console.log('Titles:', secondaryImages[index].titles);
-      console.log('Descriptions:', secondaryImages[index].descriptions);
     }
     setIsModalOpen(true);
   };
-  
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
   const toggleFullScreen = () => {
-    setIsExpanded(!isExpanded);
+    setIsExpanded((prevState) => !prevState); // Cambiar el estado de expansión
   };
 
   useEffect(() => {
@@ -105,117 +102,117 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
 
       {/* Modal para mostrar imágenes secundarias */}
       <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        contentLabel="Modal de Imágenes Secundarias"
-        style={{
-          overlay: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.75)",
-          },
-          content: {
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "white",
-            padding: 0,
-            width: isExpanded ? "100vw" : "95vw",
-            height: isExpanded ? "100vh" : "92vh",
-            transition: "width 0.3s ease, height 0.3s ease",
-            zIndex: 1000,
-            overflow: "hidden",
-          },
-        }}
-      >
-        {/* Botones para cerrar o expandir el modal */}
-        <div
-          style={{
-            position: "absolute",
-            top: 10,
-            right: 10,
-            zIndex: 1001,
-          }}
-        >
-          <button
-            onClick={toggleFullScreen}
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Modal de Imágenes Secundarias"
+  style={{
+    overlay: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(0, 0, 0, 0.75)",
+    },
+    content: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "white",
+      padding: 0,
+      width: isExpanded ? "100vw" : "95vw",
+      height: isExpanded ? "100vh" : "92vh",
+      transition: "width 0.3s ease, height 0.3s ease",
+      zIndex: 1000,
+      overflow: "hidden",
+    },
+  }}
+>
+  {/* Botones para cerrar o expandir el modal */}
+  <div
+    style={{
+      position: "absolute",
+      top: 10,
+      right: 10,
+      zIndex: 1001,
+    }}
+  >
+  
+    <button
+      onClick={closeModal}
+      style={{
+        background: "transparent",
+        border: "none",
+        color: "black",
+        fontSize: "20px",
+        cursor: "pointer",
+        zIndex: 1002,
+      }}
+    >
+      ❌ Cerrar
+    </button>
+  </div>
+
+  <Slider {...defaultSettings}>
+  {selectedSecondaryImages.length === 0 ? (
+    <p>Cargando...</p>
+  ) : (
+    selectedSecondaryImages.map((secondaryImage, index) => (
+      <div key={index} className="modal-slide">
+        {/* Imagen a la izquierda, clic para expandir */}
+        <div className="modal-image" onClick={() => toggleFullScreen(index)}>
+          <img
+            src={secondaryImage}
+            alt={`Imagen Secundaria ${index + 1}`}
             style={{
-              marginRight: "10px",
-              background: "transparent",
-              border: "none",
-              color: "black",
-              fontSize: "20px",
               cursor: "pointer",
-              zIndex: 1002,
+              width: isExpanded ? "100vw" : "auto", // Si está expandido, ocupará toda la pantalla
+              height: isExpanded ? "100vh" : "auto", // Lo mismo para la altura
+              transition: "width 0.3s ease, height 0.3s ease", // Para animar el cambio de tamaño
             }}
-          >
-            {isExpanded ? "Reducir" : "Expandir"} 🎥
-          </button>
-          <button
-            onClick={closeModal}
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "black",
-              fontSize: "20px",
-              cursor: "pointer",
-              zIndex: 1002,
-            }}
-          >
-            ❌ Cerrar
-          </button>
+          />
+          
         </div>
+        {/* Texto a la derecha */}
+        <div className="modal-text">
+          <h3>{selectedTitles[index]}</h3>
+          <p>{selectedDescriptions[index]}</p>
+        </div>
+      </div>
+    ))
+  )}
+</Slider>
 
-        {/* Desplegar imágenes secundarias */}
-        <Slider {...defaultSettings}>
-          {selectedSecondaryImages.length === 0 ? (
-            <p>Cargando...</p> // Mostrar un mensaje mientras se cargan las imágenes
-          ) : (
-            selectedSecondaryImages.map((secondaryImage, index) => (
-              <div
-  key={index}
-  className="modal-slide">
-  {/* Imagen a la izquierda */}
-  <div className="modal-image">
+
+  {/* Botón de WhatsApp dentro del modal */}
+  <a
+    href="https://wa.me/573046615865"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-button"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#25d366",
+      color: "white",
+      padding: "1px 2px",
+      borderRadius: "10px",
+      textDecoration: "none",
+      position: "absolute",
+      bottom: "20px",
+      left: "10%",
+      transform: "translateX(-50%)",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+      zIndex: 1001,
+      width: "150px",
+    }}
+  >
     <img
-      src={secondaryImage}
-      alt={`Imagen Secundaria ${index + 1}`}
     />
-  </div>
+    Precio al WhatsApp
+  </a>
+</Modal>
 
-  {/* Texto a la derecha */}
-  <div className="modal-text">
-    <h3>{selectedTitles[index]}</h3>
-    <p>{selectedDescriptions[index]}</p>
-  </div>
-</div>
-
-            
-            ))
-          )}
-        </Slider>
-
-        {/* Botón para redirigir al WhatsApp */}
-        <a
-          href="https://wa.me/573046615865"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-block",
-            marginTop: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#25D366",
-            color: "white",
-            textAlign: "center",
-            borderRadius: "5px",
-            textDecoration: "none",
-          }}
-        >
-          Precio al WhatsApp
-        </a>
-      </Modal>
     </div>
   );
 };
