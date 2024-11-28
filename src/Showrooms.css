@@ -1,60 +1,60 @@
 /* Estilos para la imagen flotante como botón */
 .floatingImage {
-    position: fixed;
-    bottom: 100px; /* Ajusta la posición según lo desees */
-    right: 20px;
-    width: 60px;  /* Tamaño de la imagen */
-    height: 60px; /* Tamaño de la imagen */
-    cursor: pointer;
-    border-radius: 50%;  /* Hace que la imagen sea redonda si es cuadrada */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease;
-    z-index: 1001;
-  }
-  
-  .floatingImage:hover {
-    opacity: 0.8;  /* Cambia la opacidad cuando se pasa el cursor */
-  }
-  
-  /* Estilos para el overlay del modal */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  /* Estilos para el modal */
-  .modal {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    display: flex;
-    flex-direction: column; /* Organiza los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-  }
+  position: fixed;
+  bottom: 80px; /* Ajusta la posición según lo desees */
+  right: 10px;
+  width: 60px;  /* Tamaño de la imagen */
+  height: 60px; /* Tamaño de la imagen */
+  cursor: pointer;
+  border-radius: 50%;  /* Hace que la imagen sea redonda si es cuadrada */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.floatingImage:hover {
+  opacity: 0.8;  /* Cambia la opacidad cuando se pasa el cursor */
+}
+
+/* Estilos para el overlay del modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Estilos para el modal */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
 
 
 
-  
-  /* Estilos para la imagen dentro del modal */
-  .image {
-    max-width: 65%;
-    height: auto;
-    margin-top: -15px;  /* Deja espacio entre el título y la imagen */
-    border-radius: 258px;
-  }
+
+/* Estilos para la imagen dentro del modal */
+.image {
+  max-width: 65%;
+  height: auto;
+  margin-top: -15px;  /* Deja espacio entre el título y la imagen */
+  border-radius: 258px;
+}
 
 
 
@@ -63,96 +63,132 @@
 
 /* Estilos para el título principal (h2) antes de la imagen */
 .modalTitle {
-    font-size: 24px;
-    color: #fff; /* Texto blanco para resaltar sobre el fondo */
-    margin-bottom: 15px;
-    text-align: center;
-    position: absolute;
-    top: 8px; /* Ajusta la posición encima de la imagen */
-    width: 100%;
-    
-    /* Fondo llamativo */
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
-    padding: 10px; /* Espaciado alrededor del texto */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
-    
-    /* Sombras para resaltar el texto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    
-    /* Transición suave para los efectos */
-    transition: all 0.3s ease;
+  font-size: 24px;
+  color: #fff; /* Texto blanco para resaltar sobre el fondo */
+  margin-bottom: 15px;
+  text-align: center;
+  position: absolute;
+  top: 8px; /* Ajusta la posición encima de la imagen */
+  width: 100%;
+  
+  /* Fondo llamativo */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  padding: 10px; /* Espaciado alrededor del texto */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  
+  /* Sombras para resaltar el texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  
+  /* Transición suave para los efectos */
+  transition: all 0.3s ease;
 }
 
 .modalTitle:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Aumentar sombra en hover */
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Aumentar sombra en hover */
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
 }
 
 
 /* Estilos para el título secundario (h3) después de la imagen */
 .modal h3 {
-    font-size: 18px;
-    color: #333;
-    margin-top: 0px; /* Elimina el margen superior para acercarlo más al borde superior */
-    margin-bottom: 10px; /* Espacio entre el h3 y el párrafo */
-    padding-left: 10px; /* Agrega un pequeño padding a la izquierda para no pegarlo al borde */
-    padding-right: 10px; /* Agrega un pequeño padding a la derecha */
-    width: calc(120% - 0px); /* Ajusta el ancho al 100% menos el padding */
-    line-height: 1.3; /* Espaciado entre las líneas */
-    text-align: center; /* Centra el texto */
-    word-wrap: break-word; /* Permite que las palabras largas se dividan */
-    white-space: normal; /* Asegura que el texto pueda ajustarse al ancho */
+  font-size: 18px;
+  color: #333;
+  margin-top: 0px; /* Elimina el margen superior para acercarlo más al borde superior */
+  margin-bottom: 10px; /* Espacio entre el h3 y el párrafo */
+  padding-left: 10px; /* Agrega un pequeño padding a la izquierda para no pegarlo al borde */
+  padding-right: 10px; /* Agrega un pequeño padding a la derecha */
+  width: calc(120% - 0px); /* Ajusta el ancho al 100% menos el padding */
+  line-height: 1.3; /* Espaciado entre las líneas */
+  text-align: center; /* Centra el texto */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  white-space: normal; /* Asegura que el texto pueda ajustarse al ancho */
 }
 
 
 /* Estilos para la descripción dentro del modal */
 /* Estilos para la descripción dentro del modal */
 .modal p {
-  font-size: 16px;
-  color: #555; /* Color más oscuro y suave para mejorar la legibilidad */
-  line-height: 1.6; /* Mayor espacio entre líneas para mejor lectura */
-  margin-top: 0px; /* Añadido un pequeño margen superior */
-  margin-bottom: 15px; /* Un poco de espacio en la parte inferior */
-  font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
-  text-align: justify; /* Justifica el texto para un acabado más formal */
+font-size: 16px;
+color: #555; /* Color más oscuro y suave para mejorar la legibilidad */
+line-height: 1.6; /* Mayor espacio entre líneas para mejor lectura */
+margin-top: 0px; /* Añadido un pequeño margen superior */
+margin-bottom: 15px; /* Un poco de espacio en la parte inferior */
+font-family: 'Roboto', sans-serif; /* Fuente limpia y moderna */
+text-align: justify; /* Justifica el texto para un acabado más formal */
 }
 
 .modal h3:last-of-type {
-    font-size: 17px;
-    color: #333;
-    margin-top: 0px; /* Ajusta el espacio con el párrafo */
-    text-align: center;
-  }
-  
+  font-size: 17px;
+  color: #333;
+  margin-top: 0px; /* Ajusta el espacio con el párrafo */
+  text-align: center;
+}
 
 
 
-  
-  
-  /* Estilos para el botón de cerrar el modal */
- /* Estilos para el botón de cerrar dentro del modal */
+
+
+
+/* Estilos para el botón de cerrar el modal */
+/* Estilos para el botón de cerrar dentro del modal */
 .closeButton {
-    position: absolute; /* Posiciona el botón dentro del modal */
-    bottom: 1px; /* 20px desde la parte inferior del modal */
-    left: 20px; /* 20px desde la parte izquierda del modal */
-    background-color: transparent; /* Fondo transparente */
-    color: #333; /* Color oscuro para el texto */
-    border: none; /* Elimina el borde */
-    font-size: 24px; /* Tamaño grande para el icono de cerrar */
-    cursor: pointer; /* Cambia el cursor cuando el ratón pasa sobre el botón */
-  }
-  
-  /* Efecto hover para el botón de cerrar */
-  .closeButton:hover {
-    color: #ff0000; /* Cambia el color del texto a rojo al pasar el ratón */
-  }
+  position: absolute; /* Posiciona el botón dentro del modal */
+  bottom: 1px; /* 20px desde la parte inferior del modal */
+  left: 20px; /* 20px desde la parte izquierda del modal */
+  background-color: transparent; /* Fondo transparente */
+  color: #333; /* Color oscuro para el texto */
+  border: none; /* Elimina el borde */
+  font-size: 24px; /* Tamaño grande para el icono de cerrar */
+  cursor: pointer; /* Cambia el cursor cuando el ratón pasa sobre el botón */
+}
+
+/* Efecto hover para el botón de cerrar */
+.closeButton:hover {
+  color: #ff0000; /* Cambia el color del texto a rojo al pasar el ratón */
+}
 
 
 
 
 
-  /* Estilos generales para los botones */
+/* Estilos generales para los botones */
+.button {
+display: inline-block;
+padding: 10px 15px;
+margin: 5px;
+font-size: 16px;
+text-align: center;
+text-decoration: none;
+border-radius: 5px;
+color: white;
+font-weight: bold;
+}
+
+/* Botón de WhatsApp */
+.whatsappButton {
+background-color: #25d366;
+border: none;
+}
+
+.whatsappButton:hover {
+background-color: #1da851;
+}
+
+/* Botón de llamada */
+.callButton {
+background-color: #007bff;
+border: none;
+}
+
+.callButton:hover {
+background-color: #0056b3;
+}
+
+
+
+
+/* Estilos generales para los botones */
 .button {
   display: inline-block;
   padding: 10px 15px;
@@ -187,75 +223,40 @@
 
 
 
-
-/* Estilos generales para los botones */
-.button {
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 5px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-  }
-  
-  /* Botón de WhatsApp */
-  .whatsappButton {
-    background-color: #25d366;
-    border: none;
-  }
-  
-  .whatsappButton:hover {
-    background-color: #1da851;
-  }
-  
-  /* Botón de llamada */
-  .callButton {
-    background-color: #007bff;
-    border: none;
-  }
-  
-  .callButton:hover {
-    background-color: #0056b3;
-  }
-  
-
-
 /* Para dispositivos en orientación vertical (Portrait) */
 @media (max-width: 768px) {
-    .modal {
-        padding: 15px;
-        max-width: 90%;
-    }
-
-    .floatingImage {
-        bottom: 20px; /* Ajusta la posición si es necesario */
-        right: 10px;  /* Posiciona la imagen más cerca de la esquina */
-    }
-
-    .modalTitle {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    /* Estilos para la imagen dentro del modal */
-  .image {
-    max-width: 85%;
-    height: auto;
-    margin-top: -45px !important;  /* Deja espacio entre el título y la imagen */
-    border-radius: 258px;
+  .modal {
+      padding: 15px;
+      max-width: 90%;
   }
 
+  .floatingImage {
+      bottom: 70px; /* Ajusta la posición si es necesario */
+      right: 10px;  /* Posiciona la imagen más cerca de la esquina */
+  }
+  
 
-    .modal h3 {
-        font-size: 18px;
-    }
+  .modalTitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
 
-    .modal p {
-        font-size: 14px;
-    }
+  /* Estilos para la imagen dentro del modal */
+.image {
+  max-width: 85%;
+  height: auto;
+  margin-top: -75px !important;  /* Deja espacio entre el título y la imagen */
+  border-radius: 258px;
+}
+
+
+  .modal h3 {
+      font-size: 18px;
+  }
+
+  .modal p {
+      font-size: 14px;
+  }
 }
 
 
@@ -283,30 +284,3 @@
 
 
 
-
-
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .modal {
-      padding: 15px;
-      max-width: 90%;
-    }
-  
-    .modalTitle {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-  
-    .image {
-      margin-top: 40px;
-    }
-  
-    .modal h3 {
-      font-size: 18px;
-    }
-  
-    .modal p {
-      font-size: 14px;
-    }
-  }
-  

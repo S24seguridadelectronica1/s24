@@ -45,7 +45,7 @@
   padding: 20px; /* Espaciado interno */
   flex: 1; /* Asegura que este contenedor crezca para llenar el espacio restante */
   background-color: #ffffff; /* Fondo blanco */
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  box-shadow: 0px 2px 8px #f301011a; /* Sombra para darle profundidad */
 }
 
 /* Estilos para el footer */
@@ -74,6 +74,6 @@ body {
   padding: 0;
   background-color: #f8f9fa; /* Mantén un fondo claro general */
   font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
-  color: #212529; /* Color de texto base */
+  color: #292121; /* Color de texto base */
   line-height: 1.6; /* Mejora la legibilidad */
 }

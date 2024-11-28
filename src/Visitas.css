@@ -1,0 +1,17 @@
+
+
+  .button-visit {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .button-visit:hover {
+    background-color: #0056b3;
+  }
+  

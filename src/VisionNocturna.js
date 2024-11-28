@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Card, Container, Button, Modal } from 'react-bootstrap';
 import './VisionNocturna.css';
+import Visitas from './Visitas';
 import FormularioContrate from './FormularioContrate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,7 +9,10 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
   const [showForm, setShowForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  // Función para alternar la visibilidad del formulario en el modal
   const toggleForm = () => setShowForm(!showForm);
+
+  // Funciones para mostrar/ocultar el modal de la imagen del showroom
   const showModalImage = () => setShowModal(true);
   const hideModalImage = () => setShowModal(false);
 
@@ -41,9 +45,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             <Col xs={12} md={7} className="text-center vision-image-col">
               <img src={imageSrc} alt={title} className="img-fluid vision-image" />
               <div className="overlay-content">
-                <Button variant="primary" className="mt-3 custom-button" onClick={toggleForm}>
-                  Visita sin Costo!
-                </Button>
+              <Visitas />
                 <div className="mt-2 small-text">
                   Visitas sin costo de lunes a viernes de 8 am a 2 pm. Para visitas fuera del horario gratuito, por favor{' '}
                   <span
@@ -55,11 +57,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
                   </span>.
                 </div>
               </div>
-              <div className="showroom-message">
-                <Button variant="link" onClick={showModalImage}>
-                  ¡Ven a nuestros Showrooms en Bucaramanga!
-                </Button>
-              </div>
+            
             </Col>
           </Row>
         </Card.Body>
@@ -77,32 +75,31 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
 
       {/* Modal para la imagen del showroom */}
       <Modal show={showModal} onHide={hideModalImage}>
-  <Modal.Header closeButton>
-    <Modal.Title>Sala de Ventas en Bucaramanga!</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    {/* Ruta correcta a la imagen en la carpeta public */}
-    <img src="/123.png" alt="Showroom" className="img-fluid" />
-    <p className="mt-3">
-      ¡Conoce todos los equipos en nuestros show rooms. Todas las marcas!
-    </p>
-    <p>
-      Pregunte por la dirección de los showrooms al whatsapp o llame directamente para más información:{' '}
-      <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
-        +573046615865
-      </a>.
-    </p>
-    <div className="d-flex justify-content-between">
-      <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
-        Llamar
-      </Button>
-      <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
-        Dirección al WhatsApp
-      </Button>
-    </div>
-  </Modal.Body>
-</Modal>
-
+        <Modal.Header closeButton>
+          <Modal.Title>Sala de Ventas en Bucaramanga!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* Ruta correcta a la imagen en la carpeta public */}
+          <img src="/123.png" alt="Showroom" className="img-fluid" />
+          <p className="mt-3">
+            ¡Conoce todos los equipos en nuestros show rooms. Todas las marcas!
+          </p>
+          <p>
+            Pregunte por la dirección de los showrooms al whatsapp o llame directamente para más información:{' '}
+            <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
+              +573046615865
+            </a>.
+          </p>
+          <div className="d-flex justify-content-between">
+            <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
+              Llamar
+            </Button>
+            <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
+              Dirección al WhatsApp
+            </Button>
+          </div>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };

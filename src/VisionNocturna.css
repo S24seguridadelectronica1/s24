@@ -1,171 +1,185 @@
-.custom-title {
-    margin: 0; /* Elimina los márgenes externos */
-    font-size: 1.8rem; /* Tamaño adaptado */
-    font-weight: bold;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    text-align: center; /* Opcional: texto alineado a la izquierda */
-    padding: 0px; /* Espaciado mínimo desde los bordes */
-    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
-}
+/* VisionNocturna.css */
 
-.custom-description {
-    margin: 0; /* Elimina los márgenes externos */
-    font-size: 1rem; /* Tamaño adaptado */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    text-align: center; /* Opcional: texto alineado a la izquierda */
-    padding: 0 5px; /* Espaciado mínimo desde los bordes */
-    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
-}
-
-.custom-button {
-    font-size: 1.5rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    background-color: #007bff; /* Color de fondo azul */
-    color: #fff; /* Color de texto blanco */
-    border: none; /* Elimina el borde por defecto */
-    transition: background-color 0.3s ease; /* Efecto suave en el hover */
-}
-
-.custom-button:hover {
-    background-color: #0056b3; /* Color de fondo más oscuro al hacer hover */
-    color: #f8f9fa; /* Color de texto un poco más claro */
-}
-
-.custom-button:focus {
-    outline: none; /* Quita el borde al hacer focus */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Sombra alrededor para el enfoque */
-}
-
-.vision-card {
-    width: 100%;
+.vision-container {
+    background-color: hwb(0 100% 0%); /* Fondo claro */
+    padding: 0px;
+    border-radius: 8px;
+  }
+  
+  .vision-card {
+    border: none;
+    overflow: hidden;
+  }
+  
+  .vision-body {
+    padding: 0px;
+  }
+  
+  .vision-logo {
+    max-width: 120px;
     height: auto;
-    min-height: 300px;
+  }
+  
+  .vision-row {
+    margin-top: -55px;
+  }
+  
+  .vision-description {
+    padding: 20px;
+  }
+  
+  .custom-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #403434; /* Gris oscuro */
+    margin-bottom: 15px;
+  }
+  
+  .custom-description {
+    color: #6c757d; /* Gris más claro */
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .desktop-showroom-message {
+    margin-top: 15px;
+  }
+  
+  .vision-image-col {
     position: relative;
-    margin: 0 auto;
-}
-
-.vision-body {
-    height: auto;
-    padding: 10px;
-}
-
-.vision-logo {
+    padding: 20px;
+  }
+  
+  .vision-image {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .vision-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px #ff000033;
+  }
+  
+  .overlay-content {
     position: absolute;
-    top: 2px;
-    left: 1%;
-    max-width: 80px;
-    z-index: 10;
-}
-
-.vision-row {
-    margin-top: -1px;
-}
-
-.vision-description {
-    position: relative;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
     padding: 15px;
-    margin-top: 50px; /* Ajuste general */
-    z-index: 20;
+    border-radius: 8px;
     text-align: center;
+    color: hsl(0, 100%, 100%);
+  }
+  
+  .custom-button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  .link-text {
+    color: #ffc107; /* Amarillo */
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .showroom-message {
+    margin-top: 15px;
+  }
+  
+  
+  
+ 
+  
+ /* Estilos para el modal */
+/* Estilo del modal general */
+.form-modal .modal-dialog {
+  max-width: 1200px;  
+  max-height: 1200px;             /* Establece un ancho máximo para el modal */
+  margin: 100%;                       /* Restablece los márgenes */
+  top: 50%;                        /* Centra el modal verticalmente */
+  right: 100px;                        /* Ubica el modal a la derecha de la pantalla */
+  transform: translateY(-50%);     /* Ajusta para que se centre en el eje vertical */
 }
 
-.vision-image {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho */
-    height: auto; /* Mantiene la proporción */
-    object-fit: cover;
+/* Fondo oscuro del modal */
+.form-modal .modal-backdrop {
+  background-color: #ff000099;  /* Fondo semi-transparente oscuro */
 }
 
-.vision-image-col {
-    text-align: center;
-    padding: 10px;
-    position: relative;
+/* Estilos para el encabezado del modal */
+.form-modal .modal-header {
+  background-color: #007bff;            /* Fondo azul en el encabezado */
+  color: white;                         /* Texto blanco */
+  border: none;                         /* Eliminar borde inferior */
+  padding: 15px 20px;                   /* Espaciado en el encabezado */
+  border-radius: 8px 8px 0 0;           /* Bordes redondeados en la parte superior */
+  text-align: center;                   /* Centrado del título */
 }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 576px) {
-    .vision-logo {
-        max-width: 60px;
-    }
-
-    .vision-image {
-        height: 300px !important; /* Aumenta la altura de la imagen en pantallas pequeñas */
-        width: 100%; /* Asegúrate de que ocupe todo el ancho */
-        object-fit: cover;
-        object-position: 25% center; /* Desplaza el contenido */
-    }
-
-    .custom-title {
-        font-size: 2rem !important; /* Tamaño en pantallas pequeñas */
-        margin-top: 10px; /* Ajusta el espacio superior */
-        margin-left: -29px;
-        width: 120%; /* Ocupa todo el ancho del contenedor */
-    }
-
-    .custom-description {
-        font-size: 0.8rem;
-        margin-left: -15px;
-        width: 110%; /* Ocupa todo el ancho del contenedor */
-    }
-
-    .display-4 {
-        font-size: 1.5rem;
-    }
-
-    .fs-4 {
-        font-size: 1rem;
-    }
-
-    .vision-description {
-        margin-top: 10px; /* Ajuste de margen superior para pantallas pequeñas */
-    }
-
-    /* Estilos para mostrar el mensaje debajo de la imagen en pantallas pequeñas */
-    .showroom-message {
-        display: block;
-        margin-top: 15px;
-        text-align: center;
-        font-size: 1rem;
-        color: yellow; /* Cambié el color a amarillo */
-        text-decoration: underline;
-    }
-
-    .desktop-showroom-message {
-        display: none;
-    }
-
-    /* Estilos para el contenedor superpuesto en pantallas pequeñas */
-    .overlay-content {
-        position: absolute;
-        top: 55%; /* Ajusta según sea necesario */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
-        padding: 1px;
-        border-radius: 8px;
-        color: white;
-        width: 90%;
-        height: 40%;
-        z-index: 10; /* Asegura que esté debajo del mensaje */
-    }
-
-    .vision-image {
-        width: 100%;
-        height: auto;
-    }
+/* Estilo del título en el encabezado */
+.form-modal .modal-title {
+  font-size: 1.5rem;                    /* Tamaño de fuente más grande */
+  font-weight: bold;                    /* Negrita para el título */
+  margin-bottom: 0;                     /* Eliminar márgenes innecesarios */
 }
 
-/* Estilos para ocultar el mensaje en pantallas grandes */
-@media (min-width: 577px) {
-    .showroom-message {
-        display: none; /* Oculta el mensaje en pantallas grandes */
-    }
+/* Estilo del botón de cierre */
+.form-modal .btn-close {
+  background-color: transparent;       /* Fondo transparente para el botón de cierre */
+  border: none;                         /* Elimina el borde del botón */
+  font-size: 1.5rem;                    /* Tamaño mayor del ícono */
+  color: white;                         /* Color blanco para el ícono */
+}
 
-    .desktop-showroom-message {
-        display: inline;
-        font-size: 1rem;
-        color: #0000ffd5;
-        text-decoration: underline;
-    }
+/* Estilo al pasar el ratón sobre el botón de cierre */
+.form-modal .btn-close:hover {
+  color: #ffc107;                       /* Cambia el color a amarillo cuando se pasa el ratón */
+}
+
+/* Estilos para el cuerpo del modal */
+.form-modal .modal-body {
+  padding: 20px;                        /* Espaciado interno alrededor del contenido */
+  background-color: #f8f9fa;            /* Fondo gris claro para el cuerpo */
+  border-radius: 0 0 8px 8px;           /* Bordes redondeados en la parte inferior */
+}
+
+/* Estilos para los botones en el pie del modal */
+.form-modal .modal-footer .btn {
+  background-color: #007bff;            /* Fondo azul para los botones */
+  color: white;                         /* Texto blanco */
+  border: none;                         /* Elimina los bordes */
+  padding: 10px 20px;                   /* Padding para los botones */
+  border-radius: 4px;                   /* Bordes redondeados */
+  font-size: 1rem;                      /* Tamaño de fuente adecuado */
+}
+
+/* Estilo de los botones al pasar el ratón */
+.form-modal .modal-footer .btn:hover {
+  background-color: #0056b3;            /* Fondo azul más oscuro cuando se pasa el ratón */
+}
+
+
+.visitas-btn {
+  margin-top: 10px;
+  background-color: #0056b3;
+  border-color: #0056b3;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.visitas-btn:hover {
+  background-color: #003c7d;
+  border-color: #003c7d;
 }

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const FormularioContrate = () => {
   const navigate = useNavigate();
