@@ -31,7 +31,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
           {/* Fila principal para el contenido */}
           <Row className="g-0 align-items-center w-100 vision-row">
             {/* Columna de descripción y botón */}
-            <Col xs={12} md={5} className="text-center text-md-left vision-description">
+            <Col xs={12} md={4} className="text-center text-md-left vision-description">
               <Card.Title className="display-4 custom-title">{title}</Card.Title>
               <Card.Text className="fs-5 custom-description">{description}</Card.Text>
               <div className="desktop-showroom-message">
@@ -42,7 +42,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
             </Col>
 
             {/* Columna de la imagen con el contenedor superpuesto */}
-            <Col xs={12} md={7} className="text-center vision-image-col">
+            <Col xs={12} md={8} className="text-center vision-image-col">
               <img src={imageSrc} alt={title} className="img-fluid vision-image" />
               <div className="overlay-content">
               <Visitas />
