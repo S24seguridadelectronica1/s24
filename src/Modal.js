@@ -26,7 +26,7 @@ const Modal = ({
     <div className="overlay">
       <div className="modal">
         <button onClick={closeModal} className="closeButton">
-          X
+        ❌
         </button>
         <h2 className="modalTitle">{title}</h2>
         <img src={imageSrc} alt="Imagen" className="image" />

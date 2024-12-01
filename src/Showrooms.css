@@ -136,19 +136,21 @@ text-align: justify; /* Justifica el texto para un acabado más formal */
 /* Estilos para el botón de cerrar el modal */
 /* Estilos para el botón de cerrar dentro del modal */
 .closeButton {
-  position: absolute; /* Posiciona el botón dentro del modal */
-  bottom: 1px; /* 20px desde la parte inferior del modal */
-  left: 20px; /* 20px desde la parte izquierda del modal */
-  background-color: transparent; /* Fondo transparente */
-  color: #333; /* Color oscuro para el texto */
-  border: none; /* Elimina el borde */
-  font-size: 24px; /* Tamaño grande para el icono de cerrar */
-  cursor: pointer; /* Cambia el cursor cuando el ratón pasa sobre el botón */
+  position: absolute;
+  bottom: 10px; /* Alineado 10px desde la parte inferior */
+  left: 10px;   /* Alineado 10px desde la parte izquierda */
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: transform 0.2s, color 0.2s;
 }
 
 /* Efecto hover para el botón de cerrar */
-.closeButton:hover {
-  color: #ff0000; /* Cambia el color del texto a rojo al pasar el ratón */
+.overlay .modal .closeButton:hover {
+  color: hsl(357, 100%, 50%);
+  transform: scale(1.2);
 }
 
 
