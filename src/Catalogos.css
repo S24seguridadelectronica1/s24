@@ -1,3 +1,7 @@
+@import 'reset.css';
+
+
+
 .catalogo-image {
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
     height: auto; /* Mantiene la proporción */

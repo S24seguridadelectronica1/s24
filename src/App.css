@@ -1,3 +1,6 @@
+@import 'reset.css';
+
+
 :root {
   --font-small: clamp(0.8rem, 2vw, 1rem);
   --font-medium: clamp(1rem, 2.5vw, 1.5rem);

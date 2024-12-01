@@ -1,4 +1,4 @@
-
+@import 'reset.css';
 
 /* Aplicar la fuente en todo el documento */
 body {
@@ -9,8 +9,7 @@ body {
 
 
 
-<!-- Enlace a Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Sinze&display=swap" rel="stylesheet">
+
 
 /* Añadir la fuente en todo el archivo */
 body {

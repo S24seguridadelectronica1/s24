@@ -1,3 +1,4 @@
+@import 'reset.css';
 /* Estilos base para el header */
 header {
   background-color: #007bff; /* Fondo azul (clase bg-primary de Bootstrap) */

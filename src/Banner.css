@@ -1,10 +1,40 @@
-/* Banner.css */
+@import 'reset.css';
 
 .custom-banner-container {
-    max-width: 100%; /* Asegura que el contenedor no se desborde del ancho de la pantalla */
-    width: auto;
-    padding: 0 20px; /* Espaciado interno para evitar desbordes */
-    box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-  }
-  
+  background-color: #343a40; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding: 2rem; /* Padding vertical */
+  text-align: center; /* Centra el texto */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  margin: 1rem auto; /* Margen automático para centrar horizontalmente */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.custom-banner-container h2 {
+  font-size: 2.5rem; /* Tamaño de fuente del título */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  font-weight: bold; /* Negrita */
+}
+
+.custom-banner-container p {
+  font-size: 1.25rem; /* Tamaño de fuente del párrafo */
+  margin-bottom: 2rem; /* Espaciado inferior */
+  line-height: 1.5; /* Altura de línea */
+}
+
+.custom-banner-container button {
+  background-color: #007bff; /* Fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  padding: 0.75rem 1.5rem; /* Padding del botón */
+  font-size: 1.1rem; /* Tamaño de fuente del botón */
+  border: none; /* Sin borde */
+  border-radius: 50px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones */
+}
+
+.custom-banner-container button:hover {
+  background-color: #0056b3; /* Fondo del botón al pasar el cursor */
+  transform: translateY(-2px); /* Mueve el botón hacia arriba al pasar el cursor */
+}
