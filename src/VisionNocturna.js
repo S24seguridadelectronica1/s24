@@ -61,7 +61,7 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
         closeModal={hideModalImage}
         title="Sala de Ventas en Bucaramanga"
         imageSrc="/123.png"
-        description="¡Conoce todos los equipos en nuestros showrooms. Todas las marcas!"
+        description="¡Conoce todos los equipos de nuestros showrooms en Bucaramanga. encontrarás Todas las marcas!"
         contactInfo={{
           whatsapp: '3046615865',
           phone: '+573046615865',

@@ -11,10 +11,10 @@ const Showrooms = () => {
   const closeModal = () => setShowModal(false);
 
   const modalContent = {
-    title: "Salas de Exposición de Equipos de Seguridad!",
+    title: "Sala de Ventas en Bucaramanga!",
     imageSrc: "/123.png", // Ruta de la imagen del showroom
     description:
-      "Visítanos en nuestros showrooms ubicados en Bucaramanga, donde encontrarás la mejor exposición de equipos de seguridad en Santander. Ofrecemos una amplia gama de productos diseñados para proteger lo que más te importa.",
+      "Visítanos en nuestros showrooms ubicados en Bucaramanga, encontrarás la mejor exposición de equipos de seguridad en Santander. Ofrecemos una amplia gama en productos de seguridad electrónica.",
     contactInfo: {
       whatsapp: "30466150865",
       phone: "30466150865",
