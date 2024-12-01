@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
 import supabase from './supabase/supabaseClient'; // Asegúrate de tener correctamente configurado supabase
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Visitas.css'; // Asegúrate de que el archivo esté bien importado
+
 
 const Visitas = () => {
   const navigate = useNavigate();
@@ -87,7 +89,7 @@ const Visitas = () => {
               onClick={openModal}
               className="button-visit"
             >
-              Solicitar Visita
+              Pide Un Tecnico Hoy!
             </Button>
           </Col>
         </Row>

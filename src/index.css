@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --font-small: clamp(0.8rem, 2vw, 1rem);
+    --font-medium: clamp(1rem, 2.5vw, 1.5rem);
+    --font-large: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  h1 {
+    font-size: var(--font-large);
+  }
+  
+  p {
+    font-size: var(--font-medium);
+  }
+  
+  /* index.css */
+html {
+    font-size: 16px; /* Base para calcular rem */
+  }
+  
+  h1 {
+    font-size: 2rem; /* 32px */
+  }
+  
+  p {
+    font-size: 1rem; /* 16px */
+  }
+  

@@ -46,8 +46,8 @@ const App = () => {
       <VisionNocturna 
         logoSrc={`${process.env.PUBLIC_URL}/s24.png`} 
         imageSrc={`${process.env.PUBLIC_URL}/111.png`} 
-        description="Venta e instalación de equipos de seguridad electrónica: video porteros, controles de acceso, alarmas y cámaras de seguridad en general."
-        title="¡Integradores De Seguridad Electrónica en Bucaramanga y Santander!" 
+        description="Venta e instalación"
+        title="¡Camaras De Seguridad en Bucaramanga y Santander!" 
       />
 
 

@@ -5,6 +5,7 @@ import Visitas from './Visitas';
 import FormularioContrate from './FormularioContrate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
   const [showForm, setShowForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -41,11 +42,15 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
               </div>
             </Col>
 
+
+
+
+
             {/* Columna de la imagen con el contenedor superpuesto */}
             <Col xs={12} md={8} className="text-center vision-image-col">
               <img src={imageSrc} alt={title} className="img-fluid vision-image" />
               <div className="overlay-content">
-              <Visitas />
+                <Visitas />
                 <div className="mt-2 small-text">
                   Visitas sin costo de lunes a viernes de 8 am a 2 pm. Para visitas fuera del horario gratuito, por favor{' '}
                   <span
@@ -57,7 +62,6 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
                   </span>.
                 </div>
               </div>
-            
             </Col>
           </Row>
         </Card.Body>

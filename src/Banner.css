@@ -1,0 +1,10 @@
+/* Banner.css */
+
+.custom-banner-container {
+    max-width: 100%; /* Asegura que el contenedor no se desborde del ancho de la pantalla */
+    width: auto;
+    padding: 0 20px; /* Espaciado interno para evitar desbordes */
+    box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  

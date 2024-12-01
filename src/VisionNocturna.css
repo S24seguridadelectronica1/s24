@@ -1,211 +1,270 @@
+
+
+/* Aplicar la fuente en todo el documento */
+body {
+  font-family: 'Sinze', sans-serif;
+}
+
+
+
+
+
+<!-- Enlace a Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Sinze&display=swap" rel="stylesheet">
+
+/* Añadir la fuente en todo el archivo */
+body {
+  font-family: 'Sinze', sans-serif;
+}
+
+
+
+:root {
+  --font-small: clamp(0.8rem, 2vw, 1rem);
+  --font-medium: clamp(1rem, 2.5vw, 1.5rem);
+  --font-large: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 /* VisionNocturna.css */
 
+/* Contenedor principal */
 .vision-container {
-    background-color: hwb(0 100% 0%); /* Fondo claro */
-    padding: 0px;
-    border-radius: 8px;
-  }
-  
-  .vision-card {
-    border: none;
-    overflow: hidden;
-  }
-  
-  .vision-body {
-    padding: 0px;
-  }
-  
-  .vision-logo {
-    max-width: 120px;
-    height: auto;
-  }
-  
-  .vision-row {
-    margin-top: -55px;
-  }
-  
-  .vision-description {
-    padding: 20px;
-  }
-  
-  .custom-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    color: #403434; /* Gris oscuro */
-    margin-bottom: 15px;
-  }
-  
-  .custom-description {
-    color: #6c757d; /* Gris más claro */
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-  
-  .desktop-showroom-message {
-    background-color: #f8f9fa; /* Color de fondo suave */
-    border: 1px solid #ddd; /* Borde gris claro */
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Centra el texto */
-    border-radius: 10px; /* Bordes redondeados */
-    max-width: 500px; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Centra horizontalmente y da margen vertical */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    font-family: Arial, sans-serif; /* Fuente legible */
+  background-color: #ffffff; /* Fondo claro */
+  padding: 0px;
+  border-radius: 8px;
+  height: 540px; /* Ajusta a la altura deseada */
+  position: relative;
+  top: -10px; /* Usa un valor negativo para subir */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
 }
 
-  
-  .vision-image-col {
-    position: absolute;
-    padding: 40px;
-    margin-top: -120px;
-    display: flex;        /* Usar Flexbox para que el contenedor se ajuste dinámicamente */
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    align-items: center; /* Centrar el contenido verticalmente */
-    width: 100%;  /* Hace que el contenedor ocupe el 100% del ancho disponible */
-    height: 100vh;  /* Hace que el contenedor ocupe el 100% de la altura de la ventana */
-  }
-  
-  .vision-image-col img {
-    width: 100%;  /* Hace que la imagen ocupe el 100% del ancho del contenedor */
-    height: 100%; /* Hace que la imagen ocupe el 100% de la altura del contenedor */
-    object-fit: fill; /* La imagen se ajusta completamente al contenedor, aunque pierda proporción */
-  }
-  
+/* Tarjeta de la visión */
+.vision-card {
+  position: relative;
+  top: -35px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Profundidad y foco visual */
+}
 
-  
-  .vision-image {
-    max-width: 100%;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .vision-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px #e7060633;
-  }
-  
-  .overlay-content {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    color: hsl(0, 100%, 100%);
-  }
-  
-  .custom-button {
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .custom-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-  }
-  
-  .link-text {
-    color: #ffc107; /* Amarillo */
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .showroom-message {
-    margin-top: 15px;
-  }
-  
-  
-  
- 
-  
- /* Estilos para el modal */
-/* Estilo del modal general */
+/* Cuerpo de la tarjeta */
+.vision-body {
+  padding: 0px;
+}
+
+/* Logo de la visión */
+.vision-logo {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* Suaviza la animación */
+}
+
+.vision-logo:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el logo en hover para captar atención */
+}
+
+/* Fila de visión */
+.vision-row {
+  margin-top: -55px;
+}
+
+/* Descripción de la visión */
+.vision-description {
+  padding: 20px;
+  font-size: var(--font-medium); /* Tamaño adaptable */
+}
+
+/* Título personalizado */
+.custom-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #403434; /* Gris oscuro */
+  margin-bottom: 15px;
+  font-size: var(--font-large); /* Tamaño ajustable */
+}
+
+/* Descripción personalizada */
+.custom-description {
+  color: #6c757d; /* Gris más claro */
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Mensaje del showroom */
+.desktop-showroom-message {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease; /* Animación suave al pasar el cursor */
+}
+
+.desktop-showroom-message:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el mensaje en hover */
+}
+
+/* Columna de imagen de visión */
+.vision-image-col {
+  position: absolute;
+  padding: 40px;
+  margin-top: -120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-left: 230px;
+}
+
+.vision-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Imagen de visión */
+.vision-image {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-image:hover {
+  transform: scale(1.05); /* Escala de la imagen para captar atención */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para resaltar la imagen */
+}
+
+/* Contenido sobrepuesto */
+.overlay-content {
+  position: absolute;
+  bottom: 95px;
+  left: 30%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: #ffffff;
+  width: 90%; /* Ancho ajustable */
+  max-width: 500px; /* Limita el tamaño máximo */
+  height: auto; /* Ajuste automático de la altura */
+}
+
+/* Estilo del botón personalizado */
+.custom-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Agrega sombra en hover para resaltar el botón */
+}
+
+/* Estilo del texto del enlace */
+.link-text {
+  color: #ffc107;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease; /* Transición suave del color */
+}
+
+.link-text:hover {
+  color: #e70606; /* Cambia a rojo al pasar el cursor */
+}
+
+/* Estilos para el modal */
+/* Modal general */
 .form-modal .modal-dialog {
-  max-width: 1200px;  
-  max-height: 1200px;             /* Establece un ancho máximo para el modal */
-  margin: 100%;                       /* Restablece los márgenes */
-  top: 50%;                        /* Centra el modal verticalmente */
-  right: 100px;                        /* Ubica el modal a la derecha de la pantalla */
-  transform: translateY(-50%);     /* Ajusta para que se centre en el eje vertical */
+  max-width: 1200px;
+  max-height: 1200px;
+  margin: 100%;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
 }
 
-/* Fondo oscuro del modal */
 .form-modal .modal-backdrop {
-  background-color: hsla(0, 93%, 50%, 0.6);  /* Fondo semi-transparente oscuro */
+  background-color: hsla(0, 93%, 50%, 0.6);
 }
 
-/* Estilos para el encabezado del modal */
+/* Encabezado del modal */
 .form-modal .modal-header {
-  background-color: #007bff;            /* Fondo azul en el encabezado */
-  color: white;                         /* Texto blanco */
-  border: none;                         /* Eliminar borde inferior */
-  padding: 15px 20px;                   /* Espaciado en el encabezado */
-  border-radius: 8px 8px 0 0;           /* Bordes redondeados en la parte superior */
-  text-align: center;                   /* Centrado del título */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
 }
 
-/* Estilo del título en el encabezado */
+/* Título en el modal */
 .form-modal .modal-title {
-  font-size: 1.5rem;                    /* Tamaño de fuente más grande */
-  font-weight: bold;                    /* Negrita para el título */
-  margin-bottom: 0;                     /* Eliminar márgenes innecesarios */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-/* Estilo del botón de cierre */
+/* Botón de cierre */
 .form-modal .btn-close {
-  background-color: transparent;       /* Fondo transparente para el botón de cierre */
-  border: none;                         /* Elimina el borde del botón */
-  font-size: 1.5rem;                    /* Tamaño mayor del ícono */
-  color: white;                         /* Color blanco para el ícono */
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
 }
 
-/* Estilo al pasar el ratón sobre el botón de cierre */
 .form-modal .btn-close:hover {
-  color: #ffc107;                       /* Cambia el color a amarillo cuando se pasa el ratón */
+  color: #ffc107;
 }
 
-/* Estilos para el cuerpo del modal */
+/* Cuerpo del modal */
 .form-modal .modal-body {
-  padding: 20px;                        /* Espaciado interno alrededor del contenido */
-  background-color: #f8f9fa;            /* Fondo gris claro para el cuerpo */
-  border-radius: 0 0 8px 8px;           /* Bordes redondeados en la parte inferior */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 8px 8px;
 }
 
-/* Estilos para los botones en el pie del modal */
+/* Pie del modal */
 .form-modal .modal-footer .btn {
-  background-color: #007bff;            /* Fondo azul para los botones */
-  color: white;                         /* Texto blanco */
-  border: none;                         /* Elimina los bordes */
-  padding: 10px 20px;                   /* Padding para los botones */
-  border-radius: 4px;                   /* Bordes redondeados */
-  font-size: 1rem;                      /* Tamaño de fuente adecuado */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-/* Estilo de los botones al pasar el ratón */
 .form-modal .modal-footer .btn:hover {
-  background-color: #0056b3;            /* Fondo azul más oscuro cuando se pasa el ratón */
+  background-color: #0056b3;
 }
 
-
+/* Botón de visitas */
 .visitas-btn {
   margin-top: 10px;
   background-color: #0056b3;
   border-color: #0056b3;
   font-size: 16px;
   padding: 10px 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .visitas-btn:hover {
   background-color: #003c7d;
   border-color: #003c7d;
+  transform: translateY(-2px); /* Sutil movimiento hacia arriba */
 }
+
 
 
 /* General Styles (already included) */
@@ -213,105 +272,163 @@
 /* Portrait Orientation */
 @media screen and (orientation: portrait) {
   .vision-container {
-    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea elementos al principio del contenedor */
+    align-items: center; /* Centra horizontalmente */
+    padding: 60px;
     border-radius: 4px;
     width: 100%;
     margin: 0;
-
-
+    height: 820px; /* Cambia el valor según lo que necesites */
+    background-color: hsl(0, 0%, 100%);
+    font-family: Arial, sans-serif; /* Fuente para todo el contenedor */
+    line-height: 1.6; /* Mejor legibilidad */
   }
 
   .vision-card {
-    border: 1px solid hsl(0, 100%, 50%);
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre elementos internos */
+    border: 1px solid hsla(0, 0%, 0%, 0.631);
+    margin: 0px;
     padding: 90px;
-    height: 700px; /* Cambia el valor según lo que necesites */
-}
+    height: 800px; /* Cambia el valor según lo que necesites */
+    margin-top: -20px;
+    font-size: var(--font-large); /* Tamaño de fuente variable */
+    font-weight: bold; /* Negrita */
+  }
 
   .vision-logo {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     max-width: 80px;
-    margin-top: -100px;
+    margin-top: -105px;
     margin-left: -80px;
-
   }
 
   .vision-description {
-  width: 190%; /* Asegura que el elemento ocupe todo el ancho */
-  padding: 13px;
-  font-size: 0.9rem;
-  margin: 0; /* Opcional, elimina márgenes adicionales */
-}
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 190%; /* Asegura que el elemento ocupe todo el ancho */
+    padding: 0px;
+    font-size: 0.9rem;
+    margin: 0; /* Opcional, elimina márgenes adicionales */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
 
   .custom-title {
-  font-size: 1.4rem;
-  text-align: center;  /* Centra el texto */
-  display: block;      /* Asegura que el elemento ocupe toda la línea */
-  width: 250%;         /* Ocupa todo el ancho del contenedor */
-  margin-left: -100px;   /* Asegura que esté centrado en contenedores más pequeños */
-  box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    position: relative; /* Cambio de 'var(--font-large)' a 'relative' para un posicionamiento adecuado */
+    display: flex;
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+    font-size: var(--font-large); /* Usa la variable 'font-large' para el tamaño de la fuente */
+    text-align: center;
+    width: 270%; /* Ajusta el ancho al contenedor sin exceder */
+    margin-left: 0; /* Elimina el margen negativo, o ajústalo según sea necesario */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    font-family: Arial, sans-serif;
+    line-height: 1.3;
+    z-index: 9999;
+    margin-top: 25px;
+  }
+  
+
+  .custom-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 220%; /* Ajusta al 100% del contenedor */
+    margin-left: 0; /* Elimina el margen negativo */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    margin-top: -1px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste a nuevas líneas */
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 
-  .custom-description {
-    font-size: 1.4rem;
-    text-align: center;  /* Centra el texto */
-    display: block;      /* Asegura que el elemento ocupe toda la línea */
-    width: 250%;         /* Ocupa todo el ancho del contenedor */
-    margin-left: -100px;   /* Asegura que esté centrado en contenedores más pequeños */
-    box-sizing: border-box; /* Incluye el padding dentro del ancho */
-    margin-top: 0px;
-  }
+
+
 
 
   .desktop-showroom-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.4rem;
-    text-align: center;  /* Centra el texto */
-    display: block;      /* Asegura que el elemento ocupe toda la línea */
-    width: 250%;         /* Ocupa todo el ancho del contenedor */
-    margin-left: -100px;   /* Asegura que esté centrado en contenedores más pequeños */
+    text-align: center;
+    width: 180%; /* Ocupa todo el ancho del contenedor */
+    margin-left: -70px;
     box-sizing: border-box; /* Incluye el padding dentro del ancho */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-top: 1px;
+    padding: 1px;
   }
-
 
   .vision-image-col {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra las imágenes verticalmente */
     position: absolute;
     padding: 0px;
-    margin-top: 700px;
+    margin-top: 850px;
     margin-left: -90px;
-    height: 50%; /* Asegura que ocupe toda la altura del contenedor */
-    width: 550px;  /* Hace que el ancho ocupe todo el espacio disponible */
+    width: 550px; /* Hace que el ancho ocupe todo el espacio disponible */
     object-fit: fill;
     max-width: 200%; /* Evita que se estire demasiado si el contenedor es más grande */
-    max-height: 200%;
+    max-height: 170%;
+    height: 70vh; /* Hace que el contenedor ocupe el 100% de la altura de la ventana */
   }
-  
+
   .vision-image-col img {
-    width: 100%;  /* Hace que la imagen ocupe el 100% del ancho */
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho */
     height: 100%; /* Hace que la imagen ocupe el 100% de la altura */
     object-fit: fill; /* La imagen se ajusta completamente al contenedor, aunque pierda proporción */
   }
-  
+
   .overlay-content {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en líneas adicionales si es necesario */
+    height: 20vh; /* Hace que el contenedor ocupe el 100% de la altura de la ventana */
+    width: 150vw;
     position: absolute;
-    bottom: 50px;
-    left: 2.5px;
+    bottom: 150px;
+    left: 2px;
     right: 15px;
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    padding: 2px;
+    background: rgba(100, 3, 3, 0.37); /* Fondo semitransparente */
+    padding: 0px;
     border-radius: 8px;
     text-align: center;
     color: hsl(0, 100%, 100%);
-    max-width: 62%;
+    max-width: 60%;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
   }
-
-
 
   .custom-button {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.9rem;
+    padding: 1px 2px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e70606;
   }
 }
+
 
 /* Landscape Orientation */
 @media screen and (orientation: landscape) {
