@@ -12,7 +12,7 @@ const Showrooms = () => {
 
   const modalContent = {
     title: "Salas de Exposición de Equipos de Seguridad!",
-    imageSrc: "/123.png",
+    imageSrc: "/123.png", // Ruta de la imagen del showroom
     description:
       "Visítanos en nuestros showrooms ubicados en Bucaramanga, donde encontrarás la mejor exposición de equipos de seguridad en Santander. Ofrecemos una amplia gama de productos diseñados para proteger lo que más te importa.",
     contactInfo: {
@@ -27,7 +27,7 @@ const Showrooms = () => {
         <Row className="justify-content-center">
           <Col xs="auto">
             <img
-              src="/showroms.png" // Ruta de tu imagen
+              src="/showroms.png" // Ruta de la imagen para abrir el showroom
               alt="Abrir showroom"
               className="floatingImage"
               onClick={openModal}
@@ -36,6 +36,7 @@ const Showrooms = () => {
           </Col>
         </Row>
       </Container>
+
       {showModal && (
         <Modal
           showModal={showModal}

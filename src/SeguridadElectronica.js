@@ -25,7 +25,7 @@ const SeguridadElectronica = () => {
       <Row>
         <Col md={12} className="text-center mb-4">
           <p className="lead">
-            Somos una empresa en Bucaramanga y Girón dedicada a la venta e instalación de cámaras de seguridad, alarmas y videoporteros. Llegamos a todo Santander. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
+            Somos una empresa en Bucaramanga dedicada a la venta e instalación de cámaras de seguridad, alarmas y videoporteros. Llegamos a todo Santander. Ofrecemos soluciones personalizadas para proteger tu hogar y negocio, asegurando la tranquilidad que mereces.
           </p>
           <p>
             Contamos con productos de la mejor tecnología y calidad, garantizando durabilidad y eficiencia. Tenemos un equipo de integradores de seguridad electrónica que te asesorará en la elección de los sistemas que mejor se adapten a tus necesidades.

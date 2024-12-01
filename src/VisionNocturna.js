@@ -1,24 +1,16 @@
 import React, { useState } from 'react';
-import { Row, Col, Card, Container, Button, Modal } from 'react-bootstrap';
+import { Row, Col, Card, Container, Button } from 'react-bootstrap';
 import './VisionNocturna.css';
 import Visitas from './Visitas';
-import FormularioContrate from './FormularioContrate';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Modal from './Modal'; // Importar tu modal personalizado
 
 const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
-  const [showForm, setShowForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-  // Función para alternar la visibilidad del formulario en el modal
-  const toggleForm = () => setShowForm(!showForm);
 
   // Funciones para mostrar/ocultar el modal de la imagen del showroom
   const showModalImage = () => setShowModal(true);
   const hideModalImage = () => setShowModal(false);
-
-  const whatsappMessage = "Estoy interesado en el exposhow en Bucaramanga, por favor necesito más información";
-  const whatsappLink = `https://wa.me/3046615865?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <Container fluid className="my-3 vision-container">
@@ -42,10 +34,6 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
               </div>
             </Col>
 
-
-
-
-
             {/* Columna de la imagen con el contenedor superpuesto */}
             <Col xs={12} md={8} className="text-center vision-image-col">
               <img src={imageSrc} alt={title} className="img-fluid vision-image" />
@@ -67,43 +55,19 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
         </Card.Body>
       </Card>
 
-      {/* Modal para el formulario */}
-      <Modal show={showForm} onHide={toggleForm}>
-        <Modal.Header closeButton>
-          <Modal.Title>¡Visita sin costo de lunes a viernes de 8am a 2pm!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <FormularioContrate />
-        </Modal.Body>
-      </Modal>
-
-      {/* Modal para la imagen del showroom */}
-      <Modal show={showModal} onHide={hideModalImage}>
-        <Modal.Header closeButton>
-          <Modal.Title>Sala de Ventas en Bucaramanga!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {/* Ruta correcta a la imagen en la carpeta public */}
-          <img src="/123.png" alt="Showroom" className="img-fluid" />
-          <p className="mt-3">
-            ¡Conoce todos los equipos en nuestros show rooms. Todas las marcas!
-          </p>
-          <p>
-            Pregunte por la dirección de los showrooms al whatsapp o llame directamente para más información:{' '}
-            <a href="tel:+573046615865" style={{ color: 'inherit', textDecoration: 'underline' }}>
-              +573046615865
-            </a>.
-          </p>
-          <div className="d-flex justify-content-between">
-            <Button variant="success" onClick={() => window.open("tel:+573046615865", "_self")}>
-              Llamar
-            </Button>
-            <Button variant="success" onClick={() => window.open(whatsappLink, "_blank")}>
-              Dirección al WhatsApp
-            </Button>
-          </div>
-        </Modal.Body>
-      </Modal>
+      {/* Modal personalizado */}
+      <Modal
+        showModal={showModal}
+        closeModal={hideModalImage}
+        title="Sala de Ventas en Bucaramanga"
+        imageSrc="/123.png"
+        description="¡Conoce todos los equipos en nuestros showrooms. Todas las marcas!"
+        contactInfo={{
+          whatsapp: '3046615865',
+          phone: '+573046615865',
+        }}
+        showForm={false} // Aquí controlas si mostrar el formulario o no
+      />
     </Container>
   );
 };

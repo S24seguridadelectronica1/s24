@@ -27,6 +27,7 @@
   cursor: pointer;
   color: #333;
   transition: transform 0.2s, color 0.2s;
+
 }
 
 .overlay .modal .closeButton:hover {
@@ -36,6 +37,9 @@
 
 
 
+.modal {
+  background-color: #ffffff !important;
+}
 
 
 
