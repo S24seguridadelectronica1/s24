@@ -50,7 +50,7 @@ const ComprarButton = () => {
   </h3>
   <h2>Domicilio gratis!</h2>
   <img
-    className="componenteA-img"
+    className="componente-img"
     src={`${process.env.PUBLIC_URL}/showroms.png`}
     alt="Imagen de la cámara DS-2CE56D0T-IRPFocho"
   />
