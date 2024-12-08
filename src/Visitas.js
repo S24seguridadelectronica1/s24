@@ -100,7 +100,7 @@ const Visitas = () => {
         <div className="overlay">
           <div className="modal">
             <button onClick={closeModal} className="closeButton">
-              X
+            ❌
             </button>
             <h2 className="modalTitle">¡Apunta tu número!</h2>
             <p className="text-center mb-4 fs-5">

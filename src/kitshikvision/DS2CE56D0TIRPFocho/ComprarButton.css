@@ -1,0 +1,140 @@
+/* Estilos del botón "Comprar" */
+.comprar-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .comprar-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Estilos del overlay del modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Estilos del contenido del modal */
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90%; /* Responsivo para pantallas más pequeñas */
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto; /* Asegura que el contenido se vea correctamente si es muy largo */
+  }
+  
+  /* Títulos en el modal */
+  .modal-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content h2, .modal-content h3 {
+    color: #333;
+  }
+  
+  /* Estilos de las etiquetas del formulario */
+  .modal-content form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Estilos de los campos de texto del formulario */
+  .modal-content form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para los botones de confirmación */
+  .confirm-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .confirm-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para el botón de cierre del modal */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Estilos de la imagen en el modal */
+  .modal-bacground {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .modal-bacground h2, .modal-bacground h3 {
+    position: relative;
+    z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+  }
+  
+  .componente-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Hace que la imagen quede detrás del texto */
+    max-width: 100%;
+    height: auto;
+    opacity: 0.3; /* Ajusta la opacidad para que la imagen no sea tan intrusiva */
+  }
+  
+  /* Estilo adicional para centrar el contenido en pantallas pequeñas */
+  @media (max-width: 600px) {
+    .modal-content {
+      width: 90%;
+    }
+    
+    .comprar-button {
+      width: 100%;
+    }
+  }
+  

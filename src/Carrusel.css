@@ -14,6 +14,110 @@
   --box-shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+
+
+.slider-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 50%; /* Ajusta el ancho máximo */
+}
+.slider-container img {
+  width: 50% !important;
+  height: auto;
+  border-radius: 10px; /* Añadir bordes redondeados si quieres */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+.thumbnail-slider-container {
+  margin-top: 10px; /* Adjust minimal top margin */
+}
+.thumbnail-slider-container {
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 20px;
+  background-color: #007bff;
+  height: 20vh;
+  width: 50vw;
+  margin-left: 190px;
+  margin-top: auto;
+}
+
+
+
+.thumbnail-slide {
+  display: flex !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  background-color: hsl(355, 100%, 50%);
+  width: 90vw !important;
+  height: 15vw;
+  margin-left: -100px !important;
+  z-index: 1000;
+}
+
+.thumbnail-slide img {
+  display: flex !important;
+  width: 220px !important;
+  height: 220px !important;
+  margin: 0px  !important;
+  padding: 0 !important;
+  object-fit: cover;
+  margin-left: 50px !important;
+}
+
+
+
+
+
+
+.thumbnail-slider-container img {
+  position: absolute;
+  display: flex !important;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  margin: -10px !important; /* Eliminar margen para que estén más juntas */
+  padding: -10px !important;
+  object-fit: cover !important;
+  margin-left: 100px !important;
+  width: 200px !important;
+  height: 200px !important;
+  z-index: 9999;
+
+}
+
+.thumbnail-slider-container img:hover {
+  border: 2px solid #007bff; /* Cambiar color al pasar el ratón */
+  margin-top: 0px !important; /* Espacio entre el carrusel principal y las miniaturas */
+}
+
+.thumbnail-slide.slick-active img {
+  border: 2px solid #007bff; /* Cambiar color del borde de la miniatura activa */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Contenedor principal del modal */
 .modal-container {
   width: 100%;

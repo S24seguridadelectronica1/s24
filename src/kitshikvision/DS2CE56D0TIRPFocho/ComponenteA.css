@@ -1,0 +1,52 @@
+/* ComponenteA.css */
+.componenteA-container {
+    padding: 20px;
+    background-color: hsl(0, 98%, 51%);
+    border-radius: 8px;
+  }
+  
+  .componenteA-title {
+    justify-self: center;
+    color: #2c3e50;
+    font-size: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .componenteA-subtitle {
+    justify-self: center;
+    color: #16a085;
+    font-size: 30px;
+  }
+  
+  .componenteA-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .componenteA-img {
+    margin-top: -100px;
+    width: 50%; /* La imagen ocupa el 50% de la pantalla */
+    height: auto;
+  }
+  
+  .componenteA-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 50%; /* La lista ocupa el 50% de la pantalla */
+    font-size: 1.7rem;
+  }
+  
+  .componenteA-list li {
+    margin-bottom: 8px;
+  }
+  
+  .componenteA-price {
+    font-size: 2rem;
+    color: #e74c3c; /* Rojo para destacar el precio */
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
