@@ -57,17 +57,19 @@ const VisionNocturna = ({ logoSrc, imageSrc, description, title }) => {
 
       {/* Modal personalizado */}
       <Modal
-        showModal={showModal}
-        closeModal={hideModalImage}
-        title="Sala de Ventas en Bucaramanga"
-        imageSrc="/123.png"
-        description="¡Conoce todos los equipos de nuestros showrooms en Bucaramanga. encontrarás Todas las marcas!"
-        contactInfo={{
-          whatsapp: '3046615865',
-          phone: '+573046615865',
-        }}
-        showForm={false} // Aquí controlas si mostrar el formulario o no
-      />
+  showModal={showModal}
+  closeModal={hideModalImage}
+  title="Sala de Ventas en Bucaramanga"
+  imageSrc={`${process.env.PUBLIC_URL}/123.png`} // ✅ Corregido
+  description="¡Conoce todos los equipos de nuestros showrooms en Bucaramanga, encontrarás todas las marcas!" // ✅ Corregido
+  contactInfo={{
+    whatsapp: '3046615865',
+    phone: '+573046615865',
+  }}
+  showForm={false} // ✅ Corregido
+/>
+
+
     </Container>
   );
 };
