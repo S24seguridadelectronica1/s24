@@ -1,5 +1,5 @@
 {
-  "name": "pagina-web-s24",
+  "name": "s24",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,5 +57,5 @@
     "tailwindcss": "^3.4.12",
     "ts-loader": "^9.5.1"
   },
-  "homepage": "https://www.s24seguridadelectronica.com"
+  "homepage": "https://github.com/S24seguridadelectronica1/s24.git"
 }

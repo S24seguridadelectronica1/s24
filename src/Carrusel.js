@@ -31,15 +31,7 @@ const Carrusel = ({ images, secondaryImages, titles, descriptions }) => {
       dotsClass: "slick-dots slick-thumb",
     };
 
-    const thumbnailSettings = {
-      slidesToShow: images.length,
-      slidesToScroll: 1,
-      asNavFor: sliderRef.current,
-      focusOnSelect: true,
-      arrows: false,
-      dots: false,
-    };
-
+   
     setSliderSettings(defaultSettings);
 
     const updateSliderSettings = () => {
